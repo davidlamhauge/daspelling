@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include <QDebug>
 #include <QSettings>
 
 #include <QFileDialog>
@@ -70,6 +71,10 @@ void MainWindow::init()
 
     QSettings settings("TeamLamhauge", "daSpelling");
     mLastDir = settings.value("last_dir").toString();
+
+    QPalette palet = ui->leSpelling->palette();
+    palet.setColor(QPalette::Base, Qt::green);
+    ui->leSpelling->setPalette(palet);
 }
 
 void MainWindow::getFileList()
