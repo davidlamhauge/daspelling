@@ -19,6 +19,8 @@ private:
     Ui::MainWindow *ui;
     void init();
 
+    void setLocale(int index);
+
     // get the path to the soundfiles
     void getFileList();
 

@@ -35,6 +35,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(ui->btnPlay, &QPushButton::clicked, this, &MainWindow::play);
     connect(ui->leSpelling, &QLineEdit::textChanged, this, &MainWindow::textChanged);
+    connect(ui->cbLanguages, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &MainWindow::setLocale);
 }
 
 MainWindow::~MainWindow()
@@ -44,6 +45,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::init()
 {
+    setLocale(ui->cbLanguages->currentIndex());
+
     ui->btnLoadFile->setEnabled(true);
     ui->btnShuffle->setEnabled(false);
     ui->btnResetList->setEnabled(false);
@@ -75,6 +78,22 @@ void MainWindow::init()
     QPalette palet = ui->leSpelling->palette();
     palet.setColor(QPalette::Base, Qt::green);
     ui->leSpelling->setPalette(palet);
+}
+
+void MainWindow::setLocale(int index)
+{
+    switch (index)
+    {
+    case 0:
+        QLocale::setDefault(QLocale::Danish);
+        break;
+    case 1:
+        QLocale::setDefault(QLocale::English);
+        break;
+    default:
+        QLocale::setDefault(QLocale::Danish);
+        break;
+    }
 }
 
 void MainWindow::getFileList()

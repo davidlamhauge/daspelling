@@ -7,4 +7,7 @@
         <file>icons/next.png</file>
         <file>icons/previous.png</file>
     </qresource>
+    <qresource prefix="/lang">
+        <file>daspelling_da_DK.qm</file>
+    </qresource>
 </RCC>
