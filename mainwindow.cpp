@@ -17,6 +17,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     init();
 
+    this->setWindowTitle("daspelling");
+
     // close app
     connect(ui->btnClose, &QPushButton::clicked, this, &MainWindow::close);
 

@@ -19,7 +19,8 @@ FORMS += \
     mainwindow.ui
 
 TRANSLATIONS += \
-    daspelling_da_DK.ts
+    daspelling_da_DK.ts \
+    daspelling_en.ts
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
