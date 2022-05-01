@@ -10,11 +10,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     QSettings settings("TeamLamhauge", "daSpelling");
-    QString mLang = settings.value("lang").toString();
-    if (mLang == "")
-    {
-        mLang = ":lang/lang/daspelling_da_DK";
-    }
+    QString mLang = settings.value("lang", ":lang/lang/daspelling_da_DK").toString();
 
     QTranslator translator;
     translator.load(mLang);

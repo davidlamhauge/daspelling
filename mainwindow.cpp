@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     // set combobox with languages
     QSettings settings("TeamLamhauge", "daSpelling");
-    int index = settings.value("langIndex").toInt();
+    int index = settings.value("langIndex", 0).toInt();
     ui->cbLanguages->setCurrentIndex(index);
 
     init();
@@ -81,7 +81,7 @@ void MainWindow::init()
     ui->labMaxNumber->setText("-");
 
     QSettings settings("TeamLamhauge", "daSpelling");
-    mLastDir = settings.value("last_dir").toString();
+    mLastDir = settings.value("last_dir", "").toString();
 
     QPalette palet = ui->leSpelling->palette();
     palet.setColor(QPalette::Base, Qt::green);
