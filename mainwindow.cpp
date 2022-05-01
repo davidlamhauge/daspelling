@@ -3,6 +3,7 @@
 
 #include <QDebug>
 #include <QSettings>
+#include <QMessageBox>
 
 #include <QFileDialog>
 #include <QFile>
@@ -15,6 +16,12 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    // set combobox with languages
+    QSettings settings("TeamLamhauge", "daSpelling");
+    int index = settings.value("langIndex").toInt();
+    ui->cbLanguages->setCurrentIndex(index);
+
     init();
 
     this->setWindowTitle("daspelling");
@@ -37,6 +44,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(ui->btnPlay, &QPushButton::clicked, this, &MainWindow::play);
     connect(ui->leSpelling, &QLineEdit::textChanged, this, &MainWindow::textChanged);
+
+    connect(ui->cbLanguages, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &MainWindow::changeLanguage);
 }
 
 MainWindow::~MainWindow()
@@ -228,5 +237,30 @@ void MainWindow::startSpelling()
 void MainWindow::FinishSpelling()
 {
     init();
+}
+
+void MainWindow::changeLanguage(int index)
+{
+    QSettings settings("TeamLamhauge", "daSpelling");
+
+    switch (index)
+    {
+    case 0:
+        settings.setValue("lang", ":lang/lang/daspelling_da_DK");
+        settings.setValue("langIndex", 0);
+        break;
+    case 1:
+        settings.setValue("lang", ":lang/lang/daspelling_en");
+        settings.setValue("langIndex", 1);
+        break;
+    default:
+        settings.setValue("lang", ":lang/lang/daspelling_da_DK");
+        settings.setValue("langIndex", 0);
+        break;
+    }
+
+    QMessageBox msgBox;
+    msgBox.setText(tr("Language change will happen after app restart"));
+    msgBox.exec();
 }
 

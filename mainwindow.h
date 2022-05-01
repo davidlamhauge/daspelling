@@ -35,6 +35,7 @@ private:
     void startSpelling();
     void FinishSpelling();
 
+    void changeLanguage(int index);
     //
     void prepareSpelling(int active);
     QString shuffleWord(QString s);
