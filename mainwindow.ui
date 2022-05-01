@@ -26,20 +26,6 @@
          <item>
           <layout class="QVBoxLayout" name="verticalLayout_3">
            <item>
-            <widget class="QComboBox" name="cbLanguages">
-             <item>
-              <property name="text">
-               <string>Danish</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>English</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item>
             <spacer name="verticalSpacer_2">
              <property name="orientation">
               <enum>Qt::Vertical</enum>

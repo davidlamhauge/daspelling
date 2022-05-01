@@ -31,3 +31,5 @@ DISTFILES +=
 
 RESOURCES += \
     icons.qrc
+
+RC_ICONS += icons/spelling.ico
