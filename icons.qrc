@@ -6,10 +6,11 @@
         <file>icons/reset_list.png</file>
         <file>icons/next.png</file>
         <file>icons/previous.png</file>
-        <file>daspelling_en.ts</file>
     </qresource>
     <qresource prefix="/lang">
-        <file>daspelling_da_DK.qm</file>
-        <file>daspelling_da_DK.ts</file>
+        <file>lang/daspelling_da_DK.ts</file>
+        <file>lang/daspelling_en.ts</file>
+        <file>lang/daspelling_da_DK.qm</file>
+        <file>lang/daspelling_en.qm</file>
     </qresource>
 </RCC>
