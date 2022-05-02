@@ -48,6 +48,7 @@ private:
     QString mShuffledWord;
     QString mShuffledWordCopy;
 
-    int mActiveSound = 0; // sound at xxx in mFileList
+    int mActiveSound = 0;       // sound at xxx in mFileList
+    int mNumberOfSounds = 0;    // sounds in the directory
 };
 #endif // MAINWINDOW_H

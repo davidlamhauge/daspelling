@@ -110,6 +110,7 @@ void MainWindow::getFileList()
             mFileList.removeOne(file);
     }
     mOrgFileList = mFileList;
+    mNumberOfSounds = mFileList.size();
 
     ui->btnStartSpelling->setEnabled(true);
     ui->btnShuffle->setEnabled(true);
