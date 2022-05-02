@@ -150,12 +150,12 @@ void MainWindow::textChanged(QString s)
 
 void MainWindow::shuffle()
 {
-    QRandomGenerator generator;
-    int len = mFileList.length();
-    for (int i = 0; i < 50; i++)
+    int shuffles = QRandomGenerator::global()->bounded(30, 70);
+    int len = mFileList.count();
+    for (int i = 0; i < shuffles; i++)
     {
-        int ran1 = generator.bounded(0, len);
-        int ran2 = generator.bounded(0, len);
+        int ran1 = QRandomGenerator::global()->bounded(0, len);
+        int ran2 = QRandomGenerator::global()->bounded(0, len);
         mFileList.move(ran1, ran2);
     }
 }
