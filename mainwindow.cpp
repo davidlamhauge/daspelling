@@ -200,7 +200,7 @@ void MainWindow::prepareSpelling(int active)
 
     ui->labShuffledWord->setText(mShuffledWord);
 
-    ui->labMaxNumber->setText(QString::number(mFileList.size()));
+    ui->labMaxNumber->setText(QString::number(mNumberOfSounds));
     ui->labActiveNumber->setText(QString::number(mActiveSound + 1));
 }
 

@@ -32,4 +32,4 @@ DISTFILES +=
 RESOURCES += \
     icons.qrc
 
-RC_ICONS += icons/spelling.ico
+RC_ICONS += icons/spelling_2.ico

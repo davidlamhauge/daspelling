@@ -6,8 +6,11 @@
         <file>icons/reset_list.png</file>
         <file>icons/next.png</file>
         <file>icons/previous.png</file>
-        <file>icons/spelling.ico</file>
         <file>icons/spelling.png</file>
+        <file>../spelling.ico</file>
+        <file>icons/spelling.ico</file>
+        <file>icons/spelling_2.ico</file>
+        <file>icons/spelling_2.png</file>
     </qresource>
     <qresource prefix="/lang">
         <file>lang/daspelling_da_DK.ts</file>
