@@ -191,10 +191,15 @@ void MainWindow::prepareSpelling(int active)
 {
     mWord = mFileList.at(active);
     mWord.remove(mWord.indexOf("."),4);
-    do  // make sure shuffled word is different
+    if (mWord.length() == 1)
+        mShuffledWord = mWord;
+    else
     {
-        mShuffledWord = shuffleWord(mWord);
-    } while (mShuffledWord == mWord);
+        do  // make sure shuffled word is different
+        {
+            mShuffledWord = shuffleWord(mWord);
+        } while (mShuffledWord == mWord);
+    }
 
     mShuffledWordCopy = mShuffledWord;
 
