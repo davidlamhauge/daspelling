@@ -10,6 +10,7 @@
         <file>icons/spelling.ico</file>
         <file>icons/spelling_2.ico</file>
         <file>icons/spelling_2.png</file>
+        <file>icons/daspelling.desktop</file>
     </qresource>
     <qresource prefix="/lang">
         <file>lang/daspelling_da_DK.ts</file>

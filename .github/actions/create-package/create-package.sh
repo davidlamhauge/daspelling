@@ -40,7 +40,7 @@ create_package_macos() {
   echo "Create ZIP"
   cd ..
   pwd
-  bsdtar caf "daspelling-mac-$1-$(date +%F).zip" daspelling
+  bsdtar caf "daspelling-mac-$1-$(date +%F).zip" build
   echo "::set-output name=package-name::daspelling-mac-$1-$(date +%F).zip"
 }
 
@@ -56,7 +56,7 @@ create_package_windows() {
   echo "Create ZIP"
   cd ..
   pwd
-  "${WINDIR}\\System32\\tar" caf "daspelling-${platform}-$1-$(date +%F).zip" daspelling
+  "${WINDIR}\\System32\\tar" caf "daspelling-${platform}-$1-$(date +%F).zip" build
   echo "::set-output name=package-name::daspelling-${platform}-$1-$(date +%F).zip"
 }
 
