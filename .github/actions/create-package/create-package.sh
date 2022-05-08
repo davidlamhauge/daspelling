@@ -5,7 +5,7 @@ set -eE
 
 create_package_linux() {
   echo "::group::Set up AppImage contents"
-  make install INSTALL_ROOT="${PWD}/daspelling" VERBOSE=1
+  make install INSTALL_ROOT="${PWD}/build" VERBOSE=1
   echo "::endgroup::"
 
   echo "::group::Create AppImage"
