@@ -48,7 +48,7 @@ create_package_macos() {
 }
 
 create_package_windows() {
-
+  local platform="${INPUT_ARCH%%_*}"
   echo "Remove files"
   find \( -name '*.pdb' -o -name '*.ilk' \) -delete
   echo "::group::Deploy Qt libraries"
