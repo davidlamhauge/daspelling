@@ -15,6 +15,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    const QColor LIGHT_GREEN = QColor(170, 230, 170);
+
 private:
     Ui::MainWindow *ui;
     void init();

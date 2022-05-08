@@ -84,7 +84,7 @@ void MainWindow::init()
     mLastDir = settings.value("last_dir", "").toString();
 
     QPalette palet = ui->leSpelling->palette();
-    palet.setColor(QPalette::Base, Qt::green);
+    palet.setColor(QPalette::Base, LIGHT_GREEN);
     ui->leSpelling->setPalette(palet);
 }
 
@@ -138,7 +138,7 @@ void MainWindow::textChanged(QString s)
     QPalette palet = ui->leSpelling->palette();
     if (mWord.startsWith(s))
     {
-        palet.setColor(QPalette::Base, Qt::green);
+        palet.setColor(QPalette::Base, LIGHT_GREEN);
         ui->leSpelling->setPalette(palet);
     }
     else
