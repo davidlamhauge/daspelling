@@ -15,7 +15,7 @@ create_package_linux() {
   chmod 755 linuxdeployqt-continuous-x86_64.AppImage
   LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:" \
     ./linuxdeployqt-continuous-x86_64.AppImage \
-    daspelling/usr/share/applications/daspelling.desktop -appimage
+    /build/build/usr/share/applications/daspelling.desktop -appimage
   local output_name="daspelling-linux-$1-$(date +%F)"
   mv daspelling*.AppImage "$output_name.AppImage"
   echo "::set-output name=package-name::$output_name.AppImage"
