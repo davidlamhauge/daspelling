@@ -84,10 +84,12 @@ jobs:
       working-directory: build
       run: qmake ../ PREFIX=/usr CONFIG+=release
 
-    - name: Build daspelling
+    - name: Build daspelling Windows
       working-directory: build
       if: ${{runner.os}} == "Windows" 
       run: nmake
+      name: Build daspelling Mac or Linux
+      working-directory: build
       if: ${{runner.os}} != "Windows" 
       run: make
 
