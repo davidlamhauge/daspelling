@@ -12,7 +12,7 @@ create_package_linux() {
   chmod 755 linuxdeployqt-continuous-x86_64.AppImage
   LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:" \
     ./linuxdeployqt-continuous-x86_64.AppImage \
-    -appimage
+    daspelling -appimage
   local output_name="daspelling-linux-$1-$(date +%F)"
   mv daspelling*.AppImage "$output_name.AppImage"
   echo "::set-output name=package-name::$output_name.AppImage"
@@ -38,7 +38,9 @@ create_package_macos() {
   echo "Remove files"
   rm -rf macdeployqtfix-master master.zip
   echo "Create ZIP"
-  bsdtar caf "daspelling-mac-$1-$(date +%F).zip" .
+  cd ..
+  pwd
+  bsdtar caf "daspelling-mac-$1-$(date +%F).zip" daspelling
   echo "::set-output name=package-name::daspelling-mac-$1-$(date +%F).zip"
 }
 
@@ -52,7 +54,9 @@ create_package_windows() {
   windeployqt release/daspelling.exe
   echo "::endgroup::"
   echo "Create ZIP"
-  "${WINDIR}\\System32\\tar" caf "daspelling-${platform}-$1-$(date +%F).zip" .
+  cd ..
+  pwd
+  "${WINDIR}\\System32\\tar" caf "daspelling-${platform}-$1-$(date +%F).zip" daspelling
   echo "::set-output name=package-name::daspelling-${platform}-$1-$(date +%F).zip"
 }
 
