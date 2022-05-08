@@ -1,6 +1,15 @@
-[InternetShortcut]
-URL=https://github.com/davidlamhauge/daspelling/blob/master/.github/actions/install-dependencies/action.yml
-IDList=
-HotKey=0
-IconFile=C:\Users\david\AppData\Local\Mozilla\Firefox\Profiles\1qbo90sf.default-release-1617025310240\shortcutCache\ovMgifU8ZwQMwYcTkUxDwA==.ico
-IconIndex=0
+name: Install dependencies
+inputs:
+  arch:
+    description: Architecture
+    required: true
+runs:
+  using: composite
+  steps:
+    # XXX: Should use github.action_path here, but it’s currently broken in
+    #      container builds, see https://github.com/actions/runner/issues/716
+  - run: .github/actions/install-dependencies/install-dependencies.sh
+    shell: bash
+    env:
+      RUNNER_OS: ${{runner.os}}
+      INPUT_ARCH: ${{inputs.arch}}
