@@ -60,3 +60,4 @@ setup_windows() {
 }
 
 "setup_$(echo "${RUNNER_OS}" | tr '[A-Z]' '[a-z]')"
+
