@@ -83,19 +83,15 @@ jobs:
     - name: Configure build (Nightly Build)
       if: github.ref != 'refs/heads/release'
       working-directory: build
-      run: qmake ../ PREFIX=/usr CONFIG+=release CONFIG+=GIT CONFIG+=PENCIL2D_NIGHTLY
+      run: qmake ../ PREFIX=/usr CONFIG+=release
     - name: Configure build (Release)
       if: github.ref == 'refs/heads/release'
       working-directory: build
-      run: qmake ../ PREFIX=/usr CONFIG+=release CONFIG+=GIT CONFIG+=PENCIL2D_RELEASE
+      run: qmake ../ PREFIX=/usr CONFIG+=release
 
-    - name: Build Pencil2D
+    - name: Build daspelling
       working-directory: build
       run: test "${{runner.os}}" != "Windows" && make || nmake
-
-    - name: Run tests
-      env: { QT_QPA_PLATFORM: minimal }
-      run: build/tests/bin/tests
 
     - name: Create package
       id: package
