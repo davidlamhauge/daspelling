@@ -14,7 +14,7 @@
 *.so.*
 *_pch.h.cpp
 *_resource.rc
-*.qm
+# *.qm
 .#*
 *.*#
 core
@@ -71,3 +71,6 @@ Thumbs.db
 *.dll
 *.exe
 
+# homepage files
+*.yml
+*.yaml
