@@ -4,9 +4,6 @@ trap 'echo "::error::Command failed"' ERR
 set -eE
 
 create_package_linux() {
-  echo "::group::Set up AppImage contents"
-  make install INSTALL_ROOT="${PWD}/daspelling"
-  echo "::endgroup::"
 
   echo "::group::Create AppImage"
   echo "listing files"
@@ -31,7 +28,6 @@ create_package_macos() {
   make clean
   echo "listing files"
   ls -la 
-  pushd daspelling >/dev/null
   echo "::endgroup::"
 
   echo "Deploy Qt libraries"
@@ -45,7 +41,6 @@ create_package_macos() {
   echo "::endgroup::"
   echo "Remove files"
   rm -rf macdeployqtfix-master master.zip
-  popd >/dev/null
   echo "Create ZIP"
   bsdtar caf "daspelling-mac-$1-$(date +%F).zip" daspelling
   echo "::set-output name=package-name::daspelling-mac-$1-$(date +%F).zip"
@@ -58,7 +53,7 @@ create_package_windows() {
   echo "::group::Deploy Qt libraries"
   echo "listing files"
   ls -la 
-  windeployqt daspelling/daspelling.exe
+  windeployqt release/daspelling.exe
   echo "::endgroup::"
   echo "Create ZIP"
   "${WINDIR}\\System32\\tar" caf "daspelling-${platform}-$1-$(date +%F).zip" daspelling
