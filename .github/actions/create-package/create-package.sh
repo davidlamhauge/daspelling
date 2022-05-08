@@ -4,6 +4,9 @@ trap 'echo "::error::Command failed"' ERR
 set -eE
 
 create_package_linux() {
+  echo "::group::Set up AppImage contents"
+  make install INSTALL_ROOT="${PWD}/daspelling" VERBOSE=1
+  echo "::endgroup::"
 
   echo "::group::Create AppImage"
   echo "listing files"
@@ -12,7 +15,7 @@ create_package_linux() {
   chmod 755 linuxdeployqt-continuous-x86_64.AppImage
   LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:" \
     ./linuxdeployqt-continuous-x86_64.AppImage \
-    daspelling -appimage
+    daspelling/usr/share/applications/daspelling.desktop -appimage
   local output_name="daspelling-linux-$1-$(date +%F)"
   mv daspelling*.AppImage "$output_name.AppImage"
   echo "::set-output name=package-name::$output_name.AppImage"

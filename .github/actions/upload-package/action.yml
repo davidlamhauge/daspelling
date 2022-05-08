@@ -21,7 +21,7 @@ runs:
       python=python3
       test "${{runner.os}}" = "Windows" && python=python
       for file in ${{inputs.files}}; do
-        "${python}" ./.github/actions/upload-package/nightly-build-upload.py ${{inputs.parent}} "${{inputs.path}}/${file}"
+        "${python}" ./.github/actions/upload-package/nightly-build-upload.py ${{inputs.parent}} "${file}"
       done
     shell: bash
     env:

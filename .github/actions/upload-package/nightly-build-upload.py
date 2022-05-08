@@ -53,7 +53,7 @@ file = drive_service.files().create(body=file_metadata, media_body=media).execut
 
 # delete files older than 120 days
 check_date = datetime.datetime.now() + datetime.timedelta(-120)
-filter120daysOld = "name contains 'pencil2d'"
+filter120daysOld = "name contains 'daspelling'"
 filter120daysOld += " and createdTime < '{}'".format(check_date.strftime("%Y-%m-%dT%H:%M:%S"))
 
 print('filter=', filter120daysOld)
