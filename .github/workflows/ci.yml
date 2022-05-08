@@ -80,18 +80,16 @@ jobs:
 
     - name: Create build directory
       run: mkdir build
-    - name: Configure build (Nightly Build)
-      if: github.ref != 'refs/heads/release'
-      working-directory: build
-      run: qmake ../ PREFIX=/usr CONFIG+=release
-    - name: Configure build (Release)
-      if: github.ref == 'refs/heads/release'
+    - name: Configure build
       working-directory: build
       run: qmake ../ PREFIX=/usr CONFIG+=release
 
     - name: Build daspelling
       working-directory: build
-      run: test "${{runner.os}}" != "Windows" && make || nmake
+      if: ${{runner.os}} == "Windows" 
+      run: nmake
+      if: ${{runner.os}} != "Windows" 
+      run: make
 
     - name: Create package
       id: package
