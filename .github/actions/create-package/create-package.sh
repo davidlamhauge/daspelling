@@ -9,9 +9,10 @@ create_package_linux() {
   echo "::endgroup::"
 
   echo "::group::Create AppImage"
+  echo "listing files"
+  ls -la 
   curl -fsSLO https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage
   chmod 755 linuxdeployqt-continuous-x86_64.AppImage
-  local update_info="" # Currently no appimageupdate support for nightly builds
   LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:" \
     ./linuxdeployqt-continuous-x86_64.AppImage \
     daspelling/usr/share/applications/org.daspelling.daspelling.desktop \
@@ -28,7 +29,8 @@ create_package_linux() {
 create_package_macos() {
   echo "::group::Clean"
   make clean
-  mv bin daspelling
+  echo "listing files"
+  ls -la 
   pushd daspelling >/dev/null
   echo "::endgroup::"
 
@@ -51,10 +53,11 @@ create_package_macos() {
 
 create_package_windows() {
 
-  mv bin daspelling
   echo "Remove files"
   find \( -name '*.pdb' -o -name '*.ilk' \) -delete
   echo "::group::Deploy Qt libraries"
+  echo "listing files"
+  ls -la 
   windeployqt daspelling/daspelling.exe
   echo "::endgroup::"
   echo "Create ZIP"
