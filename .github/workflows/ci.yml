@@ -86,12 +86,12 @@ jobs:
 
     - name: Build daspelling Windows
       working-directory: build
-      if: ${{runner.os}} == "Windows" 
+      if: ${{runner.os == 'Windows'}}
       run: nmake
-      
+
     - name: Build daspelling Mac or Linux
       working-directory: build
-      if: ${{runner.os}} != "Windows" 
+      if: ${{runner.os != 'Windows'}} 
       run: make
 
     - name: Create package

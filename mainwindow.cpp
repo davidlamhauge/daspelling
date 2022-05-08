@@ -121,7 +121,7 @@ void MainWindow::getFileList()
 
 void MainWindow::play()
 {
-    // mediaplayer lives goes on
+    // mediaplayer
     player->setMedia(QUrl::fromLocalFile(mLastDir+ "/" + mFileList.at(mActiveSound)));
     player->play();
 
