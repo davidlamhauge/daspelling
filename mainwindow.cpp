@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include <QDebug>
 #include <QSettings>
 #include <QMessageBox>
 
@@ -9,7 +8,7 @@
 #include <QFile>
 #include <QDir>
 #include <QRandomGenerator>
-#include <QSound>
+#include <QMediaPlayer>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -55,6 +54,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::init()
 {
+    player = new QMediaPlayer;
+
     ui->btnLoadFile->setEnabled(true);
     ui->btnShuffle->setEnabled(false);
     ui->btnResetList->setEnabled(false);
@@ -93,7 +94,7 @@ void MainWindow::getFileList()
     QString filename = QFileDialog::getOpenFileName(this,
                                                     tr("Open sound file"),
                                                     mLastDir,
-                                                    tr("Sound Files (*.wav)"));
+                                                    tr("Sound Files (*.wav *.mp3)"));
     if (filename.isEmpty())
         return;
 
@@ -106,7 +107,8 @@ void MainWindow::getFileList()
     mFileList = dir.entryList();
     foreach (auto file, mFileList)
     {
-        if (!file.endsWith(".wav"))
+        if (!(file.endsWith(".wav", Qt::CaseInsensitive) ||
+              file.endsWith(".mp3", Qt::CaseInsensitive)))
             mFileList.removeOne(file);
     }
     mOrgFileList = mFileList;
@@ -119,7 +121,9 @@ void MainWindow::getFileList()
 
 void MainWindow::play()
 {
-    QSound::play(mLastDir + "/" + mFileList.at(mActiveSound));
+    player->setMedia(QUrl::fromLocalFile(mLastDir+ "/" + mFileList.at(mActiveSound)));
+    player->play();
+
     ui->leSpelling->setFocus();
 }
 

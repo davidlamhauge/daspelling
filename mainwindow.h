@@ -7,6 +7,8 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
+class QMediaPlayer;
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -14,8 +16,6 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
-    const QColor LIGHT_GREEN = QColor(170, 230, 170);
 
 private:
     Ui::MainWindow *ui;
@@ -50,7 +50,11 @@ private:
     QString mShuffledWord;
     QString mShuffledWordCopy;
 
+    QMediaPlayer *player = nullptr;
+
     int mActiveSound = 0;       // sound at xxx in mFileList
     int mNumberOfSounds = 0;    // sounds in the directory
+
+    const QColor LIGHT_GREEN = QColor(170, 230, 170);
 };
 #endif // MAINWINDOW_H
