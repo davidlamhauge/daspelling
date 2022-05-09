@@ -47,7 +47,7 @@ for f in response.get('files'):
 # upload nightly build
 file_metadata = { 'name' : os.path.basename(file), 'parents': [parent] }
 print("file_metadata:", file_metadata)
-
+print("file:", file)
 media = MediaFileUpload(file)
 file = drive_service.files().create(body=file_metadata, media_body=media).execute()
 

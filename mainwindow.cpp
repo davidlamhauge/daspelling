@@ -195,7 +195,7 @@ void MainWindow::previousWord()
 void MainWindow::prepareSpelling(int active)
 {
     mWord = mFileList.at(active);
-    mWord.remove(mWord.indexOf("."),4);
+    mWord.remove(mWord.lastIndexOf("."),4);
     if (mWord.length() == 1)
         mShuffledWord = mWord;
     else

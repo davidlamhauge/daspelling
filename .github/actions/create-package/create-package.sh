@@ -2,7 +2,7 @@
 
 trap 'echo "::error::Command failed"' ERR
 set -eE
-
+<<comment
 create_package_linux() {
   echo "::group::Set up AppImage contents"
   make install INSTALL_ROOT="${PWD}/build" VERBOSE=1
@@ -21,7 +21,7 @@ create_package_linux() {
   echo "::set-output name=package-name::$output_name.AppImage"
   echo "::endgroup::"
 }
-
+comment
 create_package_macos() {
   echo "::group::Clean"
   make clean

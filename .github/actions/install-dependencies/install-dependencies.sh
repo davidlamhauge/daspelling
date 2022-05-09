@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+<<comment
 setup_linux() {
   # Because of how bare-bones our docker image is
   echo "::group::Install prerequisites"
@@ -30,7 +30,7 @@ setup_linux() {
   pip3 install --upgrade oauth2client 'google-api-python-client<2' 'setuptools<58.4' 'pyparsing<3' 'rsa<4.8'
   echo "::endgroup::"
 }
-
+comment
 setup_macos() {
   echo "::group::Update Homebrew"
   brew update
