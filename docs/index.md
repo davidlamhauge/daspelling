@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## daspelling - hjælp til staveord...
 
 You can use the [editor on GitHub](https://github.com/davidlamhauge/daspelling/edit/master/docs/index.md) to maintain and preview the content for your website in Markdown files.
 
