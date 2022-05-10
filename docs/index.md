@@ -1,6 +1,18 @@
 # daspelling - hjælp til staveord...
 ## Dowloads...
 [Windows 64](https://drive.google.com/drive/folders/1WskCUuzXrzQH_pIst1zurzpAt8enMgYN?usp=sharing)
+
+## Installation...
+Programmet skal _ikke_ installeres. Du skal gøre følgende:
+1. Udpak filerne
+2. Gå ind i mappen 'release'
+3. Tryk på filen 'spelling.exe' - (filen med ikonet)
+4. Da jeg ikke betaler Apple og Microsoft for at have programmet liggende på deres app-stores, vil I blive mødt med en besked om at filen er fra en 'ukendt kilde'. Ignorer beskeden, og åbn filen alligevel.
+
+I skulle nu være klar til at bruge programmet. Der er to video-tutorials nedenfor, der viser hvordan programmet bruges, og hvordan man kan lave sine egne ordlister af staveord.
+
+**God fornøjelse!**
+
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
