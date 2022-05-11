@@ -7,6 +7,9 @@ CONFIG += c++11 embed_translations
 TARGET = daspelling
 QMAKE_APPLICATION_BUNDLE_NAME = Daspelling
 
+VERSION = 0.9
+DEFINES += APP_VERSION=\"\\\"$${VERSION}\\\"\"
+
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0

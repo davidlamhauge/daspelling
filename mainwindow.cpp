@@ -23,7 +23,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     init();
 
-    this->setWindowTitle("daspelling");
+    setWindowTitle("daspelling - version " APP_VERSION);
+
 
     // close app
     connect(ui->btnClose, &QPushButton::clicked, this, &MainWindow::close);
