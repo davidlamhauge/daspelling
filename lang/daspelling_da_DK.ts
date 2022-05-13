@@ -63,22 +63,22 @@
     <message>
         <location filename="../mainwindow.ui" line="143"/>
         <source>Previous (Alt+Left arrow)</source>
-        <translation>Forrige (Alt Venstre pil)</translation>
+        <translation type="unfinished">Forrige (Alt+Venstre)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="159"/>
         <source>Alt+Left</source>
-        <translation>Alt+Venstre</translation>
+        <translation>Alt+Left</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="169"/>
         <source>Next (Alt+Right arrow)</source>
-        <translation>Næste (Alt+Højre pil)</translation>
+        <translation>Næste (Alt+Højre)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="185"/>
         <source>Alt+Right</source>
-        <translation>Alt-Højre</translation>
+        <translation>Alt+Right</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="200"/>
