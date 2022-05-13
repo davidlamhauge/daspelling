@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include <QDebug>
 #include <QSettings>
 #include <QMessageBox>
 
@@ -105,7 +106,7 @@ void MainWindow::getFileList()
     QSettings settings("TeamLamhauge", "daSpelling");
     settings.setValue("last_dir", mLastDir);
 
-    mFileList = dir.entryList();
+    mFileList = dir.entryList(QDir::Files, QDir::Time | QDir::Reversed);
     foreach (auto file, mFileList)
     {
         if (!(file.endsWith(".wav", Qt::CaseInsensitive) ||

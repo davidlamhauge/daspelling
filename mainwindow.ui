@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>469</width>
-    <height>411</height>
+    <height>432</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -114,7 +114,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Play sound</string>
+                <string>Play sound (Alt+P)</string>
                </property>
                <property name="text">
                 <string/>
@@ -129,6 +129,9 @@
                  <height>50</height>
                 </size>
                </property>
+               <property name="shortcut">
+                <string>Alt+P</string>
+               </property>
               </widget>
              </item>
              <item>
@@ -137,7 +140,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Previous</string>
+                <string>Previous (Alt+Left arrow)</string>
                </property>
                <property name="text">
                 <string/>
@@ -152,6 +155,9 @@
                  <height>50</height>
                 </size>
                </property>
+               <property name="shortcut">
+                <string>Alt+Left</string>
+               </property>
               </widget>
              </item>
              <item>
@@ -160,7 +166,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Next </string>
+                <string>Next (Alt+Right arrow)</string>
                </property>
                <property name="text">
                 <string/>
@@ -174,6 +180,9 @@
                  <width>50</width>
                  <height>50</height>
                 </size>
+               </property>
+               <property name="shortcut">
+                <string>Alt+Right</string>
                </property>
               </widget>
              </item>
@@ -261,7 +270,6 @@
              <property name="font">
               <font>
                <pointsize>14</pointsize>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -278,7 +286,6 @@
              <property name="font">
               <font>
                <pointsize>14</pointsize>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -292,7 +299,6 @@
              <property name="font">
               <font>
                <pointsize>14</pointsize>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
