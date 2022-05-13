@@ -39,72 +39,103 @@
         <translation>max</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="117"/>
         <source>Play sound</source>
-        <translation>Play sound</translation>
+        <translation type="vanished">Play sound</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="140"/>
         <source>Previous</source>
-        <translation>Previous</translation>
+        <translation type="vanished">Previous</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="163"/>
         <source>Next </source>
-        <translation>Next </translation>
+        <translation type="vanished">Next </translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="191"/>
+        <location filename="../mainwindow.ui" line="117"/>
+        <source>Play sound (Alt+P)</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="133"/>
+        <source>Alt+P</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="143"/>
+        <source>Previous (Alt+Left arrow)</source>
+        <translation>Previous (Alt+Left arrow)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="159"/>
+        <source>Alt+Left</source>
+        <translation>Alt+Left</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="169"/>
+        <source>Next (Alt+Right arrow)</source>
+        <translation>Next (Alt+Right arrow)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="185"/>
+        <source>Alt+Right</source>
+        <translation>Alt+Right</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="200"/>
         <source>Load directory</source>
         <translation>Load directory</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="214"/>
+        <location filename="../mainwindow.ui" line="223"/>
         <source>Shuffle list</source>
         <translation>Shuffle list</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="237"/>
+        <location filename="../mainwindow.ui" line="246"/>
         <source>Reset list</source>
         <translation>Reset list</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="269"/>
+        <location filename="../mainwindow.ui" line="277"/>
         <source>Start spelling</source>
         <translation>Start spelling</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="286"/>
+        <location filename="../mainwindow.ui" line="293"/>
         <source>Finish spelling</source>
         <translation>Finish spelling</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="300"/>
+        <location filename="../mainwindow.ui" line="306"/>
         <source>Close</source>
         <translation>Close</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="334"/>
+        <location filename="../mainwindow.ui" line="340"/>
         <source>The word...</source>
         <translation>The word...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="352"/>
+        <location filename="../mainwindow.ui" line="358"/>
         <source>Your spelling...</source>
         <translation>Your spelling...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="94"/>
+        <location filename="../mainwindow.cpp" line="97"/>
         <source>Open sound file</source>
         <translation>Open sound file</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="96"/>
-        <source>Sound Files (*.wav)</source>
-        <translation>Sound Files (*.wav)</translation>
+        <location filename="../mainwindow.cpp" line="99"/>
+        <source>Sound Files (*.wav *.mp3)</source>
+        <translation>Sound Files (*.wav *.mp3)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="263"/>
+        <source>Sound Files (*.wav)</source>
+        <translation type="vanished">Sound Files (*.wav)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="277"/>
         <source>Language change will happen after app restart</source>
         <translation>Language change will happen after app restart</translation>
     </message>

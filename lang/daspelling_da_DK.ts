@@ -39,72 +39,103 @@
         <translation>maks</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="117"/>
         <source>Play sound</source>
-        <translation>Afspil ord</translation>
+        <translation type="vanished">Afspil ord</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="140"/>
         <source>Previous</source>
-        <translation>Forrige</translation>
+        <translation type="vanished">Forrige</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="163"/>
         <source>Next </source>
-        <translation>Næste </translation>
+        <translation type="vanished">Næste </translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="191"/>
+        <location filename="../mainwindow.ui" line="117"/>
+        <source>Play sound (Alt+P)</source>
+        <translation>Play sound (Alt+P)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="133"/>
+        <source>Alt+P</source>
+        <translation>Alt+P</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="143"/>
+        <source>Previous (Alt+Left arrow)</source>
+        <translation>Forrige (Alt Venstre pil)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="159"/>
+        <source>Alt+Left</source>
+        <translation>Alt+Venstre</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="169"/>
+        <source>Next (Alt+Right arrow)</source>
+        <translation>Næste (Alt+Højre pil)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="185"/>
+        <source>Alt+Right</source>
+        <translation>Alt-Højre</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="200"/>
         <source>Load directory</source>
         <translation>Hent filer</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="214"/>
+        <location filename="../mainwindow.ui" line="223"/>
         <source>Shuffle list</source>
         <translation>Bland liste</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="237"/>
+        <location filename="../mainwindow.ui" line="246"/>
         <source>Reset list</source>
         <translation>Nulstil liste</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="269"/>
+        <location filename="../mainwindow.ui" line="277"/>
         <source>Start spelling</source>
         <translation>Start stavning</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="286"/>
+        <location filename="../mainwindow.ui" line="293"/>
         <source>Finish spelling</source>
         <translation>Afslut stavning</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="300"/>
+        <location filename="../mainwindow.ui" line="306"/>
         <source>Close</source>
         <translation>Luk</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="334"/>
+        <location filename="../mainwindow.ui" line="340"/>
         <source>The word...</source>
         <translation>Ordet...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="352"/>
+        <location filename="../mainwindow.ui" line="358"/>
         <source>Your spelling...</source>
         <translation>Din stavning...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="94"/>
+        <location filename="../mainwindow.cpp" line="97"/>
         <source>Open sound file</source>
         <translation>Åben lydfil</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="96"/>
-        <source>Sound Files (*.wav)</source>
-        <translation>Lydfiler (*.wav)</translation>
+        <location filename="../mainwindow.cpp" line="99"/>
+        <source>Sound Files (*.wav *.mp3)</source>
+        <translation>Lyd-filer (*.wav *.mp3)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="263"/>
+        <source>Sound Files (*.wav)</source>
+        <translation type="vanished">Lydfiler (*.wav)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="277"/>
         <source>Language change will happen after app restart</source>
         <translation>Sprogændring vil ske efter genstart af programmet</translation>
     </message>
