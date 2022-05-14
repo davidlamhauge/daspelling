@@ -29,26 +29,9 @@
         <translation>aktive</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="85"/>
-        <source>/</source>
-        <translation>/</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="100"/>
         <source>max</source>
         <translation>maks</translation>
-    </message>
-    <message>
-        <source>Play sound</source>
-        <translation type="vanished">Afspil ord</translation>
-    </message>
-    <message>
-        <source>Previous</source>
-        <translation type="vanished">Forrige</translation>
-    </message>
-    <message>
-        <source>Next </source>
-        <translation type="vanished">Næste </translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="117"/>
@@ -56,29 +39,14 @@
         <translation>Play sound (Alt+P)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="133"/>
-        <source>Alt+P</source>
-        <translation>Alt+P</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="143"/>
         <source>Previous (Alt+Left arrow)</source>
-        <translation type="unfinished">Forrige (Alt+Venstre)</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="159"/>
-        <source>Alt+Left</source>
-        <translation>Alt+Left</translation>
+        <translation>Forrige (Alt+Venstre)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="169"/>
         <source>Next (Alt+Right arrow)</source>
         <translation>Næste (Alt+Højre)</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="185"/>
-        <source>Alt+Right</source>
-        <translation>Alt+Right</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="200"/>
@@ -129,10 +97,6 @@
         <location filename="../mainwindow.cpp" line="99"/>
         <source>Sound Files (*.wav *.mp3)</source>
         <translation>Lyd-filer (*.wav *.mp3)</translation>
-    </message>
-    <message>
-        <source>Sound Files (*.wav)</source>
-        <translation type="vanished">Lydfiler (*.wav)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="277"/>

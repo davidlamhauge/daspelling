@@ -29,35 +29,13 @@
         <translation>active</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="85"/>
-        <source>/</source>
-        <translation>/</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="100"/>
         <source>max</source>
         <translation>max</translation>
     </message>
     <message>
-        <source>Play sound</source>
-        <translation type="vanished">Play sound</translation>
-    </message>
-    <message>
-        <source>Previous</source>
-        <translation type="vanished">Previous</translation>
-    </message>
-    <message>
-        <source>Next </source>
-        <translation type="vanished">Next </translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="117"/>
         <source>Play sound (Alt+P)</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="133"/>
-        <source>Alt+P</source>
         <translation></translation>
     </message>
     <message>
@@ -66,19 +44,9 @@
         <translation>Previous (Alt+Left arrow)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="159"/>
-        <source>Alt+Left</source>
-        <translation>Alt+Left</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="169"/>
         <source>Next (Alt+Right arrow)</source>
         <translation>Next (Alt+Right arrow)</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="185"/>
-        <source>Alt+Right</source>
-        <translation>Alt+Right</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="200"/>
@@ -129,10 +97,6 @@
         <location filename="../mainwindow.cpp" line="99"/>
         <source>Sound Files (*.wav *.mp3)</source>
         <translation>Sound Files (*.wav *.mp3)</translation>
-    </message>
-    <message>
-        <source>Sound Files (*.wav)</source>
-        <translation type="vanished">Sound Files (*.wav)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="277"/>
