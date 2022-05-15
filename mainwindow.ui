@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>469</width>
+    <width>638</width>
     <height>432</height>
    </rect>
   </property>
@@ -140,7 +140,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Previous (Alt+Left arrow)</string>
+                <string>Previous (Alt+A)</string>
                </property>
                <property name="text">
                 <string/>
@@ -156,7 +156,7 @@
                 </size>
                </property>
                <property name="shortcut">
-                <string notr="true">Alt+Left</string>
+                <string notr="true">Alt+A</string>
                </property>
               </widget>
              </item>
@@ -166,7 +166,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Next (Alt+Right arrow)</string>
+                <string>Next (Alt+Z)</string>
                </property>
                <property name="text">
                 <string/>
@@ -182,7 +182,7 @@
                 </size>
                </property>
                <property name="shortcut">
-                <string notr="true">Alt+Right</string>
+                <string notr="true">Alt+Z</string>
                </property>
               </widget>
              </item>
@@ -371,8 +371,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>469</width>
-     <height>26</height>
+     <width>638</width>
+     <height>24</height>
     </rect>
    </property>
   </widget>

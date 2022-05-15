@@ -40,13 +40,13 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="143"/>
-        <source>Previous (Alt+Left arrow)</source>
-        <translation>Previous (Alt+Left arrow)</translation>
+        <source>Previous (Alt+A)</source>
+        <translation>Previous (Alt+A)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="169"/>
-        <source>Next (Alt+Right arrow)</source>
-        <translation>Next (Alt+Right arrow)</translation>
+        <source>Next (Alt+Z)</source>
+        <translation>Next (Alt+Z)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="200"/>

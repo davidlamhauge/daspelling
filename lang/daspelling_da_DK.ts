@@ -40,13 +40,13 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="143"/>
-        <source>Previous (Alt+Left arrow)</source>
-        <translation>Forrige (Alt+Venstre)</translation>
+        <source>Previous (Alt+A)</source>
+        <translation>Forrige (Alt+A)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="169"/>
-        <source>Next (Alt+Right arrow)</source>
-        <translation>Næste (Alt+Højre)</translation>
+        <source>Next (Alt+Z)</source>
+        <translation>Næste (Alt+Z)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="200"/>
