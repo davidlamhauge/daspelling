@@ -15,93 +15,136 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="37"/>
-        <source>Danish</source>
-        <translation>Danish</translation>
+        <source>Preferences...</source>
+        <translation>Preferences...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="42"/>
-        <source>English</source>
-        <translation>English</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="70"/>
+        <location filename="../mainwindow.ui" line="64"/>
         <source>active</source>
         <translation>active</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="100"/>
+        <location filename="../mainwindow.ui" line="94"/>
         <source>max</source>
         <translation>max</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="117"/>
+        <location filename="../mainwindow.ui" line="111"/>
         <source>Play sound (Alt+P)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="143"/>
+        <location filename="../mainwindow.ui" line="137"/>
         <source>Previous (Alt+A)</source>
         <translation>Previous (Alt+A)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="169"/>
+        <location filename="../mainwindow.ui" line="163"/>
         <source>Next (Alt+Z)</source>
         <translation>Next (Alt+Z)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="200"/>
+        <location filename="../mainwindow.ui" line="194"/>
         <source>Load directory</source>
         <translation>Load directory</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="223"/>
+        <location filename="../mainwindow.ui" line="217"/>
         <source>Shuffle list</source>
         <translation>Shuffle list</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="246"/>
+        <location filename="../mainwindow.ui" line="240"/>
         <source>Reset list</source>
         <translation>Reset list</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="277"/>
+        <location filename="../mainwindow.ui" line="271"/>
         <source>Start spelling</source>
         <translation>Start spelling</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="293"/>
+        <location filename="../mainwindow.ui" line="287"/>
         <source>Finish spelling</source>
         <translation>Finish spelling</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="306"/>
+        <location filename="../mainwindow.ui" line="300"/>
         <source>Close</source>
         <translation>Close</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="340"/>
+        <location filename="../mainwindow.ui" line="334"/>
         <source>The word...</source>
         <translation>The word...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="358"/>
+        <location filename="../mainwindow.ui" line="352"/>
         <source>Your spelling...</source>
         <translation>Your spelling...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="97"/>
+        <location filename="../mainwindow.cpp" line="113"/>
         <source>Open sound file</source>
         <translation>Open sound file</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="99"/>
+        <location filename="../mainwindow.cpp" line="115"/>
         <source>Sound Files (*.wav *.mp3)</source>
         <translation>Sound Files (*.wav *.mp3)</translation>
     </message>
+</context>
+<context>
+    <name>PreferenceManager</name>
     <message>
-        <location filename="../mainwindow.cpp" line="277"/>
-        <source>Language change will happen after app restart</source>
-        <translation>Language change will happen after app restart</translation>
+        <location filename="../preferencemanager.ui" line="14"/>
+        <source>Preferences</source>
+        <translation>Preferences</translation>
+    </message>
+    <message>
+        <location filename="../preferencemanager.ui" line="22"/>
+        <source>User interface Language</source>
+        <translation>User interface Language</translation>
+    </message>
+    <message>
+        <location filename="../preferencemanager.ui" line="45"/>
+        <source>Danish</source>
+        <translation>Danish</translation>
+    </message>
+    <message>
+        <location filename="../preferencemanager.ui" line="54"/>
+        <source>English</source>
+        <translation>English</translation>
+    </message>
+    <message>
+        <location filename="../preferencemanager.ui" line="68"/>
+        <source>Color for misspelling</source>
+        <translation>Color for misspelling</translation>
+    </message>
+    <message>
+        <location filename="../preferencemanager.ui" line="91"/>
+        <source>Red</source>
+        <translation>Red</translation>
+    </message>
+    <message>
+        <location filename="../preferencemanager.ui" line="100"/>
+        <source>Orange</source>
+        <translation>Orange</translation>
+    </message>
+    <message>
+        <location filename="../preferencemanager.ui" line="109"/>
+        <source>Purple</source>
+        <translation>Purple</translation>
+    </message>
+    <message>
+        <location filename="../preferencemanager.ui" line="121"/>
+        <source>Hide letters for two-letter words</source>
+        <translation>Hide letters for two-letter words</translation>
+    </message>
+    <message>
+        <location filename="../preferencemanager.ui" line="143"/>
+        <source>Close</source>
+        <translation>Close</translation>
     </message>
 </context>
 </TS>
