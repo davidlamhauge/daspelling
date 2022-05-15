@@ -7,7 +7,7 @@ CONFIG += c++11 embed_translations
 TARGET = daspelling
 QMAKE_APPLICATION_BUNDLE_NAME = Daspelling
 
-VERSION = 0.9.1
+VERSION = 0.9.2
 DEFINES += APP_VERSION=\"\\\"$${VERSION}\\\"\"
 
 # You can make your code fail to compile if it uses deprecated APIs.
