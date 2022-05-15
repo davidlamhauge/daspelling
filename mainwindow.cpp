@@ -17,21 +17,15 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    // set combobox with languages
-    QSettings settings("TeamLamhauge", "daSpelling");
-    int index = settings.value("langIndex", 0).toInt();
-    ui->cbLanguages->setCurrentIndex(index);
-
     init();
 
     setWindowTitle("daspelling - version " APP_VERSION);
-
 
     // close app
     connect(ui->btnClose, &QPushButton::clicked, this, &MainWindow::close);
 
     // get path to sound files
-    connect(ui->btnLoadFile, &QPushButton::clicked, this, &MainWindow::getFileList);
+    connect(ui->btnLoadFile, &QPushButton::clicked, this, &MainWindow::getWordList);
 
     // shuffle or reset list. Directory order is default
     connect(ui->btnShuffle, &QPushButton::clicked, this, &MainWindow::shuffle);
@@ -46,7 +40,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->btnPlay, &QPushButton::clicked, this, &MainWindow::play);
     connect(ui->leSpelling, &QLineEdit::textChanged, this, &MainWindow::textChanged);
 
-    connect(ui->cbLanguages, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &MainWindow::changeLanguage);
+    connect(ui->btnPreferences, &QPushButton::clicked, this, &MainWindow::preferencesPressed);
 }
 
 MainWindow::~MainWindow()
@@ -83,15 +77,37 @@ void MainWindow::init()
     ui->labActiveNumber->setText("-");
     ui->labMaxNumber->setText("-");
 
-    QSettings settings("TeamLamhauge", "daSpelling");
-    mLastDir = settings.value("last_dir", "").toString();
+    readSettings();
 
     QPalette palet = ui->leSpelling->palette();
     palet.setColor(QPalette::Base, LIGHT_GREEN);
     ui->leSpelling->setPalette(palet);
 }
 
-void MainWindow::getFileList()
+void MainWindow::preferencesPressed()
+{
+    prefs = new PreferenceManager();
+    prefs->exec();
+
+    readSettings();
+}
+
+void MainWindow::readSettings()
+{
+    QSettings settings("TeamLamhauge", "daSpelling");
+    int index = settings.value("misspellIndex", 0).toInt();
+    switch (index) {
+    case 0: mMisSpellColor = mRED; break;
+    case 1: mMisSpellColor = mORANGE; break;
+    case 2: mMisSpellColor = mPURPLE; break;
+    default: mMisSpellColor = mRED; break;
+    }
+
+    mHideTwoLetterWords = settings.value("hideTwoLetterWords", false).toBool();
+    mLastDir = settings.value("last_dir", "").toString();
+}
+
+void MainWindow::getWordList()
 {
     QString filename = QFileDialog::getOpenFileName(this,
                                                     tr("Open sound file"),
@@ -150,7 +166,7 @@ void MainWindow::textChanged(QString s)
     }
     else
     {
-        palet.setColor(QPalette::Base, Qt::red);
+        palet.setColor(QPalette::Base, mMisSpellColor);
         ui->leSpelling->setPalette(palet);
     }
 }
@@ -211,7 +227,16 @@ void MainWindow::prepareSpelling(int active)
 
     mShuffledWordCopy = mShuffledWord;
 
-    ui->labShuffledWord->setText(mShuffledWord);
+    if (mHideTwoLetterWords && mShuffledWord.length() < 3)
+    {
+        ui->labShuffledWord->setText(mShuffledWord);
+        ui->labShuffledWord->setVisible(false);
+    }
+    else
+    {
+        ui->labShuffledWord->setText(mShuffledWord);
+        ui->labShuffledWord->setVisible(true);
+    }
 
     ui->labMaxNumber->setText(QString::number(mNumberOfSounds));
     ui->labActiveNumber->setText(QString::number(mActiveSound + 1));
@@ -252,29 +277,3 @@ void MainWindow::FinishSpelling()
 {
     init();
 }
-
-void MainWindow::changeLanguage(int index)
-{
-    QSettings settings("TeamLamhauge", "daSpelling");
-
-    switch (index)
-    {
-    case 0:
-        settings.setValue("lang", ":lang/lang/daspelling_da_DK");
-        settings.setValue("langIndex", 0);
-        break;
-    case 1:
-        settings.setValue("lang", ":lang/lang/daspelling_en");
-        settings.setValue("langIndex", 1);
-        break;
-    default:
-        settings.setValue("lang", ":lang/lang/daspelling_da_DK");
-        settings.setValue("langIndex", 0);
-        break;
-    }
-
-    QMessageBox msgBox;
-    msgBox.setText(tr("Language change will happen after app restart"));
-    msgBox.exec();
-}
-

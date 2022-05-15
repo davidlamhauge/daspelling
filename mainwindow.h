@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "preferencemanager.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,8 +22,11 @@ private:
     Ui::MainWindow *ui;
     void init();
 
+    void preferencesPressed();
+    void readSettings();
+
     // get the path to the soundfiles
-    void getFileList();
+    void getWordList();
 
     // button presses...
     void play();
@@ -37,7 +41,6 @@ private:
     void startSpelling();
     void FinishSpelling();
 
-    void changeLanguage(int index);
     //
     void prepareSpelling(int active);
     QString shuffleWord(QString s);
@@ -56,5 +59,14 @@ private:
     int mNumberOfSounds = 0;    // sounds in the directory
 
     const QColor LIGHT_GREEN = QColor(170, 230, 170);
+    const QColor mRED = QColor(255, 0, 0);
+    const QColor mORANGE = QColor(250, 160, 50);
+    const QColor mPURPLE = QColor(250, 150, 250);
+    QColor mMisSpellColor = mRED;
+
+    bool mHideTwoLetterWords = false;
+
+    PreferenceManager* prefs = nullptr;
+
 };
 #endif // MAINWINDOW_H

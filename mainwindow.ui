@@ -26,22 +26,16 @@
          <item>
           <layout class="QVBoxLayout" name="verticalLayout_3">
            <item>
-            <widget class="QComboBox" name="cbLanguages">
+            <widget class="QPushButton" name="btnPreferences">
              <property name="font">
               <font>
-               <pointsize>12</pointsize>
+               <pointsize>14</pointsize>
+               <bold>true</bold>
               </font>
              </property>
-             <item>
-              <property name="text">
-               <string>Danish</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>English</string>
-              </property>
-             </item>
+             <property name="text">
+              <string>Preferences...</string>
+             </property>
             </widget>
            </item>
            <item>
@@ -372,7 +366,7 @@
      <x>0</x>
      <y>0</y>
      <width>638</width>
-     <height>24</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

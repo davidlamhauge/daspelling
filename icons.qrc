@@ -11,6 +11,12 @@
         <file>icons/spelling_2.ico</file>
         <file>icons/spelling_2.png</file>
         <file>icons/daspelling.desktop</file>
+        <file>icons/Flag_DE.png</file>
+        <file>icons/Flag_DK.png</file>
+        <file>icons/Flag_UK.png</file>
+        <file>icons/orange.png</file>
+        <file>icons/red.png</file>
+        <file>icons/violet.png</file>
     </qresource>
     <qresource prefix="/lang">
         <file>lang/daspelling_da_DK.ts</file>

@@ -16,13 +16,16 @@ DEFINES += APP_VERSION=\"\\\"$${VERSION}\\\"\"
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    preferencemanager.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    preferencemanager.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    preferencemanager.ui
 
 TRANSLATIONS += \
     lang/daspelling_da_DK.ts \
