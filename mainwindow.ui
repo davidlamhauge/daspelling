@@ -61,7 +61,7 @@
                 </font>
                </property>
                <property name="text">
-                <string>active</string>
+                <string notr="true">active</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -91,7 +91,7 @@
                 </font>
                </property>
                <property name="text">
-                <string>max</string>
+                <string notr="true">max</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -108,10 +108,10 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Play sound (Alt+P)</string>
+                <string>Play sound (Ctrl+Space)</string>
                </property>
                <property name="text">
-                <string/>
+                <string notr="true"/>
                </property>
                <property name="icon">
                 <iconset resource="icons.qrc">
@@ -124,7 +124,7 @@
                 </size>
                </property>
                <property name="shortcut">
-                <string notr="true">Alt+P</string>
+                <string notr="true">Ctrl+Space</string>
                </property>
               </widget>
              </item>
@@ -134,10 +134,10 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Previous (Alt+A)</string>
+                <string>Previous (Ctrl+1)</string>
                </property>
                <property name="text">
-                <string/>
+                <string notr="true"/>
                </property>
                <property name="icon">
                 <iconset resource="icons.qrc">
@@ -150,7 +150,7 @@
                 </size>
                </property>
                <property name="shortcut">
-                <string notr="true">Alt+A</string>
+                <string notr="true">Ctrl+1</string>
                </property>
               </widget>
              </item>
@@ -160,10 +160,10 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Next (Alt+Z)</string>
+                <string>Next (Ctrl+2)</string>
                </property>
                <property name="text">
-                <string/>
+                <string notr="true"/>
                </property>
                <property name="icon">
                 <iconset resource="icons.qrc">
@@ -176,7 +176,7 @@
                 </size>
                </property>
                <property name="shortcut">
-                <string notr="true">Alt+Z</string>
+                <string notr="true">Ctrl+2</string>
                </property>
               </widget>
              </item>
@@ -331,7 +331,7 @@
          </font>
         </property>
         <property name="text">
-         <string>The word...</string>
+         <string notr="true">The word...</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -349,7 +349,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Your spelling...</string>
+         <string notr="true">Your spelling...</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>

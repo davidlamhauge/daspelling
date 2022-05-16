@@ -64,7 +64,7 @@ private:
     const QColor mPURPLE = QColor(250, 150, 250);
     QColor mMisSpellColor = mRED;
 
-    bool mHideTwoLetterWords = false;
+    int mHideShuffledWord = 0;
 
     PreferenceManager* prefs = nullptr;
 

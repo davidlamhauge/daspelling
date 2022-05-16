@@ -16,7 +16,7 @@
         <file>icons/Flag_UK.png</file>
         <file>icons/orange.png</file>
         <file>icons/red.png</file>
-        <file>icons/violet.png</file>
+        <file>icons/purple.png</file>
     </qresource>
     <qresource prefix="/lang">
         <file>lang/daspelling_da_DK.ts</file>

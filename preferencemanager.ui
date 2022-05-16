@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>424</width>
-    <height>208</height>
+    <height>239</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -110,16 +110,57 @@
       </property>
       <property name="icon">
        <iconset resource="icons.qrc">
-        <normaloff>:/icons/violet.png</normaloff>:/icons/violet.png</iconset>
+        <normaloff>:/icons/purple.png</normaloff>:/icons/purple.png</iconset>
       </property>
      </item>
     </widget>
    </item>
    <item>
-    <widget class="QCheckBox" name="checkBox_HideTwoLetterWords">
-     <property name="text">
-      <string>Hide letters for two-letter words</string>
-     </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QLabel" name="labShowShuffledWord">
+       <property name="text">
+        <string>Show letters to help?</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QComboBox" name="cbShowWord">
+     <item>
+      <property name="text">
+       <string>Show shuffled word</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Hide two letter words</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Hide two and three letter words</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Hide shuffled word</string>
+      </property>
+     </item>
     </widget>
    </item>
    <item>

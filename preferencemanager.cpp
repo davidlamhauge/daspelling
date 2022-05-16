@@ -16,15 +16,12 @@ PreferenceManager::PreferenceManager(QWidget *parent) :
     ui->cbLanguage->setCurrentIndex(index);
     index = settings.value("misspellIndex", 0).toInt();
     ui->cbDisspellColor->setCurrentIndex(index);
-    bool b = settings.value("hideTwoLetterWords", false).toBool();
-    if (b)
-        ui->checkBox_HideTwoLetterWords->setChecked(true);
-    else
-        ui->checkBox_HideTwoLetterWords->setChecked(false);
+    index = settings.value("hideShuffledWord", 0).toInt();
+    ui->cbShowWord->setCurrentIndex(index);
 
     connect(ui->cbLanguage, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &PreferenceManager::cbLangaugePressed);
     connect(ui->cbDisspellColor, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &PreferenceManager::cbColorForMisspellingPressed);
-    connect(ui->checkBox_HideTwoLetterWords, &QCheckBox::toggled, this, &PreferenceManager::checkBoxTwoLetterWordsPressed);
+    connect(ui->cbShowWord, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &PreferenceManager::cbShowWordPressed);
     connect(ui->btnClose, &QPushButton::clicked, this, &PreferenceManager::saveAndClosePressed);
 }
 
@@ -60,10 +57,10 @@ void PreferenceManager::cbColorForMisspellingPressed(int index)
     settings.setValue("misspellIndex", index);
 }
 
-void PreferenceManager::checkBoxTwoLetterWordsPressed(bool b)
+void PreferenceManager::cbShowWordPressed(int index)
 {
     QSettings settings("TeamLamhauge", "daSpelling");
-    settings.setValue("hideTwoLetterWords", b);
+    settings.setValue("hideShuffledWord", index);
 }
 
 void PreferenceManager::saveAndClosePressed()

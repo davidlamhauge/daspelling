@@ -103,7 +103,7 @@ void MainWindow::readSettings()
     default: mMisSpellColor = mRED; break;
     }
 
-    mHideTwoLetterWords = settings.value("hideTwoLetterWords", false).toBool();
+    mHideShuffledWord = settings.value("hideShuffledWord", 0).toInt();
     mLastDir = settings.value("last_dir", "").toString();
 }
 
@@ -226,16 +226,33 @@ void MainWindow::prepareSpelling(int active)
     }
 
     mShuffledWordCopy = mShuffledWord;
+    ui->labShuffledWord->setVisible(true);
 
-    if (mHideTwoLetterWords && mShuffledWord.length() < 3)
-    {
+    switch (mHideShuffledWord) {
+    case 0:
+        ui->labShuffledWord->setText(mShuffledWord);
+        break;
+    case 1:
+        ui->labShuffledWord->setText(mShuffledWord);
+        if (mShuffledWord.length() < 3)
+            ui->labShuffledWord->setVisible(false);
+        else
+            ui->labShuffledWord->setVisible(true);
+        break;
+    case 2:
+        ui->labShuffledWord->setText(mShuffledWord);
+        if (mShuffledWord.length() < 4)
+            ui->labShuffledWord->setVisible(false);
+        else
+            ui->labShuffledWord->setVisible(true);
+        break;
+    case 3:
         ui->labShuffledWord->setText(mShuffledWord);
         ui->labShuffledWord->setVisible(false);
-    }
-    else
-    {
+        break;
+    default:
         ui->labShuffledWord->setText(mShuffledWord);
-        ui->labShuffledWord->setVisible(true);
+        break;
     }
 
     ui->labMaxNumber->setText(QString::number(mNumberOfSounds));

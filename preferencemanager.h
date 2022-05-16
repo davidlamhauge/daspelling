@@ -20,7 +20,7 @@ private:
 
     void cbLangaugePressed(int index);
     void cbColorForMisspellingPressed(int index);
-    void checkBoxTwoLetterWordsPressed(bool b);
+    void cbShowWordPressed(int index);
     void saveAndClosePressed();
 };
 
