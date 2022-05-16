@@ -4,11 +4,6 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.ui" line="14"/>
-        <source>MainWindow</source>
-        <translation>MainWindow</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="21"/>
         <source>The fun starts here...</source>
         <translation>Det sjove starter her...</translation>
@@ -19,29 +14,19 @@
         <translation>Indstillinger...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="64"/>
-        <source>active</source>
-        <translation>aktive</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="94"/>
-        <source>max</source>
-        <translation>maks</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="111"/>
-        <source>Play sound (Alt+P)</source>
-        <translation>Play sound (Alt+P)</translation>
+        <source>Play sound (Ctrl+Space)</source>
+        <translation>Afspil lyd (Ctrl+Mellemrum)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="137"/>
-        <source>Previous (Alt+A)</source>
-        <translation>Forrige (Alt+A)</translation>
+        <source>Previous (Ctrl+1)</source>
+        <translation>Forrige (Ctrl+1)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="163"/>
-        <source>Next (Alt+Z)</source>
-        <translation>Næste (Alt+Z)</translation>
+        <source>Next (Ctrl+2)</source>
+        <translation>Næste (Ctrl+2)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="194"/>
@@ -72,16 +57,6 @@
         <location filename="../mainwindow.ui" line="300"/>
         <source>Close</source>
         <translation>Luk</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="334"/>
-        <source>The word...</source>
-        <translation>Ordet...</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="352"/>
-        <source>Your spelling...</source>
-        <translation>Din stavning...</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="113"/>
@@ -137,12 +112,32 @@
         <translation>Lilla</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="121"/>
-        <source>Hide letters for two-letter words</source>
-        <translation>Skjul bogstaver hvis kun to bogstaver</translation>
+        <location filename="../preferencemanager.ui" line="123"/>
+        <source>Show letters to help?</source>
+        <translation>Vis bogstaver i hjælpelinje?</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="143"/>
+        <location filename="../preferencemanager.ui" line="146"/>
+        <source>Show shuffled word</source>
+        <translation>Vis bogstaver til staveord</translation>
+    </message>
+    <message>
+        <location filename="../preferencemanager.ui" line="151"/>
+        <source>Hide two letter words</source>
+        <translation>Skjul ord på to bogstaver</translation>
+    </message>
+    <message>
+        <location filename="../preferencemanager.ui" line="156"/>
+        <source>Hide two and three letter words</source>
+        <translation>Skjul ord på to og tre bogstaver</translation>
+    </message>
+    <message>
+        <location filename="../preferencemanager.ui" line="161"/>
+        <source>Hide shuffled word</source>
+        <translation>Skjul hjælpelinjen</translation>
+    </message>
+    <message>
+        <location filename="../preferencemanager.ui" line="184"/>
         <source>Close</source>
         <translation>Luk</translation>
     </message>
