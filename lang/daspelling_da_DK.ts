@@ -119,7 +119,7 @@
     <message>
         <location filename="../preferencemanager.ui" line="146"/>
         <source>Show shuffled word</source>
-        <translation>Vis bogstaver til staveord</translation>
+        <translation>Vis hjælpelinjen</translation>
     </message>
     <message>
         <location filename="../preferencemanager.ui" line="151"/>
