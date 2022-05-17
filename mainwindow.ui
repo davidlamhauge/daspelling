@@ -108,7 +108,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Play sound (Ctrl+Space)</string>
+                <string>Play sound (Alt+Space)</string>
                </property>
                <property name="text">
                 <string notr="true"/>
@@ -124,7 +124,7 @@
                 </size>
                </property>
                <property name="shortcut">
-                <string notr="true">Ctrl+Space</string>
+                <string notr="true">Alt+Space</string>
                </property>
               </widget>
              </item>
@@ -134,7 +134,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Previous (Ctrl+1)</string>
+                <string>Previous (Alt+1)</string>
                </property>
                <property name="text">
                 <string notr="true"/>
@@ -150,7 +150,7 @@
                 </size>
                </property>
                <property name="shortcut">
-                <string notr="true">Ctrl+1</string>
+                <string notr="true">Alt+1</string>
                </property>
               </widget>
              </item>
@@ -160,7 +160,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Next (Ctrl+2)</string>
+                <string>Next (Alt+2)</string>
                </property>
                <property name="text">
                 <string notr="true"/>
@@ -176,7 +176,7 @@
                 </size>
                </property>
                <property name="shortcut">
-                <string notr="true">Ctrl+2</string>
+                <string notr="true">Alt+2</string>
                </property>
               </widget>
              </item>
@@ -366,7 +366,7 @@
      <x>0</x>
      <y>0</y>
      <width>638</width>
-     <height>26</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>
