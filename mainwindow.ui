@@ -30,6 +30,7 @@
              <property name="font">
               <font>
                <pointsize>14</pointsize>
+               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -108,7 +109,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Play sound (Alt+Space)</string>
+                <string>Play sound (Alt+P)</string>
                </property>
                <property name="text">
                 <string notr="true"/>
@@ -124,7 +125,7 @@
                 </size>
                </property>
                <property name="shortcut">
-                <string notr="true">Alt+Space</string>
+                <string notr="true">Alt+P</string>
                </property>
               </widget>
              </item>
@@ -264,6 +265,7 @@
              <property name="font">
               <font>
                <pointsize>14</pointsize>
+               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -280,6 +282,7 @@
              <property name="font">
               <font>
                <pointsize>14</pointsize>
+               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -293,6 +296,7 @@
              <property name="font">
               <font>
                <pointsize>14</pointsize>
+               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -366,7 +370,7 @@
      <x>0</x>
      <y>0</y>
      <width>638</width>
-     <height>24</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
