@@ -30,7 +30,6 @@
              <property name="font">
               <font>
                <pointsize>14</pointsize>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -109,7 +108,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Play sound (Alt+P)</string>
+                <string>Play sound (Alt+Space)</string>
                </property>
                <property name="text">
                 <string notr="true"/>
@@ -124,9 +123,6 @@
                  <height>50</height>
                 </size>
                </property>
-               <property name="shortcut">
-                <string notr="true">Alt+P</string>
-               </property>
               </widget>
              </item>
              <item>
@@ -135,7 +131,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Previous (Alt+1)</string>
+                <string>Previous (Alt+A)</string>
                </property>
                <property name="text">
                 <string notr="true"/>
@@ -150,9 +146,6 @@
                  <height>50</height>
                 </size>
                </property>
-               <property name="shortcut">
-                <string notr="true">Alt+1</string>
-               </property>
               </widget>
              </item>
              <item>
@@ -161,7 +154,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Next (Alt+2)</string>
+                <string>Next (Alt+Z)</string>
                </property>
                <property name="text">
                 <string notr="true"/>
@@ -175,9 +168,6 @@
                  <width>50</width>
                  <height>50</height>
                 </size>
-               </property>
-               <property name="shortcut">
-                <string notr="true">Alt+2</string>
                </property>
               </widget>
              </item>
@@ -265,7 +255,6 @@
              <property name="font">
               <font>
                <pointsize>14</pointsize>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -282,7 +271,6 @@
              <property name="font">
               <font>
                <pointsize>14</pointsize>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -296,7 +284,6 @@
              <property name="font">
               <font>
                <pointsize>14</pointsize>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -370,7 +357,7 @@
      <x>0</x>
      <y>0</y>
      <width>638</width>
-     <height>26</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>

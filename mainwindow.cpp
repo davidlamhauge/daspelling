@@ -3,8 +3,7 @@
 
 #include <QDebug>
 #include <QSettings>
-#include <QMessageBox>
-
+#include <QAction>
 #include <QFileDialog>
 #include <QFile>
 #include <QDir>
@@ -16,6 +15,17 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    mPlaySound = new QAction(this);
+    mPlaySound->setShortcut(Qt::ALT + Qt::Key_Space);
+    addAction(mPlaySound);
+    mPreviousWord = new QAction(this);
+    mPreviousWord->setShortcut(Qt::ALT + Qt::Key_A);
+    addAction(mPreviousWord);
+    mNextWord = new QAction(this);
+    mNextWord->setShortcut(Qt::ALT + Qt::Key_Z);
+    addAction(mNextWord);
+
 
     init();
 
@@ -35,9 +45,12 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->btnFinishSpelling, &QPushButton::clicked, this, &MainWindow::FinishSpelling);
 
     connect(ui->btnNext, &QPushButton::clicked, this, &MainWindow::nextWord);
+    connect(mNextWord, &QAction::triggered, this, &MainWindow::nextWord);
     connect(ui->btnPrevious, &QPushButton::clicked, this, &MainWindow::previousWord);
+    connect(mPreviousWord, &QAction::triggered, this, &MainWindow::previousWord);
 
     connect(ui->btnPlay, &QPushButton::clicked, this, &MainWindow::play);
+    connect(mPlaySound, &QAction::triggered, this, &MainWindow::play);
     connect(ui->leSpelling, &QLineEdit::textChanged, this, &MainWindow::textChanged);
 
     connect(ui->btnPreferences, &QPushButton::clicked, this, &MainWindow::preferencesPressed);
@@ -190,6 +203,8 @@ void MainWindow::resetList()
 
 void MainWindow::nextWord()
 {
+    if (!ui->btnNext->isEnabled())
+        return;
     ui->btnPrevious->setEnabled(true);
     mActiveSound++;
     if (mActiveSound == mFileList.size() - 1)
@@ -201,6 +216,8 @@ void MainWindow::nextWord()
 
 void MainWindow::previousWord()
 {
+    if (!ui->btnPrevious->isEnabled())
+        return;
     ui->btnNext->setEnabled(true);
     mActiveSound--;
     if (mActiveSound == 0)

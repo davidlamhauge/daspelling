@@ -53,6 +53,10 @@ private:
     QString mShuffledWord;
     QString mShuffledWordCopy;
 
+    QAction* mPlaySound;
+    QAction* mPreviousWord;
+    QAction* mNextWord;
+
     QMediaPlayer *player = nullptr;
 
     int mActiveSound = 0;       // sound at xxx in mFileList
