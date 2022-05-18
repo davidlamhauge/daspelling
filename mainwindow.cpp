@@ -9,21 +9,24 @@
 #include <QDir>
 #include <QRandomGenerator>
 #include <QMediaPlayer>
+#include <QKeyEvent>
+#include <QKeySequence>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+//    ui->leSpelling->installEventFilter(this);
 
     mPlaySound = new QAction(this);
-    mPlaySound->setShortcut(Qt::ALT + Qt::Key_Space);
+    mPlaySound->setShortcut(QKeySequence(Qt::ALT + Qt::Key_P));
     addAction(mPlaySound);
     mPreviousWord = new QAction(this);
-    mPreviousWord->setShortcut(Qt::ALT + Qt::Key_A);
+    mPreviousWord->setShortcut(QKeySequence(Qt::ALT + Qt::Key_A));
     addAction(mPreviousWord);
     mNextWord = new QAction(this);
-    mNextWord->setShortcut(Qt::ALT + Qt::Key_Z);
+    mNextWord->setShortcut(QKeySequence(Qt::ALT + Qt::Key_Z));
     addAction(mNextWord);
 
 
@@ -288,7 +291,35 @@ QString MainWindow::shuffleWord(QString s)
     }
     return s;
 }
-
+/*
+bool MainWindow::eventFilter(QObject *watched, QEvent *e)
+{
+    if (e->type() == QEvent::ShortcutOverride)
+    {
+        QKeyEvent *keyEvent = static_cast<QKeyEvent*>(e);
+        if (keyEvent->modifiers().testFlag(Qt::AltModifier) && keyEvent->key() == Qt::Key_A)
+        {
+            qDebug() << "Ignoring" << keyEvent->modifiers() << "+" << (char)keyEvent->key() << "for" << watched;
+            e->ignore();
+            return true;
+        }
+        else if (keyEvent->modifiers().testFlag(Qt::AltModifier) && keyEvent->key() == Qt::Key_X)
+        {
+            qDebug() << "Ignoring" << keyEvent->modifiers() << "+" << (char)keyEvent->key() << "for" << watched;
+            e->ignore();
+            return true;
+        }
+        else if (keyEvent->modifiers().testFlag(Qt::AltModifier) && keyEvent->key() == Qt::Key_P)
+        {
+            qDebug() << "Ignoring" << keyEvent->modifiers() << "+" << (char)keyEvent->key() << "for" << watched;
+            e->accept();
+            return true;
+        }
+        qDebug() << keyEvent->modifiers();
+    }
+    return QMainWindow::eventFilter(watched, e);
+}
+*/
 void MainWindow::startSpelling()
 {
     ui->btnLoadFile->setEnabled(false);

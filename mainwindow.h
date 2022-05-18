@@ -56,6 +56,7 @@ private:
     QAction* mPlaySound;
     QAction* mPreviousWord;
     QAction* mNextWord;
+//    bool eventFilter(QObject* watched, QEvent* e);
 
     QMediaPlayer *player = nullptr;
 
