@@ -108,7 +108,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Play sound (Alt+Space)</string>
+                <string>Play sound (Alt+P)</string>
                </property>
                <property name="text">
                 <string notr="true"/>
