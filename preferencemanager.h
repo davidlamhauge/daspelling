@@ -15,6 +15,8 @@ public:
     explicit PreferenceManager(QWidget *parent = nullptr);
     ~PreferenceManager();
 
+    void prefPosition(QPoint pos);
+
 private:
     Ui::PreferenceManager *ui;
 

@@ -117,6 +117,7 @@ void MainWindow::preferencesPressed()
     QString tmp = settings.value("lang").toString();
 
     prefs = new PreferenceManager();
+    prefs->prefPosition(this->pos());
     prefs->exec();
 
     readSettings();

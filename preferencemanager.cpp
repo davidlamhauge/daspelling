@@ -30,6 +30,11 @@ PreferenceManager::~PreferenceManager()
     delete ui;
 }
 
+void PreferenceManager::prefPosition(QPoint pos)
+{
+    move(pos);
+}
+
 void PreferenceManager::cbLangaugePressed(int index)
 {
     QSettings settings("TeamLamhauge", "daSpelling");
