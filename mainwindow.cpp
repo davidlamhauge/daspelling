@@ -10,6 +10,7 @@
 #include <QDir>
 #include <QRandomGenerator>
 #include <QMediaPlayer>
+#include <QTranslator>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -86,10 +87,22 @@ void MainWindow::init()
 
 void MainWindow::preferencesPressed()
 {
+    QSettings settings("TeamLamhauge", "daSpelling");
+    QString tmp = settings.value("lang").toString();
+
     prefs = new PreferenceManager();
     prefs->exec();
 
     readSettings();
+
+    // need to change UI language
+    if (tmp != mLanguage)
+    {
+        QTranslator* translator = new QTranslator(this);
+        translator->load(mLanguage);
+        QCoreApplication::installTranslator(translator);
+        ui->retranslateUi(this);
+    }
 }
 
 void MainWindow::readSettings()
@@ -105,6 +118,7 @@ void MainWindow::readSettings()
 
     mHideShuffledWord = settings.value("hideShuffledWord", 0).toInt();
     mLastDir = settings.value("last_dir", "").toString();
+    mLanguage = settings.value("lang", ":lang/lang/daspelling_da_DK").toString();
 }
 
 void MainWindow::getWordList()
