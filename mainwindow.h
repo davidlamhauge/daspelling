@@ -46,6 +46,7 @@ private:
     QString shuffleWord(QString s);
 
     // Lists with relevant data
+    QString mLanguage = "";
     QString mLastDir = "";
     QStringList mFileList;
     QStringList mOrgFileList;
