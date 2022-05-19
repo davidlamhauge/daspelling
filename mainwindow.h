@@ -57,7 +57,6 @@ private:
     QAction* mPlaySound;
     QAction* mPreviousWord;
     QAction* mNextWord;
-//    bool eventFilter(QObject* watched, QEvent* e);
 
     QMediaPlayer *player = nullptr;
 
@@ -73,6 +72,5 @@ private:
     int mHideShuffledWord = 0;
 
     PreferenceManager* prefs = nullptr;
-
 };
 #endif // MAINWINDOW_H

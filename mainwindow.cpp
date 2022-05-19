@@ -12,13 +12,19 @@
 #include <QKeyEvent>
 #include <QKeySequence>
 #include <QTranslator>
+#include <QScreen>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-//    ui->leSpelling->installEventFilter(this);
+
+    // position where we left it
+    QSize scr = QGuiApplication::primaryScreen()->availableSize();
+    QSettings settings("TeamLamhauge", "daSpelling");
+    resize(settings.value("winSize", QSize(620, 432)).toSize());
+    move(settings.value("winPos", QPoint(scr.width()/2 - 310, scr.height()/2 - 216)).toPoint());
 
     mPlaySound = new QAction(this);
     mPlaySound->setShortcut(QKeySequence(Qt::ALT + Qt::Key_P));
@@ -29,7 +35,6 @@ MainWindow::MainWindow(QWidget *parent)
     mNextWord = new QAction(this);
     mNextWord->setShortcut(QKeySequence(Qt::ALT + Qt::Key_Z));
     addAction(mNextWord);
-
 
     init();
 
@@ -62,6 +67,11 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
+    // set settings for next session
+    QSettings settings("TeamLamhauge", "daSpelling");
+    settings.setValue("winSize", size());
+    settings.setValue("winPos", pos());
+
     delete ui;
 }
 
@@ -305,35 +315,7 @@ QString MainWindow::shuffleWord(QString s)
     }
     return s;
 }
-/*
-bool MainWindow::eventFilter(QObject *watched, QEvent *e)
-{
-    if (e->type() == QEvent::ShortcutOverride)
-    {
-        QKeyEvent *keyEvent = static_cast<QKeyEvent*>(e);
-        if (keyEvent->modifiers().testFlag(Qt::AltModifier) && keyEvent->key() == Qt::Key_A)
-        {
-            qDebug() << "Ignoring" << keyEvent->modifiers() << "+" << (char)keyEvent->key() << "for" << watched;
-            e->ignore();
-            return true;
-        }
-        else if (keyEvent->modifiers().testFlag(Qt::AltModifier) && keyEvent->key() == Qt::Key_X)
-        {
-            qDebug() << "Ignoring" << keyEvent->modifiers() << "+" << (char)keyEvent->key() << "for" << watched;
-            e->ignore();
-            return true;
-        }
-        else if (keyEvent->modifiers().testFlag(Qt::AltModifier) && keyEvent->key() == Qt::Key_P)
-        {
-            qDebug() << "Ignoring" << keyEvent->modifiers() << "+" << (char)keyEvent->key() << "for" << watched;
-            e->accept();
-            return true;
-        }
-        qDebug() << keyEvent->modifiers();
-    }
-    return QMainWindow::eventFilter(watched, e);
-}
-*/
+
 void MainWindow::startSpelling()
 {
     ui->btnLoadFile->setEnabled(false);
