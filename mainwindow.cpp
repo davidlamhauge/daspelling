@@ -9,9 +9,10 @@
 #include <QRandomGenerator>
 #include <QMediaPlayer>
 #include <QKeyEvent>
-#include <QKeySequence>
 #include <QTranslator>
 #include <QScreen>
+
+#include "preferencemanager.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -44,12 +45,9 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->btnFinishSpelling, &QPushButton::clicked, this, &MainWindow::FinishSpelling);
 
     connect(ui->btnNext, &QPushButton::clicked, this, &MainWindow::nextWord);
-//    connect(mNextWord, &QAction::triggered, this, &MainWindow::nextWord);
     connect(ui->btnPrevious, &QPushButton::clicked, this, &MainWindow::previousWord);
-//    connect(mPreviousWord, &QAction::triggered, this, &MainWindow::previousWord);
 
     connect(ui->btnPlay, &QPushButton::clicked, this, &MainWindow::play);
-//    connect(mPlaySound, &QAction::triggered, this, &MainWindow::play);
     connect(ui->leSpelling, &QLineEdit::textChanged, this, &MainWindow::textChanged);
 
     connect(ui->btnPreferences, &QPushButton::clicked, this, &MainWindow::preferencesPressed);
