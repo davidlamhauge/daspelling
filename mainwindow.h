@@ -18,6 +18,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+protected:
+    bool eventFilter(QObject* obj, QEvent* e) override;
+
 private:
     Ui::MainWindow *ui;
     void init();
@@ -53,10 +56,6 @@ private:
     QString mWord;
     QString mShuffledWord;
     QString mShuffledWordCopy;
-
-    QAction* mPlaySound;
-    QAction* mPreviousWord;
-    QAction* mNextWord;
 
     QMediaPlayer *player = nullptr;
 

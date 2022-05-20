@@ -3,7 +3,6 @@
 
 #include <QDebug>
 #include <QSettings>
-#include <QAction>
 #include <QFileDialog>
 #include <QFile>
 #include <QDir>
@@ -19,22 +18,13 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->leSpelling->installEventFilter(this);
 
     // position where we left it
     QSize scr = QGuiApplication::primaryScreen()->availableSize();
     QSettings settings("TeamLamhauge", "daSpelling");
     resize(settings.value("winSize", QSize(620, 432)).toSize());
     move(settings.value("winPos", QPoint(scr.width()/2 - 310, scr.height()/2 - 216)).toPoint());
-
-    mPlaySound = new QAction(this);
-    mPlaySound->setShortcut(QKeySequence(Qt::ALT + Qt::Key_P));
-    addAction(mPlaySound);
-    mPreviousWord = new QAction(this);
-    mPreviousWord->setShortcut(QKeySequence(Qt::ALT + Qt::Key_A));
-    addAction(mPreviousWord);
-    mNextWord = new QAction(this);
-    mNextWord->setShortcut(QKeySequence(Qt::ALT + Qt::Key_Z));
-    addAction(mNextWord);
 
     init();
 
@@ -54,12 +44,12 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->btnFinishSpelling, &QPushButton::clicked, this, &MainWindow::FinishSpelling);
 
     connect(ui->btnNext, &QPushButton::clicked, this, &MainWindow::nextWord);
-    connect(mNextWord, &QAction::triggered, this, &MainWindow::nextWord);
+//    connect(mNextWord, &QAction::triggered, this, &MainWindow::nextWord);
     connect(ui->btnPrevious, &QPushButton::clicked, this, &MainWindow::previousWord);
-    connect(mPreviousWord, &QAction::triggered, this, &MainWindow::previousWord);
+//    connect(mPreviousWord, &QAction::triggered, this, &MainWindow::previousWord);
 
     connect(ui->btnPlay, &QPushButton::clicked, this, &MainWindow::play);
-    connect(mPlaySound, &QAction::triggered, this, &MainWindow::play);
+//    connect(mPlaySound, &QAction::triggered, this, &MainWindow::play);
     connect(ui->leSpelling, &QLineEdit::textChanged, this, &MainWindow::textChanged);
 
     connect(ui->btnPreferences, &QPushButton::clicked, this, &MainWindow::preferencesPressed);
@@ -73,6 +63,33 @@ MainWindow::~MainWindow()
     settings.setValue("winPos", pos());
 
     delete ui;
+}
+
+bool MainWindow::eventFilter(QObject *obj, QEvent *e)
+{
+    if (obj == ui->leSpelling)
+    {
+        if (e->type() == QEvent::KeyPress)
+        {
+            QKeyEvent* k = static_cast<QKeyEvent*>(e);
+            if (k->key() == Qt::Key_Left)
+            {
+                previousWord();
+                return true;
+            }
+            if (k->key() == Qt::Key_Right)
+            {
+                nextWord();
+                return true;
+            }
+            if (k->key() == Qt::Key_Space)
+            {
+                play();
+                return true;
+            }
+        }
+    }
+    return QWidget::eventFilter(obj, e);
 }
 
 void MainWindow::init()
