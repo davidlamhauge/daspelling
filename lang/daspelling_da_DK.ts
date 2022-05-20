@@ -15,56 +15,56 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="111"/>
-        <source>Play sound (Ctrl+Space)</source>
-        <translation>Afspil lyd (Ctrl+Mellemrum)</translation>
+        <source>Play sound (Space bar)</source>
+        <translation>Afspil lyd (Mellemrumstast)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="137"/>
-        <source>Previous (Ctrl+1)</source>
-        <translation>Forrige (Ctrl+1)</translation>
+        <location filename="../mainwindow.ui" line="134"/>
+        <source>Previous (Left arrow)</source>
+        <translation>Forrige (Venstre pil)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="163"/>
-        <source>Next (Ctrl+2)</source>
-        <translation>Næste (Ctrl+2)</translation>
+        <location filename="../mainwindow.ui" line="157"/>
+        <source>Next (Right arrow)</source>
+        <translation>Næste (Højre pil)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="194"/>
+        <location filename="../mainwindow.ui" line="185"/>
         <source>Load directory</source>
         <translation>Hent filer</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="217"/>
+        <location filename="../mainwindow.ui" line="208"/>
         <source>Shuffle list</source>
         <translation>Bland liste</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="240"/>
+        <location filename="../mainwindow.ui" line="231"/>
         <source>Reset list</source>
         <translation>Nulstil liste</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="271"/>
+        <location filename="../mainwindow.ui" line="262"/>
         <source>Start spelling</source>
         <translation>Start stavning</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="287"/>
+        <location filename="../mainwindow.ui" line="278"/>
         <source>Finish spelling</source>
         <translation>Afslut stavning</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="300"/>
+        <location filename="../mainwindow.ui" line="291"/>
         <source>Close</source>
         <translation>Luk</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="113"/>
+        <location filename="../mainwindow.cpp" line="171"/>
         <source>Open sound file</source>
         <translation>Åben lydfil</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="115"/>
+        <location filename="../mainwindow.cpp" line="173"/>
         <source>Sound Files (*.wav *.mp3)</source>
         <translation>Lyd-filer (*.wav *.mp3)</translation>
     </message>

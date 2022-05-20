@@ -15,56 +15,56 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="111"/>
-        <source>Play sound (Ctrl+Space)</source>
-        <translation>Play sound (Ctrl+Space)</translation>
+        <source>Play sound (Space bar)</source>
+        <translation>Play sound (Space bar)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="137"/>
-        <source>Previous (Ctrl+1)</source>
-        <translation>Previous (Ctrl+1)</translation>
+        <location filename="../mainwindow.ui" line="134"/>
+        <source>Previous (Left arrow)</source>
+        <translation>Previous (Left arrow)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="163"/>
-        <source>Next (Ctrl+2)</source>
-        <translation>Next (Ctrl+2)</translation>
+        <location filename="../mainwindow.ui" line="157"/>
+        <source>Next (Right arrow)</source>
+        <translation>Next (Right arrow)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="194"/>
+        <location filename="../mainwindow.ui" line="185"/>
         <source>Load directory</source>
         <translation>Load directory</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="217"/>
+        <location filename="../mainwindow.ui" line="208"/>
         <source>Shuffle list</source>
         <translation>Shuffle list</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="240"/>
+        <location filename="../mainwindow.ui" line="231"/>
         <source>Reset list</source>
         <translation>Reset list</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="271"/>
+        <location filename="../mainwindow.ui" line="262"/>
         <source>Start spelling</source>
         <translation>Start spelling</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="287"/>
+        <location filename="../mainwindow.ui" line="278"/>
         <source>Finish spelling</source>
         <translation>Finish spelling</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="300"/>
+        <location filename="../mainwindow.ui" line="291"/>
         <source>Close</source>
         <translation>Close</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="113"/>
+        <location filename="../mainwindow.cpp" line="171"/>
         <source>Open sound file</source>
         <translation>Open sound file</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="115"/>
+        <location filename="../mainwindow.cpp" line="173"/>
         <source>Sound Files (*.wav *.mp3)</source>
         <translation>Sound Files (*.wav *.mp3)</translation>
     </message>

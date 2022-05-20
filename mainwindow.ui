@@ -108,7 +108,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Play sound (Alt+P)</string>
+                <string>Play sound (Space bar)</string>
                </property>
                <property name="text">
                 <string notr="true"/>
@@ -131,7 +131,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Previous (Alt+A)</string>
+                <string>Previous (Left arrow)</string>
                </property>
                <property name="text">
                 <string notr="true"/>
@@ -154,7 +154,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Next (Alt+Z)</string>
+                <string>Next (Right arrow)</string>
                </property>
                <property name="text">
                 <string notr="true"/>
