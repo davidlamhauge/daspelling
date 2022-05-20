@@ -60,7 +60,7 @@ private:
 
     QMediaPlayer *player = nullptr;
 
-    int mActiveSound = 0;       // sound at xxx in mFileList
+    int mActiveSound = -1;       // sound at xxx in mFileList
     int mNumberOfSounds = 0;    // sounds in the directory
 
     const QColor LIGHT_GREEN = QColor(170, 230, 170);

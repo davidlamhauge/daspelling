@@ -94,7 +94,7 @@ void MainWindow::init()
 
     ui->labActiveNumber->setText("-");
     ui->labMaxNumber->setText("-");
-    mActiveSound = 0;
+    mActiveSound = -1;
     mWord = "";
     mShuffledWord = "";
     mFileList.clear();
@@ -170,6 +170,7 @@ void MainWindow::getWordList()
               file.endsWith(".mp3", Qt::CaseInsensitive)))
             mFileList.removeOne(file);
     }
+    mActiveSound = 0;
     mOrgFileList = mFileList;
     mNumberOfSounds = mFileList.size();
 
@@ -180,6 +181,8 @@ void MainWindow::getWordList()
 
 void MainWindow::play()
 {
+    if (mActiveSound < 0)
+        return;
     // mediaplayer
     player->setMedia(QUrl::fromLocalFile(mLastDir+ "/" + mFileList.at(mActiveSound)));
     player->play();
@@ -231,7 +234,7 @@ void MainWindow::resetList()
 
 void MainWindow::nextWord()
 {
-    if (!ui->btnNext->isEnabled())
+    if (!ui->btnNext->isEnabled() || mActiveSound < 0)
         return;
     ui->btnPrevious->setEnabled(true);
     mActiveSound++;
@@ -244,7 +247,7 @@ void MainWindow::nextWord()
 
 void MainWindow::previousWord()
 {
-    if (!ui->btnPrevious->isEnabled())
+    if (!ui->btnPrevious->isEnabled() || mActiveSound < 0)
         return;
     ui->btnNext->setEnabled(true);
     mActiveSound--;
