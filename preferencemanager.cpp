@@ -18,11 +18,17 @@ PreferenceManager::PreferenceManager(QWidget *parent) :
     ui->cbDisspellColor->setCurrentIndex(index);
     index = settings.value("hideShuffledWord", 0).toInt();
     ui->cbShowWord->setCurrentIndex(index);
+    bool b = settings.value("recordKeystrokes", false).toBool();
+    if (b == true)
+        ui->cBoxRecordKeypress->setChecked(true);
+    else
+        ui->cBoxRecordKeypress->setChecked(false);
 
     connect(ui->cbLanguage, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &PreferenceManager::cbLangaugePressed);
     connect(ui->cbDisspellColor, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &PreferenceManager::cbColorForMisspellingPressed);
     connect(ui->cbShowWord, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &PreferenceManager::cbShowWordPressed);
     connect(ui->btnClose, &QPushButton::clicked, this, &PreferenceManager::saveAndClosePressed);
+    connect(ui->cBoxRecordKeypress, &QCheckBox::stateChanged, this, &PreferenceManager::cBoxKeystrokesChanged);
 }
 
 PreferenceManager::~PreferenceManager()
@@ -66,6 +72,15 @@ void PreferenceManager::cbShowWordPressed(int index)
 {
     QSettings settings("TeamLamhauge", "daSpelling");
     settings.setValue("hideShuffledWord", index);
+}
+
+void PreferenceManager::cBoxKeystrokesChanged(int state)
+{
+    QSettings settings("TeamLamhauge", "daSpelling");
+    if (state == 0)
+        settings.setValue("recordKeystrokes", false);
+    else
+        settings.setValue("recordKeystrokes", true);
 }
 
 void PreferenceManager::saveAndClosePressed()

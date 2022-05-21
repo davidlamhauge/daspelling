@@ -8,6 +8,7 @@ namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
 class QMediaPlayer;
+class QFile;
 class PreferenceManager;
 
 class MainWindow : public QMainWindow
@@ -42,7 +43,7 @@ private:
     void previousWord();
 
     void startSpelling();
-    void FinishSpelling();
+    void finishSpelling();
 
     //
     void prepareSpelling(int active);
@@ -61,6 +62,8 @@ private:
 
     int mActiveSound = -1;       // sound at xxx in mFileList
     int mNumberOfSounds = 0;    // sounds in the directory
+    bool mRecordKeystrokes = false; // whether to save keystrokes to txt-file
+    QString mKeystrokeFileName = "";
 
     const QColor LIGHT_GREEN = QColor(170, 230, 170);
     const QColor mRED = QColor(255, 0, 0);

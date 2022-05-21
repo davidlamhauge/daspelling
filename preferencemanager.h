@@ -23,6 +23,7 @@ private:
     void cbLangaugePressed(int index);
     void cbColorForMisspellingPressed(int index);
     void cbShowWordPressed(int index);
+    void cBoxKeystrokesChanged(int state);
     void saveAndClosePressed();
 };
 

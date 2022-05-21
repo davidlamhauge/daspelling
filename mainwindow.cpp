@@ -11,6 +11,8 @@
 #include <QKeyEvent>
 #include <QTranslator>
 #include <QScreen>
+#include <QDateTime>
+#include <QTextStream>
 
 #include "preferencemanager.h"
 
@@ -42,7 +44,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->btnResetList, &QPushButton::clicked, this, &MainWindow::resetList);
 
     connect(ui->btnStartSpelling, &QPushButton::clicked, this, &MainWindow::startSpelling);
-    connect(ui->btnFinishSpelling, &QPushButton::clicked, this, &MainWindow::FinishSpelling);
+    connect(ui->btnFinishSpelling, &QPushButton::clicked, this, &MainWindow::finishSpelling);
 
     connect(ui->btnNext, &QPushButton::clicked, this, &MainWindow::nextWord);
     connect(ui->btnPrevious, &QPushButton::clicked, this, &MainWindow::previousWord);
@@ -161,6 +163,7 @@ void MainWindow::readSettings()
     mHideShuffledWord = settings.value("hideShuffledWord", 0).toInt();
     mLastDir = settings.value("last_dir", "").toString();
     mLanguage = settings.value("lang", ":lang/lang/daspelling_da_DK").toString();
+    mRecordKeystrokes = settings.value("recordKeystrokes", false).toBool();
 }
 
 void MainWindow::getWordList()
@@ -216,6 +219,17 @@ void MainWindow::textChanged(QString s)
     }
     ui->labShuffledWord->setText(tmp);
 
+    if (mRecordKeystrokes)
+    {
+        QFile fil(mKeystrokeFileName);
+        if (fil.open(QIODevice::ReadWrite | QIODevice::Append | QIODevice::Text))
+        {
+            QTextStream out(&fil);
+            out << ui->leSpelling->text() << "\n";
+            fil.close();
+        }
+    }
+
     // set background to red or green
     QPalette palet = ui->leSpelling->palette();
     if (mWord.startsWith(s))
@@ -257,6 +271,17 @@ void MainWindow::nextWord()
         ui->btnNext->setEnabled(false);
     ui->leSpelling->clear();
     prepareSpelling(mActiveSound);
+
+    if (mRecordKeystrokes)
+    {
+        QFile fil(mKeystrokeFileName);
+        if (fil.open(QIODevice::ReadWrite | QIODevice::Append | QIODevice::Text))
+        {
+            QTextStream out(&fil);
+            out << "-> " << mWord << " <-\n";
+            fil.close();
+        }
+    }
     ui->leSpelling->setFocus();
 }
 
@@ -270,6 +295,17 @@ void MainWindow::previousWord()
         ui->btnPrevious->setEnabled(false);
     ui->leSpelling->clear();
     prepareSpelling(mActiveSound);
+
+    if (mRecordKeystrokes)
+    {
+        QFile fil(mKeystrokeFileName);
+        if (fil.open(QIODevice::ReadWrite | QIODevice::Append | QIODevice::Text))
+        {
+            QTextStream out(&fil);
+            out << "-> " << mWord << " <-\n";
+            fil.close();
+        }
+    }
     ui->leSpelling->setFocus();
 }
 
@@ -350,10 +386,23 @@ void MainWindow::startSpelling()
     ui->leSpelling->setEnabled(true);
 
     prepareSpelling(mActiveSound);
+
+    if (mRecordKeystrokes)
+    {
+        mKeystrokeFileName = mLastDir + "/" + QDateTime().currentDateTime().toString("yyyyMMdd_hh_mm_ss") + ".txt";
+        QFile fil(mKeystrokeFileName);
+        if (fil.open(QIODevice::ReadWrite | QIODevice::Append | QIODevice::Text))
+        {
+            QTextStream out(&fil);
+            out << "-> " << mWord << " <-\n";
+            fil.close();
+        }
+    }
+
     ui->leSpelling->setFocus();
 }
 
-void MainWindow::FinishSpelling()
+void MainWindow::finishSpelling()
 {
     init();
 }
