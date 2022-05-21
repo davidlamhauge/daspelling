@@ -59,12 +59,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="171"/>
+        <location filename="../mainwindow.cpp" line="172"/>
         <source>Open sound file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="173"/>
+        <location filename="../mainwindow.cpp" line="174"/>
         <source>Sound Files (*.wav *.mp3)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -137,7 +137,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="184"/>
+        <location filename="../preferencemanager.ui" line="178"/>
+        <source>Saves keystrokes, for later evaluation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../preferencemanager.ui" line="181"/>
+        <source>Save keystrokes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../preferencemanager.ui" line="225"/>
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>

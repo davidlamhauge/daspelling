@@ -59,12 +59,12 @@
         <translation>Luk</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="171"/>
+        <location filename="../mainwindow.cpp" line="172"/>
         <source>Open sound file</source>
         <translation>Åben lydfil</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="173"/>
+        <location filename="../mainwindow.cpp" line="174"/>
         <source>Sound Files (*.wav *.mp3)</source>
         <translation>Lyd-filer (*.wav *.mp3)</translation>
     </message>
@@ -137,7 +137,17 @@
         <translation>Skjul hjælpelinjen</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="184"/>
+        <location filename="../preferencemanager.ui" line="178"/>
+        <source>Saves keystrokes, for later evaluation</source>
+        <translation>Gem tastetryk, til senere evaluering</translation>
+    </message>
+    <message>
+        <location filename="../preferencemanager.ui" line="181"/>
+        <source>Save keystrokes</source>
+        <translation>Gem tastetryk</translation>
+    </message>
+    <message>
+        <location filename="../preferencemanager.ui" line="225"/>
         <source>Close</source>
         <translation>Luk</translation>
     </message>

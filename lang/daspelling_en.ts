@@ -59,12 +59,12 @@
         <translation>Close</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="171"/>
+        <location filename="../mainwindow.cpp" line="172"/>
         <source>Open sound file</source>
         <translation>Open sound file</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="173"/>
+        <location filename="../mainwindow.cpp" line="174"/>
         <source>Sound Files (*.wav *.mp3)</source>
         <translation>Sound Files (*.wav *.mp3)</translation>
     </message>
@@ -137,7 +137,17 @@
         <translation>Hide shuffled word</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="184"/>
+        <location filename="../preferencemanager.ui" line="178"/>
+        <source>Saves keystrokes, for later evaluation</source>
+        <translation>Saves keystrokes, for later evaluation</translation>
+    </message>
+    <message>
+        <location filename="../preferencemanager.ui" line="181"/>
+        <source>Save keystrokes</source>
+        <translation>Save keystrokes</translation>
+    </message>
+    <message>
+        <location filename="../preferencemanager.ui" line="225"/>
         <source>Close</source>
         <translation>Close</translation>
     </message>
