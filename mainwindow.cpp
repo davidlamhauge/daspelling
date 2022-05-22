@@ -82,7 +82,7 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *e)
                 nextWord();
                 return true;
             }
-            if (k->key() == Qt::Key_Space)
+            if (k->key() == Qt::Key_Down)
             {
                 play();
                 return true;
@@ -205,6 +205,17 @@ void MainWindow::play()
     player->setMedia(QUrl::fromLocalFile(mLastDir+ "/" + mFileList.at(mActiveSound)));
     player->play();
 
+    if (mRecordKeystrokes)
+    {
+        QFile fil(mKeystrokeFileName);
+        if (fil.open(QIODevice::ReadWrite | QIODevice::Append | QIODevice::Text))
+        {
+            QTextStream out(&fil);
+            out << "-> " << tr("Play:") << " " << mWord << " <-\n";
+            fil.close();
+        }
+    }
+
     ui->leSpelling->setFocus();
 }
 
@@ -318,10 +329,22 @@ void MainWindow::prepareSpelling(int active)
         mShuffledWord = mWord;
     else
     {
-        do  // make sure shuffled word is different
+        if (mWord.contains(Qt::Key_Space))
         {
-            mShuffledWord = shuffleWord(mWord);
-        } while (mShuffledWord == mWord);
+            do  // make sure shuffled word is different and spaces is inside shuffledword
+            {
+                mShuffledWord = shuffleWord(mWord);
+            } while (mShuffledWord == mWord
+                     || mShuffledWord.startsWith(Qt::Key_Space)
+                     || mShuffledWord.endsWith(Qt::Key_Space));
+        }
+        else
+        {
+            do  // make sure shuffled word is different
+            {
+                mShuffledWord = shuffleWord(mWord);
+            } while (mShuffledWord == mWord);
+        }
     }
 
     mShuffledWordCopy = mShuffledWord;
