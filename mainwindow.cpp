@@ -412,7 +412,11 @@ void MainWindow::startSpelling()
 
     if (mRecordKeystrokes)
     {
-        mKeystrokeFileName = mLastDir + "/" + QDateTime().currentDateTime().toString("yyyyMMdd_hh_mm_ss") + ".txt";
+        QString name = qgetenv("USER");
+        if (name.isEmpty())
+            name = qgetenv("USERNAME");
+        QString stamp = QDateTime().currentDateTime().toString("yyyyMMdd_hh_mm_ss");
+        mKeystrokeFileName = mLastDir + "/" + name + "_" + stamp + ".txt";
         QFile fil(mKeystrokeFileName);
         if (fil.open(QIODevice::ReadWrite | QIODevice::Append | QIODevice::Text))
         {

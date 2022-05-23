@@ -16,22 +16,22 @@
     <message>
         <location filename="../mainwindow.ui" line="111"/>
         <source>Play sound (Down arrow)</source>
-        <translation>Geräusch abspielen (Pfeil nach unten)</translation>
+        <translation>Das Wort abspielen (Pfeil nach unten)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="134"/>
         <source>Previous (Left arrow)</source>
-        <translation>Voriges wort (Pfeil links)</translation>
+        <translation>Voriges Wort (Pfeil links)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="157"/>
         <source>Next (Right arrow)</source>
-        <translation>Nächtes wort (Pfeil rechts)</translation>
+        <translation>Nächtes Wort (Pfeil rechts)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="185"/>
         <source>Load directory</source>
-        <translation>Hol Mappe</translation>
+        <translation>Wörter holen</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="208"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../mainwindow.ui" line="291"/>
         <source>Close</source>
-        <translation>Exit</translation>
+        <translation>Schliessen</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="172"/>
@@ -124,37 +124,37 @@
     <message>
         <location filename="../preferencemanager.ui" line="132"/>
         <source>Show letters to help?</source>
-        <translation>Zeige Buchstaben als hilfe?</translation>
+        <translation>Zeig Buchstaben als hilfe?</translation>
     </message>
     <message>
         <location filename="../preferencemanager.ui" line="155"/>
         <source>Show shuffled word</source>
-        <translation>Zeige gemischte Wörter</translation>
+        <translation>Zeig gemischte Wörter</translation>
     </message>
     <message>
         <location filename="../preferencemanager.ui" line="160"/>
         <source>Hide two letter words</source>
-        <translation>Verstecke zwei Buchstaben Wörter</translation>
+        <translation>Versteck zwei Buchstaben Wörter</translation>
     </message>
     <message>
         <location filename="../preferencemanager.ui" line="165"/>
         <source>Hide two and three letter words</source>
-        <translation>Verstecke zwei und drei Buchstabigen Wörter</translation>
+        <translation>Versteck zwei und drei Buchstabigen Wörter</translation>
     </message>
     <message>
         <location filename="../preferencemanager.ui" line="170"/>
         <source>Hide shuffled word</source>
-        <translation>Verstecke gemischte Wörter</translation>
+        <translation>Versteck gemischte Wörter</translation>
     </message>
     <message>
         <location filename="../preferencemanager.ui" line="187"/>
         <source>Saves keystrokes, for later evaluation</source>
-        <translation>Behalte Tastendrücke für spätere evaluirung</translation>
+        <translation>Behalte Tastendrücke für spätere Evaluation</translation>
     </message>
     <message>
         <location filename="../preferencemanager.ui" line="190"/>
         <source>Save keystrokes</source>
-        <translation>Behalte tastendrücke</translation>
+        <translation>Behalte Tastendrücke</translation>
     </message>
     <message>
         <location filename="../preferencemanager.ui" line="234"/>

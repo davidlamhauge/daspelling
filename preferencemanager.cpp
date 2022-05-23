@@ -2,7 +2,6 @@
 #include "ui_preferencemanager.h"
 
 #include <QSettings>
-#include <QDebug>
 
 PreferenceManager::PreferenceManager(QWidget *parent) :
     QDialog(parent),
