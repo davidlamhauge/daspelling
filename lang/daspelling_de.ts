@@ -56,7 +56,7 @@
     <message>
         <location filename="../mainwindow.ui" line="291"/>
         <source>Close</source>
-        <translation>Schliessen</translation>
+        <translation>Beenden</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="172"/>
@@ -149,17 +149,17 @@
     <message>
         <location filename="../preferencemanager.ui" line="187"/>
         <source>Saves keystrokes, for later evaluation</source>
-        <translation>Behalte Tastendrücke für spätere Evaluation</translation>
+        <translation>Tastendrücke speichern für spätere Evaluation</translation>
     </message>
     <message>
         <location filename="../preferencemanager.ui" line="190"/>
         <source>Save keystrokes</source>
-        <translation>Behalte Tastendrücke</translation>
+        <translation>Tastendrücke speichern</translation>
     </message>
     <message>
         <location filename="../preferencemanager.ui" line="234"/>
         <source>Close</source>
-        <translation>Exit</translation>
+        <translation>Beenden</translation>
     </message>
 </context>
 </TS>
