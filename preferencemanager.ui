@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>360</width>
-    <height>292</height>
+    <height>327</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -56,6 +56,15 @@
       <property name="icon">
        <iconset resource="icons.qrc">
         <normaloff>:/icons/Flag_UK.png</normaloff>:/icons/Flag_UK.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>German</string>
+      </property>
+      <property name="icon">
+       <iconset resource="icons.qrc">
+        <normaloff>:/icons/Flag_DE.png</normaloff>:/icons/Flag_DE.png</iconset>
       </property>
      </item>
     </widget>
