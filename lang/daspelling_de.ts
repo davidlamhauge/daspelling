@@ -6,67 +6,72 @@
     <message>
         <location filename="../mainwindow.ui" line="21"/>
         <source>The fun starts here...</source>
-        <translation type="unfinished"></translation>
+        <translation>Das lustige fängt hier an...</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="37"/>
         <source>Preferences...</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen...</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="111"/>
-        <source>Play sound (Space bar)</source>
-        <translation type="unfinished"></translation>
+        <source>Play sound (Down arrow)</source>
+        <translation>Geräusch abspielen (Pfeil nach unten)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="134"/>
         <source>Previous (Left arrow)</source>
-        <translation type="unfinished"></translation>
+        <translation>Voriges wort (Pfeil links)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="157"/>
         <source>Next (Right arrow)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nächtes wort (Pfeil rechts)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="185"/>
         <source>Load directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Hol Mappe</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="208"/>
         <source>Shuffle list</source>
-        <translation type="unfinished"></translation>
+        <translation>Liste mischen</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="231"/>
         <source>Reset list</source>
-        <translation type="unfinished"></translation>
+        <translation>Liste zurücksetzen</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="262"/>
         <source>Start spelling</source>
-        <translation type="unfinished"></translation>
+        <translation>Fang an mit buchstabieren</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="278"/>
         <source>Finish spelling</source>
-        <translation type="unfinished"></translation>
+        <translation>Buchstabieren absliesen</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="291"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Exit</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="172"/>
         <source>Open sound file</source>
-        <translation type="unfinished"></translation>
+        <translation>Öfne geräusch Datei</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="174"/>
         <source>Sound Files (*.wav *.mp3)</source>
-        <translation type="unfinished"></translation>
+        <translation>Geräusch Dateien (*.wav *.mp3)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="214"/>
+        <source>Play:</source>
+        <translation>Abspielen:</translation>
     </message>
 </context>
 <context>
@@ -74,82 +79,87 @@
     <message>
         <location filename="../preferencemanager.ui" line="14"/>
         <source>Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <location filename="../preferencemanager.ui" line="22"/>
         <source>User interface Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Sprache</translation>
     </message>
     <message>
         <location filename="../preferencemanager.ui" line="45"/>
         <source>Danish</source>
-        <translation type="unfinished"></translation>
+        <translation>Dänisch</translation>
     </message>
     <message>
         <location filename="../preferencemanager.ui" line="54"/>
         <source>English</source>
-        <translation type="unfinished"></translation>
+        <translation>Englisch</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="68"/>
+        <location filename="../preferencemanager.ui" line="63"/>
+        <source>German</source>
+        <translation>Deutsch</translation>
+    </message>
+    <message>
+        <location filename="../preferencemanager.ui" line="77"/>
         <source>Color for misspelling</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../preferencemanager.ui" line="91"/>
-        <source>Red</source>
-        <translation type="unfinished"></translation>
+        <translation>Farbe für fehl buchstabierung</translation>
     </message>
     <message>
         <location filename="../preferencemanager.ui" line="100"/>
-        <source>Orange</source>
-        <translation type="unfinished"></translation>
+        <source>Red</source>
+        <translation>Rot</translation>
     </message>
     <message>
         <location filename="../preferencemanager.ui" line="109"/>
+        <source>Orange</source>
+        <translation>Orange</translation>
+    </message>
+    <message>
+        <location filename="../preferencemanager.ui" line="118"/>
         <source>Purple</source>
-        <translation type="unfinished"></translation>
+        <translation>Lila</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="123"/>
+        <location filename="../preferencemanager.ui" line="132"/>
         <source>Show letters to help?</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeige Buchstaben als hilfe?</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="146"/>
+        <location filename="../preferencemanager.ui" line="155"/>
         <source>Show shuffled word</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeige gemischte Wörter</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="151"/>
+        <location filename="../preferencemanager.ui" line="160"/>
         <source>Hide two letter words</source>
-        <translation type="unfinished"></translation>
+        <translation>Verstecke zwei Buchstaben Wörter</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="156"/>
+        <location filename="../preferencemanager.ui" line="165"/>
         <source>Hide two and three letter words</source>
-        <translation type="unfinished"></translation>
+        <translation>Verstecke zwei und drei Buchstabigen Wörter</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="161"/>
+        <location filename="../preferencemanager.ui" line="170"/>
         <source>Hide shuffled word</source>
-        <translation type="unfinished"></translation>
+        <translation>Verstecke gemischte Wörter</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="178"/>
+        <location filename="../preferencemanager.ui" line="187"/>
         <source>Saves keystrokes, for later evaluation</source>
-        <translation type="unfinished"></translation>
+        <translation>Behalte Tastendrücke für spätere evaluirung</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="181"/>
+        <location filename="../preferencemanager.ui" line="190"/>
         <source>Save keystrokes</source>
-        <translation type="unfinished"></translation>
+        <translation>Behalte tastendrücke</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="225"/>
+        <location filename="../preferencemanager.ui" line="234"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Exit</translation>
     </message>
 </context>
 </TS>

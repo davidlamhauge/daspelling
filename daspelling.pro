@@ -42,7 +42,7 @@ DISTFILES +=
 RESOURCES += \
     icons.qrc
 
-RC_ICONS += icons/spelling_2.ico
+RC_ICONS += icons/spelling.ico
 
 unix:!macx {
     target.path = $${PREFIX}

@@ -30,6 +30,7 @@
              <property name="font">
               <font>
                <pointsize>14</pointsize>
+               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -115,7 +116,7 @@
                </property>
                <property name="icon">
                 <iconset resource="icons.qrc">
-                 <normaloff>:/icons/play.png</normaloff>:/icons/play.png</iconset>
+                 <normaloff>:/icons/play-100.png</normaloff>:/icons/play-100.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -212,7 +213,7 @@
                </property>
                <property name="icon">
                 <iconset resource="icons.qrc">
-                 <normaloff>:/icons/shuffle2.png</normaloff>:/icons/shuffle2.png</iconset>
+                 <normaloff>:/icons/shuffle_icon.png</normaloff>:/icons/shuffle_icon.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -235,7 +236,7 @@
                </property>
                <property name="icon">
                 <iconset resource="icons.qrc">
-                 <normaloff>:/icons/reset_list.png</normaloff>:/icons/reset_list.png</iconset>
+                 <normaloff>:/icons/reset.png</normaloff>:/icons/reset.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -255,6 +256,7 @@
              <property name="font">
               <font>
                <pointsize>14</pointsize>
+               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -271,6 +273,7 @@
              <property name="font">
               <font>
                <pointsize>14</pointsize>
+               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -284,6 +287,7 @@
              <property name="font">
               <font>
                <pointsize>14</pointsize>
+               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>

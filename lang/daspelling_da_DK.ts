@@ -15,8 +15,8 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="111"/>
-        <source>Play sound (Space bar)</source>
-        <translation>Afspil lyd (Mellemrumstast)</translation>
+        <source>Play sound (Down arrow)</source>
+        <translation>Afspil lyd (Pil ned)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="134"/>
@@ -68,6 +68,11 @@
         <source>Sound Files (*.wav *.mp3)</source>
         <translation>Lyd-filer (*.wav *.mp3)</translation>
     </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="214"/>
+        <source>Play:</source>
+        <translation>Afspil:</translation>
+    </message>
 </context>
 <context>
     <name>PreferenceManager</name>
@@ -92,62 +97,67 @@
         <translation>Engelsk</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="68"/>
+        <location filename="../preferencemanager.ui" line="63"/>
+        <source>German</source>
+        <translation>Tysk</translation>
+    </message>
+    <message>
+        <location filename="../preferencemanager.ui" line="77"/>
         <source>Color for misspelling</source>
         <translation>Farve til fejlstavning</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="91"/>
+        <location filename="../preferencemanager.ui" line="100"/>
         <source>Red</source>
         <translation>Rød</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="100"/>
+        <location filename="../preferencemanager.ui" line="109"/>
         <source>Orange</source>
         <translation>Orange</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="109"/>
+        <location filename="../preferencemanager.ui" line="118"/>
         <source>Purple</source>
         <translation>Lilla</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="123"/>
+        <location filename="../preferencemanager.ui" line="132"/>
         <source>Show letters to help?</source>
         <translation>Vis bogstaver i hjælpelinje?</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="146"/>
+        <location filename="../preferencemanager.ui" line="155"/>
         <source>Show shuffled word</source>
         <translation>Vis hjælpelinjen</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="151"/>
+        <location filename="../preferencemanager.ui" line="160"/>
         <source>Hide two letter words</source>
         <translation>Skjul ord på to bogstaver</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="156"/>
+        <location filename="../preferencemanager.ui" line="165"/>
         <source>Hide two and three letter words</source>
         <translation>Skjul ord på to og tre bogstaver</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="161"/>
+        <location filename="../preferencemanager.ui" line="170"/>
         <source>Hide shuffled word</source>
         <translation>Skjul hjælpelinjen</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="178"/>
+        <location filename="../preferencemanager.ui" line="187"/>
         <source>Saves keystrokes, for later evaluation</source>
         <translation>Gem tastetryk, til senere evaluering</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="181"/>
+        <location filename="../preferencemanager.ui" line="190"/>
         <source>Save keystrokes</source>
         <translation>Gem tastetryk</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="225"/>
+        <location filename="../preferencemanager.ui" line="234"/>
         <source>Close</source>
         <translation>Luk</translation>
     </message>

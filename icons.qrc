@@ -1,15 +1,10 @@
 <RCC>
     <qresource prefix="/">
         <file>icons/loadfile.png</file>
-        <file>icons/play.png</file>
-        <file>icons/shuffle2.png</file>
-        <file>icons/reset_list.png</file>
         <file>icons/next.png</file>
         <file>icons/previous.png</file>
         <file>icons/spelling.png</file>
         <file>icons/spelling.ico</file>
-        <file>icons/spelling_2.ico</file>
-        <file>icons/spelling_2.png</file>
         <file>icons/daspelling.desktop</file>
         <file>icons/Flag_DE.png</file>
         <file>icons/Flag_DK.png</file>
@@ -17,11 +12,16 @@
         <file>icons/orange.png</file>
         <file>icons/red.png</file>
         <file>icons/purple.png</file>
+        <file>icons/play-100.png</file>
+        <file>icons/reset.png</file>
+        <file>icons/shuffle_icon.png</file>
     </qresource>
     <qresource prefix="/lang">
         <file>lang/daspelling_da_DK.ts</file>
         <file>lang/daspelling_en.ts</file>
+        <file>lang/daspelling_de.ts</file>
         <file>lang/daspelling_da_DK.qm</file>
+        <file>lang/daspelling_de.qm</file>
         <file>lang/daspelling_en.qm</file>
     </qresource>
 </RCC>
