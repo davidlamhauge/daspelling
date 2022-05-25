@@ -132,6 +132,7 @@ void MainWindow::preferencesPressed()
 {
     QSettings settings("TeamLamhauge", "daSpelling");
     QString tmp = settings.value("lang").toString();
+    QString helpLine = ui->labShuffledWord->text();
 
     prefs = new PreferenceManager();
     prefs->prefPosition(this->pos());
@@ -149,6 +150,7 @@ void MainWindow::preferencesPressed()
     }
 
     updateShuffledWord(mHideShuffledWord);
+    ui->labShuffledWord->setText(helpLine);
     ui->leSpelling->setFocus();
 }
 
