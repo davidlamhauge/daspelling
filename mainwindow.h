@@ -47,6 +47,7 @@ private:
 
     //
     void prepareSpelling(int active);
+    void updateShuffledWord(int index);
     QString shuffleWord(QString s);
 
     // Lists with relevant data

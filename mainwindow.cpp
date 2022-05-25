@@ -147,6 +147,9 @@ void MainWindow::preferencesPressed()
         QCoreApplication::installTranslator(translator);
         ui->retranslateUi(this);
     }
+
+    updateShuffledWord(mHideShuffledWord);
+    ui->leSpelling->setFocus();
 }
 
 void MainWindow::readSettings()
@@ -350,9 +353,18 @@ void MainWindow::prepareSpelling(int active)
     mShuffledWordCopy = mShuffledWord;
     ui->labShuffledWord->setVisible(true);
 
-    switch (mHideShuffledWord) {
+    updateShuffledWord(mHideShuffledWord);
+
+    ui->labMaxNumber->setText(QString::number(mNumberOfSounds));
+    ui->labActiveNumber->setText(QString::number(mActiveSound + 1));
+}
+
+void MainWindow::updateShuffledWord(int index)
+{
+    switch (index) {
     case 0:
         ui->labShuffledWord->setText(mShuffledWord);
+        ui->labShuffledWord->setVisible(true);
         break;
     case 1:
         ui->labShuffledWord->setText(mShuffledWord);
@@ -376,9 +388,6 @@ void MainWindow::prepareSpelling(int active)
         ui->labShuffledWord->setText(mShuffledWord);
         break;
     }
-
-    ui->labMaxNumber->setText(QString::number(mNumberOfSounds));
-    ui->labActiveNumber->setText(QString::number(mActiveSound + 1));
 }
 
 QString MainWindow::shuffleWord(QString s)
