@@ -17,15 +17,18 @@ DEFINES += APP_VERSION=\"\\\"$${VERSION}\\\"\"
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    preferencemanager.cpp
+    preferencemanager.cpp \
+    recordwords.cpp
 
 HEADERS += \
     mainwindow.h \
-    preferencemanager.h
+    preferencemanager.h \
+    recordwords.h
 
 FORMS += \
     mainwindow.ui \
-    preferencemanager.ui
+    preferencemanager.ui \
+    recordwords.ui
 
 TRANSLATIONS += \
     lang/daspelling_da_DK.ts \
