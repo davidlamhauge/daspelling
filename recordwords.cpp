@@ -34,15 +34,13 @@ void RecordWords::recWordsPosition(QPoint pos, QString lastDir)
 
 void RecordWords::selectFolderPressed()
 {
-    QString directory = QFileDialog::getExistingDirectory(this, tr("Choose Directory"),
-                                                    mLastDir,
-                                                    QFileDialog::ShowDirsOnly
-                                                    | QFileDialog::DontResolveSymlinks);
-    QDir dir = QFileInfo(directory).dir();
-
+    QDir dir = QFileDialog::getExistingDirectory(this, tr("Choose Directory"),
+                                                          mLastDir,
+                                                          QFileDialog::ShowDirsOnly
+                                                          | QFileDialog::DontResolveSymlinks);
     if (dir.exists())
     {
-        mLastDir = QFileInfo(directory).dir().path();
+        mLastDir = dir.path();
         ui->labWordPath->setText(mLastDir);
         QSettings settings("TeamLamhauge", "daSpelling");
         settings.setValue("last_dir", mLastDir);
@@ -53,6 +51,7 @@ void RecordWords::selectFolderPressed()
 void RecordWords::newWordListPressed()
 {
     ui->labWordPath->setText("");
+    ui->leWordPrefix->clear();
     ui->leWordPrefix->setEnabled(false);
     setButtonsEnabled(false);
 }
