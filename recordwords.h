@@ -15,10 +15,19 @@ public:
     explicit RecordWords(QWidget *parent = nullptr);
     ~RecordWords();
 
-    void recWordsPosition(QPoint pos);
+    void recWordsPosition(QPoint pos, QString lastDir);
 
 private:
     Ui::RecordWords *ui;
+    QString mLastDir = "";
+
+    void selectFolderPressed();
+    void newWordListPressed();
+    void closePressed();
+
+    void textChanged(QString s);
+
+    void setButtonsEnabled(bool b);
 };
 
 #endif // RECORDWORDS_H

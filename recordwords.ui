@@ -74,7 +74,14 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
-         <widget class="QLineEdit" name="leWordPrefix"/>
+         <widget class="QLineEdit" name="leWordPrefix">
+          <property name="text">
+           <string notr="true"/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QLabel" name="labSuffix">
@@ -160,6 +167,13 @@
       </widget>
      </item>
      <item>
+      <widget class="Line" name="line">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="btnPlay">
        <property name="maximumSize">
         <size>
@@ -173,6 +187,13 @@
        <property name="icon">
         <iconset resource="icons.qrc">
          <normaloff>:/icons/play-100.png</normaloff>:/icons/play-100.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="Line" name="line_2">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
        </property>
       </widget>
      </item>
@@ -208,6 +229,13 @@
         </size>
        </property>
       </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnNewWordList">
+       <property name="text">
+        <string>New word list</string>
+       </property>
+      </widget>
      </item>
      <item>
       <widget class="QPushButton" name="btnFinished">

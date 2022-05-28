@@ -55,6 +55,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->leSpelling, &QLineEdit::textChanged, this, &MainWindow::textChanged);
 
     connect(ui->btnPreferences, &QPushButton::clicked, this, &MainWindow::preferencesPressed);
+    connect(ui->btnRecordWords, &QPushButton::clicked, this, &MainWindow::recordWordsPressed);
 }
 
 MainWindow::~MainWindow()
@@ -167,7 +168,7 @@ void MainWindow::preferencesPressed()
 void MainWindow::recordWordsPressed()
 {
     recWords = new RecordWords();
-    recWords->recWordsPosition(this->pos());
+    recWords->recWordsPosition(this->pos(), mLastDir);
     recWords->exec();
 }
 
