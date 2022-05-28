@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string notr="true">MainWindow</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -47,7 +47,7 @@
               </font>
              </property>
              <property name="text">
-              <string>Record and save words...</string>
+              <string>Record words...</string>
              </property>
             </widget>
            </item>
@@ -370,7 +370,7 @@
      <x>0</x>
      <y>0</y>
      <width>634</width>
-     <height>24</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

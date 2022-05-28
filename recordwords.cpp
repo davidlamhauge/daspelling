@@ -2,7 +2,7 @@
 #include "ui_recordwords.h"
 
 RecordWords::RecordWords(QWidget *parent) :
-    QWidget(parent),
+    QDialog(parent),
     ui(new Ui::RecordWords)
 {
     ui->setupUi(this);
@@ -11,4 +11,9 @@ RecordWords::RecordWords(QWidget *parent) :
 RecordWords::~RecordWords()
 {
     delete ui;
+}
+
+void RecordWords::recWordsPosition(QPoint pos)
+{
+    move(pos);
 }

@@ -15,6 +15,9 @@
         <file>icons/play-100.png</file>
         <file>icons/reset.png</file>
         <file>icons/shuffle_icon.png</file>
+        <file>icons/record.png</file>
+        <file>icons/save.png</file>
+        <file>icons/stop.png</file>
     </qresource>
     <qresource prefix="/lang">
         <file>lang/daspelling_da_DK.ts</file>

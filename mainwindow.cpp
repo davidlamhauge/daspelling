@@ -16,6 +16,7 @@
 #include <QAudioRecorder>
 
 #include "preferencemanager.h"
+#include "recordwords.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -161,6 +162,13 @@ void MainWindow::preferencesPressed()
     updateShuffledWord(mHideShuffledWord);
     ui->labShuffledWord->setText(helpLine);
     ui->leSpelling->setFocus();
+}
+
+void MainWindow::recordWordsPressed()
+{
+    recWords = new RecordWords();
+    recWords->recWordsPosition(this->pos());
+    recWords->exec();
 }
 
 void MainWindow::readSettings()

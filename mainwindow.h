@@ -10,6 +10,7 @@ QT_END_NAMESPACE
 class QMediaPlayer;
 class QFile;
 class PreferenceManager;
+class RecordWords;
 
 class MainWindow : public QMainWindow
 {
@@ -27,6 +28,7 @@ private:
     void init();
 
     void preferencesPressed();
+    void recordWordsPressed();
     void readSettings();
 
     // get the path to the soundfiles
@@ -75,5 +77,6 @@ private:
     int mHideShuffledWord = 0;
 
     PreferenceManager* prefs = nullptr;
+    RecordWords* recWords = nullptr;
 };
 #endif // MAINWINDOW_H
