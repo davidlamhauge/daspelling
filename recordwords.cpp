@@ -10,6 +10,7 @@
 #include <QMediaPlayer>
 #include <QAudioBuffer>
 #include <QSound>
+#include <QtEndian>
 #include <QMessageBox>
 
 #include <QDebug>
@@ -100,38 +101,45 @@ void RecordWords::closePressed()
 
 void RecordWords::recordPressed()
 {
+    mRecordFileName = mLastDir + "/" + ui->leWordPrefix->text() + ".wav";
     QAudioEncoderSettings audioSettings;
     audioSettings.setCodec("audio/pcm");
     audioSettings.setQuality(QMultimedia::NormalQuality);
     audioSettings.setChannelCount(1);
-    audioSettings.setSampleRate(48000);
-    audioSettings.setBitRate(16);
+    audioSettings.setSampleRate(44100);
+    audioSettings.setBitRate(32);
 
     recorder->setEncodingSettings(audioSettings);
     qDebug() << "bit rate " << audioSettings.bitRate() << " * sample rate: " << audioSettings.sampleRate();
 
-    recorder->setOutputLocation(QUrl::fromLocalFile(mLastDir + "/" + ui->leWordPrefix->text() + ".wav"));
+    recorder->setOutputLocation(QUrl::fromLocalFile(mRecordFileName));
     recorder->record();
 }
 
 void RecordWords::stopRecordingPressed()
 {
+    if (recorder->state() != QMediaRecorder::RecordingState)
+        return;
     recorder->stop();
-    QFile file(mLastDir + "/" + ui->leWordPrefix->text() + ".wav");
+    QFile file(mRecordFileName);
     if (!file.open(QIODevice::ReadOnly))
         return;
-    file.seek(34);
-
-    qDebug() << "Bits/sample: " << file.read(2).toInt()  << " * bytes audio: " << file.bytesAvailable() - 44;
+    char* strm = nullptr;
+    file.seek(44);
+    byteArr.clear();
+    while(!file.atEnd())
+    {
+        byteArr.append(file.read(strm,2));
+    }
+    file.seek(0);
+    qDebug() << "byteArr: " << byteArr.size() << " * bytes audio: " << file.bytesAvailable();
     file.close();
 }
 
 void RecordWords::playSoundPressed()
 {
-    player->setMedia(QUrl::fromLocalFile(mLastDir + "/" + ui->leWordPrefix->text() + ".wav"));
+    player->setMedia(QUrl::fromLocalFile(mRecordFileName));
     player->play();
-    qDebug() << "dur at play: " << player->duration();
-
 }
 
 void RecordWords::textChanged(QString s)

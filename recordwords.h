@@ -46,6 +46,7 @@ private:
     QAudioBuffer buffer;
     QMediaPlayer* player = nullptr;
     QByteArray byteArr;
+    QString mRecordFileName = "";
 };
 
 #endif // RECORDWORDS_H
