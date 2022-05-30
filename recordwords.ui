@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>802</width>
+    <width>1046</width>
     <height>257</height>
    </rect>
   </property>
@@ -36,7 +36,7 @@
      <item>
       <widget class="QLabel" name="labWordPath">
        <property name="text">
-        <string>(folder)</string>
+        <string notr="true"/>
        </property>
       </widget>
      </item>
@@ -100,11 +100,23 @@
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
-        <property name="maximumSize">
+        <property name="minimumSize">
          <size>
-          <width>16777215</width>
+          <width>1000</width>
           <height>100</height>
          </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>1000</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
         </property>
        </widget>
       </item>
@@ -206,7 +218,7 @@
         </size>
        </property>
        <property name="toolTip">
-        <string>Save</string>
+        <string>Save selection</string>
        </property>
        <property name="text">
         <string notr="true"/>

@@ -129,14 +129,6 @@ void MainWindow::init()
     QPalette palet = ui->leSpelling->palette();
     palet.setColor(QPalette::Base, LIGHT_GREEN);
     ui->leSpelling->setPalette(palet);
-
-    QAudioRecorder *recorder = new QAudioRecorder(this);
-    QStringList codecs_list = recorder->supportedAudioCodecs();
-
-    for( int i=0 ; i<codecs_list.count() ; i++ )
-    {
-        qDebug() << codecs_list[i];
-    }
 }
 
 void MainWindow::preferencesPressed()

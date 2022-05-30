@@ -1,7 +1,14 @@
 #ifndef RECORDWORDS_H
 #define RECORDWORDS_H
 
+#include "qaudiobuffer.h"
 #include <QDialog>
+
+class QAudioRecorder;
+class QAudioProbe;
+class QAudioDecoder;
+class QAudioBuffer;
+class QMediaPlayer;
 
 namespace Ui {
 class RecordWords;
@@ -25,9 +32,20 @@ private:
     void newWordListPressed();
     void closePressed();
 
+    void recordPressed();
+    void stopRecordingPressed();
+    void playSoundPressed();
+
     void textChanged(QString s);
 
     void setButtonsEnabled(bool b);
+
+    QAudioRecorder* recorder = nullptr;
+    QAudioProbe* probe = nullptr;
+    QAudioDecoder* decoder = nullptr;
+    QAudioBuffer buffer;
+    QMediaPlayer* player = nullptr;
+    QByteArray byteArr;
 };
 
 #endif // RECORDWORDS_H
