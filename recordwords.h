@@ -3,12 +3,11 @@
 
 #include "qaudiobuffer.h"
 #include <QDialog>
+#include <QGraphicsScene>
 
 class QAudioRecorder;
-class QAudioProbe;
-class QAudioDecoder;
 class QAudioBuffer;
-class QMediaPlayer;
+class QGraphicsScene;
 
 namespace Ui {
 class RecordWords;
@@ -41,12 +40,11 @@ private:
     void setButtonsEnabled(bool b);
 
     QAudioRecorder* recorder = nullptr;
-    QAudioProbe* probe = nullptr;
-    QAudioDecoder* decoder = nullptr;
     QAudioBuffer buffer;
-    QMediaPlayer* player = nullptr;
-    QByteArray byteArr;
+    QByteArray byteArray;
+    QByteArray headerArray;
     QString mRecordFileName = "";
+    QGraphicsScene* scene = nullptr;
 };
 
 #endif // RECORDWORDS_H
