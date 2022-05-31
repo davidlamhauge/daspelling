@@ -7,11 +7,7 @@
 #include <QFile>
 #include <QAudioRecorder>
 #include <QSound>
-#include <QAudioBuffer>
-#include <QSound>
 #include <QMessageBox>
-#include <QGraphicsScene>
-#include <QGraphicsSceneMouseEvent>
 
 #include <QDebug>
 
@@ -44,7 +40,6 @@ RecordWords::RecordWords(QWidget *parent) :
         close();
     }
     recorder->setAudioInput(input_list.at(0));
-//    qDebug() << "audioInputs: " << input_list;
 
     QStringList codecs_list = recorder->supportedAudioCodecs();
     if (!codecs_list.contains("audio/pcm"))
@@ -54,8 +49,10 @@ RecordWords::RecordWords(QWidget *parent) :
         msgBox.exec();
         close();
     }
-//    qDebug() << "supportedAudioCodecs: " << codecs_list;
-    scene = new QGraphicsScene(0, 0, 1000, 100);
+
+    QMessageBox msgBox;
+    msgBox.setText(tr("NB!!!\nWorks only on Windows!"));
+    msgBox.exec();
 }
 
 RecordWords::~RecordWords()
@@ -114,7 +111,6 @@ void RecordWords::recordPressed()
     audioSettings.setBitRate(32);
 
     recorder->setEncodingSettings(audioSettings);
-//    qDebug() << "bit rate " << audioSettings.bitRate() << " * sample rate: " << audioSettings.sampleRate();
 
     recorder->setOutputLocation(QUrl::fromLocalFile(mRecordFileName));
     recorder->record();
@@ -125,58 +121,6 @@ void RecordWords::stopRecordingPressed()
     if (recorder->state() != QMediaRecorder::RecordingState)
         return;
     recorder->stop();
-/*
-    QFile file(mRecordFileName);
-    if (!file.open(QIODevice::ReadOnly))
-        return;
-
-    headerArray.clear();
-    byteArray.clear();
-
-    headerArray.append(file.read(44));
-    qDebug() << "headerArray: " << headerArray.size() << " * " << headerArray;
-
-    while(!file.atEnd())
-    {
-        byteArray.append(file.read(1));
-    }
-    qDebug() << "byteArr: " << byteArray.size() << " * bytes audio: " << file.bytesAvailable();
-    file.close();
-
-    QPen pen(Qt::blue, 1.0);
-    int chunk = byteArray.size() / 1000;
-    int sumUp = 0;
-    int amp = 0;
-    int pos = 0;
-    int avg = 0;
-    int hori = 0;
-    for (int i = 0; i < 1000; i++)
-    {
-        for (hori = 0; hori < chunk; hori++)
-        {
-            pos = i * chunk + hori;
-            amp = int(byteArray.at(pos));
-            if (amp < 0)
-                sumUp += -amp;
-            else
-                sumUp += amp;
-        }
-        avg = sumUp/chunk;
-        scene->addLine(i, scene->height(), i, scene->height() - avg, pen);
-        sumUp = 0;
-    }
-    ui->gvWave->setScene(scene);
-
-    /*
-    // THIS WORKS!
-    QFile nyFil(mLastDir + "/" + "b_" + ui->leWordPrefix->text() + ".wav");
-    qDebug() << "nyfil: " << nyFil.fileName();
-    if (!nyFil.open(QIODevice::ReadWrite))
-        return;
-    nyFil.write(headerArray);
-    nyFil.write(byteArray);
-    nyFil.close();
-    */
 }
 
 void RecordWords::playSoundPressed()

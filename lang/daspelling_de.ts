@@ -14,62 +14,67 @@
         <translation>Einstellungen...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="111"/>
+        <location filename="../mainwindow.ui" line="50"/>
+        <source>Record words...</source>
+        <translation>Wörter aufnehmen...</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="124"/>
         <source>Play sound (Down arrow)</source>
         <translation>Das Wort abspielen (Pfeil nach unten)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="134"/>
+        <location filename="../mainwindow.ui" line="147"/>
         <source>Previous (Left arrow)</source>
         <translation>Voriges Wort (Pfeil links)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="157"/>
+        <location filename="../mainwindow.ui" line="170"/>
         <source>Next (Right arrow)</source>
         <translation>Nächtes Wort (Pfeil rechts)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="185"/>
+        <location filename="../mainwindow.ui" line="198"/>
         <source>Load directory</source>
         <translation>Wörter holen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="208"/>
+        <location filename="../mainwindow.ui" line="221"/>
         <source>Shuffle list</source>
         <translation>Liste mischen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="231"/>
+        <location filename="../mainwindow.ui" line="244"/>
         <source>Reset list</source>
         <translation>Liste zurücksetzen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="262"/>
+        <location filename="../mainwindow.ui" line="275"/>
         <source>Start spelling</source>
         <translation>Fang an mit buchstabieren</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="278"/>
+        <location filename="../mainwindow.ui" line="291"/>
         <source>Finish spelling</source>
         <translation>Buchstabieren absliesen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="291"/>
+        <location filename="../mainwindow.ui" line="304"/>
         <source>Close</source>
         <translation>Beenden</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="172"/>
+        <location filename="../mainwindow.cpp" line="187"/>
         <source>Open sound file</source>
         <translation>Öfne geräusch Datei</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="174"/>
+        <location filename="../mainwindow.cpp" line="189"/>
         <source>Sound Files (*.wav *.mp3)</source>
         <translation>Geräusch Dateien (*.wav *.mp3)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="214"/>
+        <location filename="../mainwindow.cpp" line="229"/>
         <source>Play:</source>
         <translation>Abspielen:</translation>
     </message>
@@ -160,6 +165,66 @@
         <location filename="../preferencemanager.ui" line="234"/>
         <source>Close</source>
         <translation>Beenden</translation>
+    </message>
+</context>
+<context>
+    <name>RecordWords</name>
+    <message>
+        <location filename="../recordwords.ui" line="20"/>
+        <source>Record words</source>
+        <translation>Wörter aufnehmen</translation>
+    </message>
+    <message>
+        <location filename="../recordwords.ui" line="37"/>
+        <source>Folder:</source>
+        <translation>Verzeichnis:</translation>
+    </message>
+    <message>
+        <location filename="../recordwords.ui" line="64"/>
+        <source>Select folder</source>
+        <translation>Verzeichnis auswählen</translation>
+    </message>
+    <message>
+        <location filename="../recordwords.ui" line="106"/>
+        <source>.wav</source>
+        <translation>.wav</translation>
+    </message>
+    <message>
+        <location filename="../recordwords.ui" line="139"/>
+        <source>Record</source>
+        <translation>Aufnehmen</translation>
+    </message>
+    <message>
+        <location filename="../recordwords.ui" line="159"/>
+        <source>Stop recording</source>
+        <translation>Tonaufnahme beenden</translation>
+    </message>
+    <message>
+        <location filename="../recordwords.ui" line="210"/>
+        <source>Exit</source>
+        <translation>Beenden</translation>
+    </message>
+    <message>
+        <location filename="../recordwords.cpp" line="38"/>
+        <source>No microphone detected. Exits dialog...</source>
+        <translation>Kein Mikrofon erkannt. Beendet den Dialog...</translation>
+    </message>
+    <message>
+        <location filename="../recordwords.cpp" line="48"/>
+        <source>No audio codecs available. Exits dialog...</source>
+        <translation>Keine Audio-Codecs verfügbar. Beendet den Dialog...</translation>
+    </message>
+    <message>
+        <location filename="../recordwords.cpp" line="54"/>
+        <source>NB!!!
+Works only on Windows!</source>
+        <translation>NB!!!
+Funktioniert nur unter Windows!</translation>
+    </message>
+    <message>
+        <location filename="../recordwords.cpp" line="71"/>
+        <source>Choose Directory</source>
+        <translation>Verzeichnis auswählen</translation>
     </message>
 </context>
 </TS>

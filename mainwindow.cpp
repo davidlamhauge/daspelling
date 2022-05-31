@@ -128,7 +128,7 @@ void MainWindow::init()
 
     QPalette palet = ui->leSpelling->palette();
     palet.setColor(QPalette::Base, LIGHT_GREEN);
-    ui->leSpelling->setPalette(palet);
+    ui->leSpelling->setPalette(palet);    
 }
 
 void MainWindow::preferencesPressed()

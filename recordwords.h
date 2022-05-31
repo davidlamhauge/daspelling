@@ -1,13 +1,9 @@
 #ifndef RECORDWORDS_H
 #define RECORDWORDS_H
 
-#include "qaudiobuffer.h"
 #include <QDialog>
-#include <QGraphicsScene>
 
 class QAudioRecorder;
-class QAudioBuffer;
-class QGraphicsScene;
 
 namespace Ui {
 class RecordWords;
@@ -40,11 +36,9 @@ private:
     void setButtonsEnabled(bool b);
 
     QAudioRecorder* recorder = nullptr;
-    QAudioBuffer buffer;
     QByteArray byteArray;
     QByteArray headerArray;
     QString mRecordFileName = "";
-    QGraphicsScene* scene = nullptr;
 };
 
 #endif // RECORDWORDS_H
