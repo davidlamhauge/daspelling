@@ -4,7 +4,7 @@
 #include "qaudiobuffer.h"
 #include <QDialog>
 #include <QGraphicsScene>
-#include <QGraphicsSceneMouseEvent>
+#include <QGraphicsItem>
 
 class QAudioRecorder;
 class QAudioBuffer;
@@ -46,8 +46,14 @@ private:
     QByteArray headerArray;
     QString mRecordFileName = "";
     QGraphicsScene* scene = nullptr;
+    QGraphicsItem* mRectItem = nullptr;
 
     void mousePressEvent(QMouseEvent* e);
+    void mouseMoveEvent(QMouseEvent* e);
+    void mouseReleaseEvent(QMouseEvent* e);
+
+    QPoint mStartPoint;
+    QPoint mEndPoint;
 };
 
 #endif // RECORDWORDS_H

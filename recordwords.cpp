@@ -56,6 +56,8 @@ RecordWords::RecordWords(QWidget *parent) :
     }
 //    qDebug() << "supportedAudioCodecs: " << codecs_list;
     scene = new QGraphicsScene(0, 0, 1000, 100);
+    mRectItem = new QGraphicsRectItem();
+    qDebug() << ui->gvWave->geometry() << " upTop " << ui->gvWave->geometry().top() << " upLeft " << ui->gvWave->geometry().left() << " " << this->geometry();
 }
 
 RecordWords::~RecordWords()
@@ -138,35 +140,40 @@ void RecordWords::stopRecordingPressed()
 
     while(!file.atEnd())
     {
-        byteArray.append(file.read(1));
+        byteArray.append(file.read(2));
     }
-//    qDebug() << "byteArr: " << byteArray.size() << " * bytes audio: " << file.bytesAvailable();
+    qDebug() << "byteArr: " << byteArray.size() << " * bytes audio: " << file.bytesAvailable();
     file.close();
 
+    scene->clear();
     QPen pen(Qt::blue, 1.0);
     int chunk = byteArray.size() / 1000;
     int sumUp = 0;
     int amp = 0;
     int pos = 0;
     int avg = 0;
-    int hori = 0;
     for (int i = 0; i < 1000; i++)
     {
-        for (hori = 0; hori < chunk; hori++)
+        for (int hori = 0; hori < chunk; hori++)
         {
             pos = i * chunk + hori;
             amp = int(byteArray.at(pos));
+            if (i == 500)
+                qDebug() << pos << " " << amp;
             if (amp < 0)
                 sumUp += -amp;
             else
                 sumUp += amp;
         }
-        avg = sumUp*2/chunk;
+        avg = sumUp/chunk;
+        if (i == 500)
+            qDebug() << "avg: " << avg;
         int startY = (scene->height() - avg) / 2;
         scene->addLine(i, startY, i, startY + avg, pen);
         sumUp = 0;
     }
     ui->gvWave->setScene(scene);
+    ui->gvWave->setFocus();
 /*
 
     // THIS WORKS!
@@ -182,6 +189,7 @@ void RecordWords::stopRecordingPressed()
 
 void RecordWords::playSoundPressed()
 {
+    ui->gvWave->setFocus();
     QSound::play(mRecordFileName);
 }
 
@@ -200,6 +208,24 @@ void RecordWords::setButtonsEnabled(bool b)
 }
 
 void RecordWords::mousePressEvent(QMouseEvent *e)
+{
+    if (ui->gvWave->geometry().contains(e->pos()))
+    {
+        mStartPoint = QPoint(e->pos().x() - ui->gvWave->geometry().x(), e->pos().y() - ui->gvWave->geometry().y());
+    }
+//    qDebug() << ui->gvWave->geometry().contains(e->pos()) << " * pos: " << ui->gvWave->pos() << " * mapped x: " << ui->gvWave->geometry();
+}
+
+void RecordWords::mouseMoveEvent(QMouseEvent *e)
+{
+    if (ui->gvWave->geometry().contains(e->pos()))
+    {
+        mEndPoint = QPoint(e->pos().x() - ui->gvWave->geometry().x(), e->pos().y() - ui->gvWave->geometry().y());
+    }
+    qDebug() << mStartPoint << " * " << mEndPoint;
+}
+
+void RecordWords::mouseReleaseEvent(QMouseEvent *e)
 {
 
 }
