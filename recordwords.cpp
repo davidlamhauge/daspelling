@@ -125,7 +125,7 @@ void RecordWords::stopRecordingPressed()
     if (recorder->state() != QMediaRecorder::RecordingState)
         return;
     recorder->stop();
-/*
+
     QFile file(mRecordFileName);
     if (!file.open(QIODevice::ReadOnly))
         return;
@@ -134,13 +134,13 @@ void RecordWords::stopRecordingPressed()
     byteArray.clear();
 
     headerArray.append(file.read(44));
-    qDebug() << "headerArray: " << headerArray.size() << " * " << headerArray;
+//    qDebug() << "headerArray: " << headerArray.size() << " * " << headerArray;
 
     while(!file.atEnd())
     {
         byteArray.append(file.read(1));
     }
-    qDebug() << "byteArr: " << byteArray.size() << " * bytes audio: " << file.bytesAvailable();
+//    qDebug() << "byteArr: " << byteArray.size() << " * bytes audio: " << file.bytesAvailable();
     file.close();
 
     QPen pen(Qt::blue, 1.0);
@@ -161,13 +161,14 @@ void RecordWords::stopRecordingPressed()
             else
                 sumUp += amp;
         }
-        avg = sumUp/chunk;
-        scene->addLine(i, scene->height(), i, scene->height() - avg, pen);
+        avg = sumUp*2/chunk;
+        int startY = (scene->height() - avg) / 2;
+        scene->addLine(i, startY, i, startY + avg, pen);
         sumUp = 0;
     }
     ui->gvWave->setScene(scene);
+/*
 
-    /*
     // THIS WORKS!
     QFile nyFil(mLastDir + "/" + "b_" + ui->leWordPrefix->text() + ".wav");
     qDebug() << "nyfil: " << nyFil.fileName();
@@ -176,7 +177,7 @@ void RecordWords::stopRecordingPressed()
     nyFil.write(headerArray);
     nyFil.write(byteArray);
     nyFil.close();
-    */
+*/
 }
 
 void RecordWords::playSoundPressed()
@@ -196,5 +197,10 @@ void RecordWords::setButtonsEnabled(bool b)
     ui->btnRecord->setEnabled(b);
     ui->btnStopRecording->setEnabled(b);
     ui->btnPlay->setEnabled(b);
+}
+
+void RecordWords::mousePressEvent(QMouseEvent *e)
+{
+
 }
 
