@@ -140,7 +140,7 @@ void RecordWords::stopRecordingPressed()
 
     while(!file.atEnd())
     {
-        byteArray.append(file.read(2));
+        byteArray.append(file.read(4));
     }
     qDebug() << "byteArr: " << byteArray.size() << " * bytes audio: " << file.bytesAvailable();
     file.close();
@@ -165,7 +165,7 @@ void RecordWords::stopRecordingPressed()
             else
                 sumUp += amp;
         }
-        avg = sumUp/chunk;
+        avg = sumUp*2/chunk;
         if (i == 500)
             qDebug() << "avg: " << avg;
         int startY = (scene->height() - avg) / 2;
