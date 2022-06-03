@@ -9,6 +9,8 @@
 class QAudioRecorder;
 class QAudioBuffer;
 class QGraphicsScene;
+class QMediaPlayer;
+class QBrush;
 
 namespace Ui {
 class RecordWords;
@@ -41,6 +43,7 @@ private:
     void setButtonsEnabled(bool b);
 
     QAudioRecorder* recorder = nullptr;
+    QMediaPlayer* mPlayer = nullptr;
     QAudioBuffer buffer;
     QByteArray byteArray;
     QByteArray headerArray;
@@ -49,11 +52,12 @@ private:
     QGraphicsItem* mRectItem = nullptr;
 
     void mousePressEvent(QMouseEvent* e);
-    void mouseMoveEvent(QMouseEvent* e);
-    void mouseReleaseEvent(QMouseEvent* e);
 
     QPoint mStartPoint;
+    bool mStart = false;
     QPoint mEndPoint;
+    bool mEnd = false;
+    QBrush mRectBrush;
 };
 
 #endif // RECORDWORDS_H

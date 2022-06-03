@@ -6,6 +6,7 @@
 #include <QFileDialog>
 #include <QFile>
 #include <QAudioRecorder>
+#include <QMediaPlayer>
 #include <QSound>
 #include <QAudioBuffer>
 #include <QSound>
@@ -57,6 +58,9 @@ RecordWords::RecordWords(QWidget *parent) :
 //    qDebug() << "supportedAudioCodecs: " << codecs_list;
     scene = new QGraphicsScene(0, 0, 1000, 100);
     mRectItem = new QGraphicsRectItem();
+    mPlayer = new QMediaPlayer(this);
+    mRectBrush.setColor(QColor(255, 0, 0, 128));
+    setMouseTracking(true);
     qDebug() << ui->gvWave->geometry() << " upTop " << ui->gvWave->geometry().top() << " upLeft " << ui->gvWave->geometry().left() << " " << this->geometry();
 }
 
@@ -158,16 +162,12 @@ void RecordWords::stopRecordingPressed()
         {
             pos = i * chunk + hori;
             amp = int(byteArray.at(pos));
-            if (i == 500)
-                qDebug() << pos << " " << amp;
             if (amp < 0)
                 sumUp += -amp;
             else
                 sumUp += amp;
         }
-        avg = sumUp*2/chunk;
-        if (i == 500)
-            qDebug() << "avg: " << avg;
+        avg = sumUp * 2 / chunk;
         int startY = (scene->height() - avg) / 2;
         scene->addLine(i, startY, i, startY + avg, pen);
         sumUp = 0;
@@ -189,8 +189,10 @@ void RecordWords::stopRecordingPressed()
 
 void RecordWords::playSoundPressed()
 {
+    mPlayer->setMedia(QMediaContent());
+    mPlayer->setMedia(QUrl::fromLocalFile(mRecordFileName));
+    mPlayer->play();
     ui->gvWave->setFocus();
-    QSound::play(mRecordFileName);
 }
 
 void RecordWords::textChanged(QString s)
@@ -209,24 +211,25 @@ void RecordWords::setButtonsEnabled(bool b)
 
 void RecordWords::mousePressEvent(QMouseEvent *e)
 {
-    if (ui->gvWave->geometry().contains(e->pos()))
+    if (ui->gvWave->geometry().contains(e->pos()) && e->button() == Qt::LeftButton && !mStart)
     {
         mStartPoint = QPoint(e->pos().x() - ui->gvWave->geometry().x(), e->pos().y() - ui->gvWave->geometry().y());
+        qDebug() << "Start point: " << mStartPoint;
+        mStart = true;
+        ui->gvWave->setFocus();
     }
-//    qDebug() << ui->gvWave->geometry().contains(e->pos()) << " * pos: " << ui->gvWave->pos() << " * mapped x: " << ui->gvWave->geometry();
-}
-
-void RecordWords::mouseMoveEvent(QMouseEvent *e)
-{
-    if (ui->gvWave->geometry().contains(e->pos()))
+    else if (ui->gvWave->geometry().contains(e->pos()) && e->button() == Qt::LeftButton && mStart)
     {
         mEndPoint = QPoint(e->pos().x() - ui->gvWave->geometry().x(), e->pos().y() - ui->gvWave->geometry().y());
+        if (mStartPoint.x() == mEndPoint.x())
+        {
+            mStart = false;
+            return;
+        }
+        mRectItem->mapRectToScene(mStartPoint.x(), 0, mEndPoint.x(), 100);
+        scene->addRect(mStartPoint.x(), 5, mEndPoint.x(), 95, Qt::NoPen, mRectBrush);
+        qDebug() << "End point: " << mEndPoint;
+        mStart = false;
+        ui->gvWave->setFocus();
     }
-    qDebug() << mStartPoint << " * " << mEndPoint;
 }
-
-void RecordWords::mouseReleaseEvent(QMouseEvent *e)
-{
-
-}
-
