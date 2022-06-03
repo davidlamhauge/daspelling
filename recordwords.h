@@ -36,7 +36,9 @@ private:
 
     void recordPressed();
     void stopRecordingPressed();
+    QGraphicsScene* drawScene(QByteArray array, QRect rect, QGraphicsScene* scene);
     void playSoundPressed();
+    void stopAudio(int ms);
 
     void textChanged(QString s);
 
@@ -55,8 +57,9 @@ private:
 
     QPoint mStartPoint;
     bool mStart = false;
+    bool mSoundSelected = false;
     QPoint mEndPoint;
-    bool mEnd = false;
+    int mStopAt = 0;
     QBrush mRectBrush;
 };
 
