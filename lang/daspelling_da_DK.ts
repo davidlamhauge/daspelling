@@ -175,101 +175,56 @@
         <translation>Indspil ord</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../recordwords.ui" line="37"/>
-=======
         <location filename="../recordwords.ui" line="38"/>
->>>>>>> light_record_audio
         <source>Folder:</source>
         <translation>Mappe:</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../recordwords.ui" line="64"/>
-=======
         <location filename="../recordwords.ui" line="65"/>
->>>>>>> light_record_audio
         <source>Select folder</source>
         <translation>Vælg mappe</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../recordwords.ui" line="106"/>
-=======
-        <location filename="../recordwords.ui" line="113"/>
->>>>>>> light_record_audio
-        <source>.wav</source>
-        <translation>.wav</translation>
-    </message>
-    <message>
-<<<<<<< HEAD
-        <location filename="../recordwords.ui" line="139"/>
-=======
         <location filename="../recordwords.ui" line="168"/>
->>>>>>> light_record_audio
         <source>Record</source>
         <translation>Optagelse</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../recordwords.ui" line="159"/>
-=======
         <location filename="../recordwords.ui" line="188"/>
->>>>>>> light_record_audio
         <source>Stop recording</source>
         <translation>Stop optagelse</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../recordwords.ui" line="210"/>
-=======
         <location filename="../recordwords.ui" line="263"/>
->>>>>>> light_record_audio
         <source>Exit</source>
         <translation>Afslut</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../recordwords.cpp" line="38"/>
-=======
-        <location filename="../recordwords.cpp" line="46"/>
->>>>>>> light_record_audio
+        <location filename="../recordwords.cpp" line="42"/>
         <source>No microphone detected. Exits dialog...</source>
         <translation>Ingen mikrofon fundet. Forlader dialog...</translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../recordwords.cpp" line="48"/>
+        <location filename="../recordwords.cpp" line="52"/>
         <source>No audio codecs available. Exits dialog...</source>
-        <translation>Ingen audio-codecs fundet. Forlader dialog...</translation>
+        <translation>Ingen audio codecs tilgængelige. Forlader dialog...</translation>
     </message>
     <message>
-        <location filename="../recordwords.cpp" line="54"/>
+        <location filename="../recordwords.cpp" line="58"/>
         <source>NB!!!
 Works only on Windows!</source>
         <translation>NB!!!
 Virker kun på Windows!</translation>
     </message>
     <message>
-        <location filename="../recordwords.cpp" line="71"/>
-        <source>Choose Directory</source>
-        <translation>Vælg mappe</translation>
-    </message>
-=======
-        <location filename="../recordwords.cpp" line="56"/>
-        <source>No audio codecs available. Exits dialog...</source>
-        <translation>Ingen audio codecs tilgængelige. Forlader dialog...</translation>
-    </message>
-    <message>
-        <location filename="../recordwords.cpp" line="79"/>
+        <location filename="../recordwords.cpp" line="80"/>
         <source>Choose Directory</source>
         <translation>Vælg mappe</translation>
     </message>
     <message>
-        <location filename="../recordwords.cpp" line="292"/>
+        <location filename="../recordwords.cpp" line="293"/>
         <source> sec.</source>
         <translation> sek.</translation>
     </message>
->>>>>>> light_record_audio
 </context>
 </TS>

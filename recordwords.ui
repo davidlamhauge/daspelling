@@ -110,7 +110,7 @@
         </font>
        </property>
        <property name="text">
-        <string>.wav</string>
+        <string notr="true">.wav</string>
        </property>
       </widget>
      </item>
