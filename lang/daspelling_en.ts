@@ -175,46 +175,79 @@
         <translation>Record words</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../recordwords.ui" line="37"/>
+=======
+        <location filename="../recordwords.ui" line="38"/>
+>>>>>>> light_record_audio
         <source>Folder:</source>
         <translation>Folder:</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../recordwords.ui" line="64"/>
+=======
+        <location filename="../recordwords.ui" line="65"/>
+>>>>>>> light_record_audio
         <source>Select folder</source>
         <translation>Select folder</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../recordwords.ui" line="106"/>
+=======
+        <location filename="../recordwords.ui" line="113"/>
+>>>>>>> light_record_audio
         <source>.wav</source>
         <translation>.wav</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../recordwords.ui" line="139"/>
+=======
+        <location filename="../recordwords.ui" line="168"/>
+>>>>>>> light_record_audio
         <source>Record</source>
         <translation>Record</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../recordwords.ui" line="159"/>
+=======
+        <location filename="../recordwords.ui" line="188"/>
+>>>>>>> light_record_audio
         <source>Stop recording</source>
         <translation>Stop recording</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../recordwords.ui" line="210"/>
+=======
+        <location filename="../recordwords.ui" line="263"/>
+>>>>>>> light_record_audio
         <source>Exit</source>
         <translation>Exit</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../recordwords.cpp" line="38"/>
+=======
+        <location filename="../recordwords.cpp" line="46"/>
+>>>>>>> light_record_audio
         <source>No microphone detected. Exits dialog...</source>
         <translation>No microphone detected. Exits dialog...</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../recordwords.cpp" line="48"/>
+=======
+        <location filename="../recordwords.cpp" line="56"/>
+>>>>>>> light_record_audio
         <source>No audio codecs available. Exits dialog...</source>
         <translation>No audio codecs available. Exits dialog...</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../recordwords.cpp" line="54"/>
         <source>NB!!!
 Works only on Windows!</source>
@@ -226,5 +259,16 @@ Works only on Windows!</translation>
         <source>Choose Directory</source>
         <translation>Choose Directory</translation>
     </message>
+=======
+        <location filename="../recordwords.cpp" line="79"/>
+        <source>Choose Directory</source>
+        <translation>Choose Directory</translation>
+    </message>
+    <message>
+        <location filename="../recordwords.cpp" line="292"/>
+        <source> sec.</source>
+        <translation> sec.</translation>
+    </message>
+>>>>>>> light_record_audio
 </context>
 </TS>
