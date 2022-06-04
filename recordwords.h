@@ -39,6 +39,7 @@ private:
 
     void recordPressed();
     void stopRecordingPressed();
+    void saveSelection();
     QGraphicsScene* drawScene(QByteArray array, QRect rect, QGraphicsScene* scene);
     void playSoundPressed();
     void stopAudio(int ms);
@@ -51,7 +52,7 @@ private:
     QAudioRecorder* recorder = nullptr;
     QMediaPlayer* mPlayer = nullptr;
     QAudioBuffer buffer;
-    QByteArray byteArray;
+    QByteArray mDataArray;
     QByteArray headerArray;
     QString mRecordFileName = "";
     QGraphicsScene* scene = nullptr;
@@ -60,9 +61,9 @@ private:
     void mousePressEvent(QMouseEvent* e);
 
     QPoint mStartPoint;
-    bool mStart = false;
-    bool mSoundSelected = false;
     QPoint mEndPoint;
+    bool mStart = false;            // has startpoint been set?
+    bool mSoundSelected = false;    // has endpoint been set?
     int mStopAt = 0;
 };
 
