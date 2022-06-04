@@ -28,6 +28,7 @@ RecordWords::RecordWords(QWidget *parent) :
     connect(ui->btnRecord, &QPushButton::clicked, this, &RecordWords::recordPressed);
     connect(ui->btnStopRecording, &QPushButton::clicked, this, &RecordWords::stopRecordingPressed);
     connect(ui->btnPlay, &QPushButton::clicked, this, &RecordWords::playSoundPressed);
+    connect(this, &RecordWords::selectionChanged, this, &RecordWords::selectionChangedSent);
 
     connect(ui->leWordPrefix, &QLineEdit::textChanged, this, &RecordWords::textChanged);
 
@@ -57,7 +58,6 @@ RecordWords::RecordWords(QWidget *parent) :
     scene = new QGraphicsScene(0, 0, 1000, 100);
     mRectItem = new QGraphicsRectItem();
     mPlayer = new QMediaPlayer(this);
-    mRectBrush.setColor(QColor(255, 0, 0, 128));
     setMouseTracking(true);
 }
 
@@ -103,6 +103,9 @@ void RecordWords::closePressed()
 
 void RecordWords::recordPressed()
 {
+    scene->clear();
+    ui->gvWave->setScene(scene);
+
     mRecordFileName = mLastDir + "/" + ui->leWordPrefix->text() + ".wav";
 
     QFile file(mRecordFileName);
@@ -146,6 +149,7 @@ void RecordWords::stopRecordingPressed()
     scene->clear();
     scene = drawScene(byteArray, QRect(), scene);
     ui->gvWave->setScene(scene);
+    selectionChangedSent(false);
     ui->gvWave->setFocus();
 /*
 
@@ -163,13 +167,17 @@ void RecordWords::stopRecordingPressed()
 QGraphicsScene* RecordWords::drawScene(QByteArray array, QRect rect, QGraphicsScene *scene)
 {
     QPen pen(Qt::blue, 1.0);
+    QBrush brush(QColor(255, 0, 0, 128));
     int chunk = array.size() / 1000;
     int sumUp = 0;
     int amp = 0;
     int pos = 0;
     int avg = 0;
+    QPoint p1;
+    QPoint p2;
     for (int i = 0; i < 1000; i++)
     {
+        p1 = QPoint(i, avg);
         for (int hori = 0; hori < chunk; hori++)
         {
             pos = i * chunk + hori;
@@ -180,12 +188,12 @@ QGraphicsScene* RecordWords::drawScene(QByteArray array, QRect rect, QGraphicsSc
                 sumUp += amp;
         }
         avg = sumUp * 2 / chunk;
-        int startY = (scene->height() - avg) / 2;
-        scene->addLine(i, startY, i, startY + avg, pen);
+        p2 = QPoint(i, avg);
+        scene->addLine(QLine(p1, p2), pen);
         sumUp = 0;
     }
     if (rect.width() > 0)
-        scene->addRect(rect, QPen(Qt::red), mRectBrush);
+        scene->addRect(rect, QPen(Qt::red), brush);
     return scene;
 }
 
@@ -195,16 +203,16 @@ void RecordWords::playSoundPressed()
     mPlayer->setMedia(QUrl::fromLocalFile(mRecordFileName));
     if (!mSoundSelected)
     {
-        qDebug() << "NOT selected...";
+//        qDebug() << "NOT selected...";
         mPlayer->play();
     }
     else
     {
         int ms = static_cast<int>(byteArray.size() / 88.2);
-        qDebug() << "IS selected... ms: " << ms << " start: " << ms * mStartPoint.x() / 1000;
+//        qDebug() << "IS selected... ms: " << ms << " start: " << ms * mStartPoint.x() / 1000;
         connect(mPlayer, &QMediaPlayer::positionChanged, this, &RecordWords::stopAudio);
         mStopAt = ms * mEndPoint.x() / 1000;
-        mPlayer->setNotifyInterval(100);
+        mPlayer->setNotifyInterval(10);
         mPlayer->play();
         mPlayer->setPosition(ms * mStartPoint.x() / 1000);
     }
@@ -214,7 +222,10 @@ void RecordWords::playSoundPressed()
 void RecordWords::stopAudio(int ms)
 {
     if (ms >= mStopAt)
+    {
         mPlayer->stop();
+        disconnect(mPlayer, &QMediaPlayer::positionChanged, this, &RecordWords::stopAudio);
+    }
 }
 
 void RecordWords::textChanged(QString s)
@@ -231,21 +242,39 @@ void RecordWords::setButtonsEnabled(bool b)
     ui->btnPlay->setEnabled(b);
 }
 
+void RecordWords::selectionChangedSent(bool b)
+{
+    ui->btnSaveSelection->setEnabled(b);
+    int ms = static_cast<int>(byteArray.size() / 88.2);
+    QString txt = "";
+    if (!mSoundSelected)
+    {
+        txt = QString::number(static_cast<qreal>(ms/1000.0));
+    }
+    else
+    {
+        qreal percent = static_cast<qreal>((mEndPoint.x() - mStartPoint.x()) / 1000.0);
+        txt = QString::number(static_cast<qreal>(ms * percent / 1000.0));
+    }
+    ui->labLength->setText(txt + tr(" sec."));
+}
+
 void RecordWords::mousePressEvent(QMouseEvent *e)
 {
     if (ui->gvWave->geometry().contains(e->pos()) && e->button() == Qt::LeftButton && !mStart)
     {
-        mStartPoint = QPoint(e->pos().x() - ui->gvWave->geometry().x(), 5);
+        mStartPoint = QPoint(e->pos().x() - ui->gvWave->geometry().x(), 0);
         scene->clear();
-        scene = drawScene(byteArray, QRect(mStartPoint, QPoint(mStartPoint.x() + 1, 95)), scene);
+        scene = drawScene(byteArray, QRect(mStartPoint, QPoint(mStartPoint.x() + 1, 100)), scene);
         ui->gvWave->setScene(scene);
         mStart = true;
         mSoundSelected = false;
+        emit selectionChanged(mSoundSelected);
         ui->gvWave->setFocus();
     }
     else if (ui->gvWave->geometry().contains(e->pos()) && e->button() == Qt::LeftButton && mStart)
     {
-        mEndPoint = QPoint(e->pos().x() - ui->gvWave->geometry().x(), 95);
+        mEndPoint = QPoint(e->pos().x() - ui->gvWave->geometry().x(), 100);
         if (mStartPoint.x() >= mEndPoint.x())
         {
             mStart = false;
@@ -260,6 +289,7 @@ void RecordWords::mousePressEvent(QMouseEvent *e)
         ui->gvWave->setScene(scene);
         mStart = false;
         mSoundSelected = true;
+        emit selectionChanged(mSoundSelected);
         ui->gvWave->setFocus();
     }
 }

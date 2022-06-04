@@ -26,6 +26,9 @@ public:
 
     void recWordsPosition(QPoint pos, QString lastDir);
 
+signals:
+    void selectionChanged(bool b);
+
 private:
     Ui::RecordWords *ui;
     QString mLastDir = "";
@@ -43,6 +46,7 @@ private:
     void textChanged(QString s);
 
     void setButtonsEnabled(bool b);
+    void selectionChangedSent(bool b);
 
     QAudioRecorder* recorder = nullptr;
     QMediaPlayer* mPlayer = nullptr;
@@ -60,7 +64,6 @@ private:
     bool mSoundSelected = false;
     QPoint mEndPoint;
     int mStopAt = 0;
-    QBrush mRectBrush;
 };
 
 #endif // RECORDWORDS_H
