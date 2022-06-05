@@ -211,6 +211,9 @@
          <height>30</height>
         </size>
        </property>
+       <property name="toolTip">
+        <string>Play</string>
+       </property>
        <property name="text">
         <string notr="true"/>
        </property>
@@ -234,6 +237,9 @@
          <width>30</width>
          <height>30</height>
         </size>
+       </property>
+       <property name="toolTip">
+        <string>Save selection</string>
        </property>
        <property name="text">
         <string/>

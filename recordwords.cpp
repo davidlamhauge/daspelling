@@ -59,6 +59,7 @@ RecordWords::RecordWords(QWidget *parent) :
     msgBox.setText(tr("NB!!!\nWorks only on Windows!"));
     msgBox.exec();
 
+    ui->btnSaveSelection->setEnabled(false);
     scene = new QGraphicsScene(0, 0, 1000, 100);
     mRectItem = new QGraphicsRectItem();
     mPlayer = new QMediaPlayer(this);

@@ -195,7 +195,17 @@
         <translation>Aufnahme stoppen</translation>
     </message>
     <message>
-        <location filename="../recordwords.ui" line="263"/>
+        <location filename="../recordwords.ui" line="215"/>
+        <source>Play</source>
+        <translation>Abspielen</translation>
+    </message>
+    <message>
+        <location filename="../recordwords.ui" line="242"/>
+        <source>Save selection</source>
+        <translation>Auswahl speichern</translation>
+    </message>
+    <message>
+        <location filename="../recordwords.ui" line="269"/>
         <source>Exit</source>
         <translation>Beenden</translation>
     </message>
@@ -210,19 +220,19 @@
         <translation>Keine Audio-Codecs verfügbar. Beendet den Dialog...</translation>
     </message>
     <message>
-        <location filename="../recordwords.cpp" line="58"/>
+        <location filename="../recordwords.cpp" line="59"/>
         <source>NB!!!
 Works only on Windows!</source>
         <translation>NB!!!
 Funktioniert nur unter Windows!!</translation>
     </message>
     <message>
-        <location filename="../recordwords.cpp" line="80"/>
+        <location filename="../recordwords.cpp" line="82"/>
         <source>Choose Directory</source>
         <translation>Wählen Sie Verzeichnis</translation>
     </message>
     <message>
-        <location filename="../recordwords.cpp" line="293"/>
+        <location filename="../recordwords.cpp" line="298"/>
         <source> sec.</source>
         <translation> Sek.</translation>
     </message>
