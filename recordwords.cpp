@@ -50,6 +50,7 @@ RecordWords::RecordWords(QWidget *parent) :
     {
         QMessageBox msgBox;
         msgBox.setText(tr("No audio codecs available. Exits dialog..."));
+        msgBox.move(this->pos());
         msgBox.exec();
         close();
     }
@@ -154,6 +155,8 @@ void RecordWords::stopRecordingPressed()
     scene = drawScene(mDataArray, QRect(), scene);
     ui->gvWave->setScene(scene);
     selectionChangedSent(false);
+    mPlayer->setMedia(QUrl::fromLocalFile(mRecordFileName));
+    playSoundPressed();
     ui->gvWave->setFocus();
 }
 
@@ -178,11 +181,11 @@ void RecordWords::saveSelection()
 
 //    qDebug() << "header FØR: " << headerArray;
 
-    headerArray.chop(4);
+//    headerArray.chop(4);
 //    qDebug() << "header UND: " << headerArray;
-    qint32 intValue = newArray.size();
-    QByteArray bytes = QByteArray::fromRawData(reinterpret_cast<const char *>(&intValue), sizeof(intValue));
-    headerArray.append(bytes);
+    int intValue = newArray.size();
+    QByteArray bytes = QByteArray::fromRawData(reinterpret_cast<const char *>(&intValue), 4);
+    headerArray.replace(40, 4, bytes);
 //    qDebug() << "header EFT: " << headerArray;
     nyFil.write(headerArray);
     nyFil.write(newArray);
@@ -195,6 +198,7 @@ void RecordWords::saveSelection()
     ui->gvWave->setScene(scene);
     selectionChangedSent(false);
     mPlayer->setMedia(QUrl::fromLocalFile(mRecordFileName));
+    playSoundPressed();
     ui->gvWave->setFocus();
 }
 
