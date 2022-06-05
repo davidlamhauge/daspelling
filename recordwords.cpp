@@ -167,27 +167,26 @@ void RecordWords::saveSelection()
         return;
 
     int startByte = static_cast<int>((mStartPoint.x() / 1000.0) * mDataArray.size());
+    startByte -= startByte % 4;
     int numBytes = static_cast<int>((mEndPoint.x() - mStartPoint.x()) / 1000.0 * mDataArray.size());
-//    qDebug() << mDataArray.size() << " * " << startByte << " * " << numBytes;
+    numBytes -= numBytes % 4;
+
     QByteArray newArray;
     newArray.clear();
-    for (int i = startByte; i < startByte+numBytes; i++)
+    for (int i = startByte; i < startByte + numBytes; i++)
         newArray.append(mDataArray.at(i));
 
     QFile nyFil(mRecordFileName);
     if (nyFil.exists(mRecordFileName))
         nyFil.remove(mRecordFileName);
+
     if (!nyFil.open(QIODevice::ReadWrite))
         return;
 
-//    qDebug() << "header FØR: " << headerArray;
+    quint32 intValue = newArray.size();
+    QByteArray bytesSum = QByteArray::fromRawData(reinterpret_cast<const char *>(&intValue), sizeof (intValue));
+    headerArray.replace(40, 4, bytesSum);
 
-//    headerArray.chop(4);
-//    qDebug() << "header UND: " << headerArray;
-    int intValue = newArray.size();
-    QByteArray bytes = QByteArray::fromRawData(reinterpret_cast<const char *>(&intValue), 4);
-    headerArray.replace(40, 4, bytes);
-//    qDebug() << "header EFT: " << headerArray;
     nyFil.write(headerArray);
     nyFil.write(newArray);
     nyFil.close();
