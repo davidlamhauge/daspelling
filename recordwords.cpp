@@ -23,7 +23,6 @@ RecordWords::RecordWords(QWidget *parent) :
     connect(ui->btnFinished, &QPushButton::clicked, this, &RecordWords::closePressed);
 
     connect(ui->btnRecord, &QPushButton::clicked, this, &RecordWords::recordPressed);
-    connect(ui->btnStopRecording, &QPushButton::clicked, this, &RecordWords::stopRecordingPressed);
     connect(ui->btnPlay, &QPushButton::clicked, this, &RecordWords::playSoundPressed);
     connect(this, &RecordWords::selectionChanged, this, &RecordWords::selectionChangedSent);
     connect(ui->btnSaveSelection, &QPushButton::clicked, this, &RecordWords::saveSelection);
@@ -108,57 +107,58 @@ void RecordWords::closePressed()
 
 void RecordWords::recordPressed()
 {
-    scene->clear();
-    ui->gvWave->setScene(scene);
-
-    mRecordFileName = mLastDir + "/" + ui->leWordPrefix->text() + ".wav";
-
-    QFile file(mRecordFileName);
-    if (file.exists(mRecordFileName))
-        file.remove(mRecordFileName);
-
-    QAudioEncoderSettings audioSettings;
-    audioSettings.setCodec("audio/pcm");
-    audioSettings.setQuality(QMultimedia::NormalQuality);
-    audioSettings.setChannelCount(1);
-    audioSettings.setSampleRate(44100);
-    audioSettings.setBitRate(32);
-
-    recorder->setEncodingSettings(audioSettings);
-
-    recorder->setOutputLocation(QUrl::fromLocalFile(mRecordFileName));
-    recorder->record();
-}
-
-void RecordWords::stopRecordingPressed()
-{
-    if (recorder->state() != QMediaRecorder::RecordingState)
-        return;
-    recorder->stop();
-
-    QFile file(mRecordFileName);
-    if (!file.open(QIODevice::ReadOnly))
-        return;
-
-    headerArray.clear();
-    mDataArray.clear();
-
-    headerArray.append(file.read(44));
-
-//    qDebug() << "header: " << headerArray;
-    while(!file.atEnd())
+    if (!mIsRecording)
     {
-        mDataArray.append(file.read(4));
-    }
-    file.close();
+        scene->clear();
+        ui->gvWave->setScene(scene);
 
-    scene->clear();
-    scene = drawScene(mDataArray, QRect(), scene);
-    ui->gvWave->setScene(scene);
-    selectionChangedSent(false);
-    mPlayer->setMedia(QUrl::fromLocalFile(mRecordFileName));
-    playSoundPressed();
-    ui->gvWave->setFocus();
+        mRecordFileName = mLastDir + "/" + ui->leWordPrefix->text() + ".wav";
+
+        QFile file(mRecordFileName);
+        if (file.exists(mRecordFileName))
+            file.remove(mRecordFileName);
+
+        QAudioEncoderSettings audioSettings;
+        audioSettings.setCodec("audio/pcm");
+        audioSettings.setQuality(QMultimedia::NormalQuality);
+        audioSettings.setChannelCount(1);
+        audioSettings.setSampleRate(44100);
+        audioSettings.setBitRate(32);
+
+        recorder->setEncodingSettings(audioSettings);
+
+        recorder->setOutputLocation(QUrl::fromLocalFile(mRecordFileName));
+        recorder->record();
+        mIsRecording = true;
+    }
+    else
+    {
+        recorder->stop();
+        mIsRecording = false;
+
+        QFile file(mRecordFileName);
+        if (!file.open(QIODevice::ReadOnly))
+            return;
+
+        headerArray.clear();
+        mDataArray.clear();
+
+        headerArray.append(file.read(44));
+
+        while(!file.atEnd())
+        {
+            mDataArray.append(file.read(4));
+        }
+        file.close();
+
+        scene->clear();
+        scene = drawScene(mDataArray, QRect(), scene);
+        ui->gvWave->setScene(scene);
+        selectionChangedSent(false);
+        mPlayer->setMedia(QUrl::fromLocalFile(mRecordFileName));
+        playSoundPressed();
+        ui->gvWave->setFocus();
+    }
 }
 
 void RecordWords::saveSelection()
@@ -278,7 +278,6 @@ void RecordWords::textChanged(QString s)
 void RecordWords::setButtonsEnabled(bool b)
 {
     ui->btnRecord->setEnabled(b);
-    ui->btnStopRecording->setEnabled(b);
     ui->btnPlay->setEnabled(b);
 }
 

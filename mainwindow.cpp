@@ -52,6 +52,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->btnPrevious, &QPushButton::clicked, this, &MainWindow::previousWord);
 
     connect(ui->btnPlay, &QPushButton::clicked, this, &MainWindow::play);
+    connect(ui->speedSlider, &QSlider::valueChanged, this, &MainWindow::setPlaybackRate);
     connect(ui->leSpelling, &QLineEdit::textChanged, this, &MainWindow::textChanged);
 
     connect(ui->btnPreferences, &QPushButton::clicked, this, &MainWindow::preferencesPressed);
@@ -97,7 +98,7 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *e)
 
 void MainWindow::init()
 {
-    player = new QMediaPlayer;
+    mPlayer = new QMediaPlayer;
 
     ui->btnLoadFile->setEnabled(true);
     ui->btnShuffle->setEnabled(false);
@@ -123,6 +124,7 @@ void MainWindow::init()
 
     ui->labActiveNumber->setText("-");
     ui->labMaxNumber->setText("-");
+    ui->labSpeed->setText(QString::number(1));
 
     readSettings();
 
@@ -217,8 +219,8 @@ void MainWindow::play()
     if (mActiveSound < 0)
         return;
     // mediaplayer
-    player->setMedia(QUrl::fromLocalFile(mLastDir+ "/" + mFileList.at(mActiveSound)));
-    player->play();
+    mPlayer->setMedia(QUrl::fromLocalFile(mLastDir+ "/" + mFileList.at(mActiveSound)));
+    mPlayer->play();
 
     if (mRecordKeystrokes)
     {
@@ -231,6 +233,14 @@ void MainWindow::play()
         }
     }
 
+    ui->leSpelling->setFocus();
+}
+
+void MainWindow::setPlaybackRate(int rate)
+{
+    qreal speed = static_cast<qreal>(rate / 100.0);
+    mPlayer->setPlaybackRate(speed);
+    ui->labSpeed->setText(QString::number(speed));
     ui->leSpelling->setFocus();
 }
 

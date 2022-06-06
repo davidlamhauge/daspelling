@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>634</width>
-    <height>432</height>
+    <height>463</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -357,6 +357,55 @@
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="labSetSpeed">
+        <property name="text">
+         <string>Set speed:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSlider" name="speedSlider">
+        <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>400</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>Set playback speed</string>
+        </property>
+        <property name="minimum">
+         <number>75</number>
+        </property>
+        <property name="maximum">
+         <number>100</number>
+        </property>
+        <property name="value">
+         <number>100</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labSpeed">
+        <property name="text">
+         <string notr="true"/>
         </property>
        </widget>
       </item>

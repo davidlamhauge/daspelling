@@ -36,6 +36,7 @@ private:
 
     // button presses...
     void play();
+    void setPlaybackRate(int rate);
     void textChanged(QString s);
 
     void shuffle();
@@ -61,7 +62,7 @@ private:
     QString mShuffledWord;
     QString mShuffledWordCopy;
 
-    QMediaPlayer *player = nullptr;
+    QMediaPlayer *mPlayer = nullptr;
 
     int mActiveSound = -1;       // sound at xxx in mFileList
     int mNumberOfSounds = 0;    // sounds in the directory

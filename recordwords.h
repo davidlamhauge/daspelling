@@ -38,7 +38,6 @@ private:
     void closePressed();
 
     void recordPressed();
-    void stopRecordingPressed();
     void saveSelection();
     QGraphicsScene* drawScene(QByteArray array, QRect rect, QGraphicsScene* scene);
     void playSoundPressed();
@@ -64,6 +63,7 @@ private:
     QPoint mEndPoint;
     bool mStart = false;            // has startpoint been set?
     bool mSoundSelected = false;    // has endpoint been set?
+    bool mIsRecording = false;      // are you recording?
     int mStopAt = 0;
 
 };

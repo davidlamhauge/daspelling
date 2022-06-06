@@ -64,17 +64,27 @@
         <translation>Luk</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="187"/>
+        <location filename="../mainwindow.ui" line="370"/>
+        <source>Set speed:</source>
+        <translation>Sæt hastighed:</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="389"/>
+        <source>Set playback speed</source>
+        <translation>Sæt afspilningshastighed</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="188"/>
         <source>Open sound file</source>
         <translation>Åben lydfil</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="189"/>
+        <location filename="../mainwindow.cpp" line="190"/>
         <source>Sound Files (*.wav *.mp3)</source>
         <translation>Lyd-filer (*.wav *.mp3)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="229"/>
+        <location filename="../mainwindow.cpp" line="230"/>
         <source>Play:</source>
         <translation>Afspil:</translation>
     </message>
@@ -175,59 +185,54 @@
         <translation>Indspil ord</translation>
     </message>
     <message>
-        <location filename="../recordwords.ui" line="38"/>
+        <location filename="../recordwords.ui" line="37"/>
         <source>Folder:</source>
         <translation>Mappe:</translation>
     </message>
     <message>
-        <location filename="../recordwords.ui" line="65"/>
+        <location filename="../recordwords.ui" line="64"/>
         <source>Select folder</source>
         <translation>Vælg mappe</translation>
     </message>
     <message>
-        <location filename="../recordwords.ui" line="168"/>
-        <source>Record</source>
-        <translation>Optagelse</translation>
+        <location filename="../recordwords.ui" line="165"/>
+        <source>Record - Start/Stop</source>
+        <translation>Optag - Start/Stop</translation>
     </message>
     <message>
-        <location filename="../recordwords.ui" line="188"/>
-        <source>Stop recording</source>
-        <translation>Stop optagelse</translation>
-    </message>
-    <message>
-        <location filename="../recordwords.ui" line="215"/>
+        <location filename="../recordwords.ui" line="192"/>
         <source>Play</source>
         <translation>Afspil</translation>
     </message>
     <message>
-        <location filename="../recordwords.ui" line="242"/>
+        <location filename="../recordwords.ui" line="219"/>
         <source>Save selection</source>
         <translation>Gem valgte</translation>
     </message>
     <message>
-        <location filename="../recordwords.ui" line="269"/>
+        <location filename="../recordwords.ui" line="246"/>
         <source>Exit</source>
         <translation>Afslut</translation>
     </message>
     <message>
-        <location filename="../recordwords.cpp" line="42"/>
+        <location filename="../recordwords.cpp" line="41"/>
         <source>No microphone detected. Exits dialog...</source>
         <translation>Ingen mikrofon fundet. Forlader dialog...</translation>
     </message>
     <message>
-        <location filename="../recordwords.cpp" line="52"/>
+        <location filename="../recordwords.cpp" line="51"/>
         <source>No audio codecs available. Exits dialog...</source>
         <translation>Ingen audio codecs tilgængelige. Forlader dialog...</translation>
     </message>
     <message>
-        <location filename="../recordwords.cpp" line="59"/>
+        <location filename="../recordwords.cpp" line="58"/>
         <source>NB!!!
 Works only on Windows!</source>
         <translation>NB!!!
 Virker kun på Windows!</translation>
     </message>
     <message>
-        <location filename="../recordwords.cpp" line="82"/>
+        <location filename="../recordwords.cpp" line="81"/>
         <source>Choose Directory</source>
         <translation>Vælg mappe</translation>
     </message>

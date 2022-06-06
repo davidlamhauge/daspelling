@@ -64,17 +64,27 @@
         <translation>Beenden</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="187"/>
+        <location filename="../mainwindow.ui" line="370"/>
+        <source>Set speed:</source>
+        <translation>Geschwindigkeit einstellen:</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="389"/>
+        <source>Set playback speed</source>
+        <translation>Wiedergabegeschwindigkeit einstellen</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="188"/>
         <source>Open sound file</source>
         <translation>Öfne geräusch Datei</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="189"/>
+        <location filename="../mainwindow.cpp" line="190"/>
         <source>Sound Files (*.wav *.mp3)</source>
         <translation>Geräusch Dateien (*.wav *.mp3)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="229"/>
+        <location filename="../mainwindow.cpp" line="230"/>
         <source>Play:</source>
         <translation>Abspielen:</translation>
     </message>
@@ -175,59 +185,54 @@
         <translation>Wörter aufnehmen</translation>
     </message>
     <message>
-        <location filename="../recordwords.ui" line="38"/>
+        <location filename="../recordwords.ui" line="37"/>
         <source>Folder:</source>
         <translation>Verzeichnis:</translation>
     </message>
     <message>
-        <location filename="../recordwords.ui" line="65"/>
+        <location filename="../recordwords.ui" line="64"/>
         <source>Select folder</source>
         <translation>Verzeichnis auswählen</translation>
     </message>
     <message>
-        <location filename="../recordwords.ui" line="168"/>
-        <source>Record</source>
-        <translation>Aufnehmen</translation>
+        <location filename="../recordwords.ui" line="165"/>
+        <source>Record - Start/Stop</source>
+        <translation>Aufnahme - Start/Stopp</translation>
     </message>
     <message>
-        <location filename="../recordwords.ui" line="188"/>
-        <source>Stop recording</source>
-        <translation>Aufnahme stoppen</translation>
-    </message>
-    <message>
-        <location filename="../recordwords.ui" line="215"/>
+        <location filename="../recordwords.ui" line="192"/>
         <source>Play</source>
         <translation>Abspielen</translation>
     </message>
     <message>
-        <location filename="../recordwords.ui" line="242"/>
+        <location filename="../recordwords.ui" line="219"/>
         <source>Save selection</source>
         <translation>Auswahl speichern</translation>
     </message>
     <message>
-        <location filename="../recordwords.ui" line="269"/>
+        <location filename="../recordwords.ui" line="246"/>
         <source>Exit</source>
         <translation>Beenden</translation>
     </message>
     <message>
-        <location filename="../recordwords.cpp" line="42"/>
+        <location filename="../recordwords.cpp" line="41"/>
         <source>No microphone detected. Exits dialog...</source>
         <translation>Kein Mikrofon erkannt. Beendet den Dialog...</translation>
     </message>
     <message>
-        <location filename="../recordwords.cpp" line="52"/>
+        <location filename="../recordwords.cpp" line="51"/>
         <source>No audio codecs available. Exits dialog...</source>
         <translation>Keine Audio-Codecs verfügbar. Beendet den Dialog...</translation>
     </message>
     <message>
-        <location filename="../recordwords.cpp" line="59"/>
+        <location filename="../recordwords.cpp" line="58"/>
         <source>NB!!!
 Works only on Windows!</source>
         <translation>NB!!!
 Funktioniert nur unter Windows!!</translation>
     </message>
     <message>
-        <location filename="../recordwords.cpp" line="82"/>
+        <location filename="../recordwords.cpp" line="81"/>
         <source>Choose Directory</source>
         <translation>Wählen Sie Verzeichnis</translation>
     </message>

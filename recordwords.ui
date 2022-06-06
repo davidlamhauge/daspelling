@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1022</width>
-    <height>236</height>
+    <height>240</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -30,7 +30,6 @@
       <widget class="QLabel" name="labSelectWordPath">
        <property name="font">
         <font>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -85,7 +84,6 @@
        <property name="font">
         <font>
          <pointsize>12</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -105,7 +103,6 @@
        <property name="font">
         <font>
          <pointsize>12</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -165,7 +162,7 @@
         </size>
        </property>
        <property name="toolTip">
-        <string>Record</string>
+        <string>Record - Start/Stop</string>
        </property>
        <property name="text">
         <string notr="true"/>
@@ -173,26 +170,6 @@
        <property name="icon">
         <iconset resource="icons.qrc">
          <normaloff>:/icons/record.png</normaloff>:/icons/record.png</iconset>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="btnStopRecording">
-       <property name="maximumSize">
-        <size>
-         <width>30</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="toolTip">
-        <string>Stop recording</string>
-       </property>
-       <property name="text">
-        <string notr="true"/>
-       </property>
-       <property name="icon">
-        <iconset resource="icons.qrc">
-         <normaloff>:/icons/stop.png</normaloff>:/icons/stop.png</iconset>
        </property>
       </widget>
      </item>
