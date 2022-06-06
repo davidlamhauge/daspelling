@@ -215,7 +215,7 @@ QGraphicsScene* RecordWords::drawScene(QByteArray array, QRect rect, QGraphicsSc
     QPoint p2;
     for (int i = 0; i < 1000; i++)
     {
-        p1 = QPoint(i, avg);
+        p1 = QPoint(i, 100);
         for (int hori = 0; hori < chunk; hori++)
         {
             pos = i * chunk + hori;
@@ -226,7 +226,7 @@ QGraphicsScene* RecordWords::drawScene(QByteArray array, QRect rect, QGraphicsSc
                 sumUp += amp;
         }
         avg = sumUp * 2 / chunk;
-        p2 = QPoint(i, avg);
+        p2 = QPoint(i, 100 - avg);
         scene->addLine(QLine(p1, p2), pen);
         sumUp = 0;
     }
@@ -271,6 +271,8 @@ void RecordWords::textChanged(QString s)
     QDir dir = ui->labWordPath->text();
     if (s.length() > 0 && dir.exists())
         setButtonsEnabled(true);
+    else
+        setButtonsEnabled(false);
 }
 
 void RecordWords::setButtonsEnabled(bool b)
@@ -328,6 +330,7 @@ void RecordWords::mousePressEvent(QMouseEvent *e)
         mStart = false;
         mSoundSelected = true;
         emit selectionChanged(mSoundSelected);
+        playSoundPressed();
         ui->gvWave->setFocus();
     }
 }
