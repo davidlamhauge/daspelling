@@ -40,9 +40,12 @@
    </item>
    <item>
     <widget class="QComboBox" name="cbLanguage">
+     <property name="currentText">
+      <string notr="true">Dansk</string>
+     </property>
      <item>
       <property name="text">
-       <string>Danish</string>
+       <string notr="true">Dansk</string>
       </property>
       <property name="icon">
        <iconset resource="icons.qrc">
@@ -51,7 +54,7 @@
      </item>
      <item>
       <property name="text">
-       <string>English</string>
+       <string notr="true">English</string>
       </property>
       <property name="icon">
        <iconset resource="icons.qrc">
@@ -60,7 +63,16 @@
      </item>
      <item>
       <property name="text">
-       <string>German</string>
+       <string notr="true">Føroyskt</string>
+      </property>
+      <property name="icon">
+       <iconset resource="icons.qrc">
+        <normaloff>:/icons/Flag_FO.png</normaloff>:/icons/Flag_FO.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string notr="true">Deutch</string>
       </property>
       <property name="icon">
        <iconset resource="icons.qrc">

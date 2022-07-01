@@ -18,6 +18,9 @@
         <file>icons/record.png</file>
         <file>icons/save.png</file>
         <file>icons/stop.png</file>
+        <file>icons/Flag_FO.png</file>
+        <file>lang/daspelling_fo.qm</file>
+        <file>lang/daspelling_fo.ts</file>
     </qresource>
     <qresource prefix="/lang">
         <file>lang/daspelling_da_DK.ts</file>
@@ -26,5 +29,7 @@
         <file>lang/daspelling_da_DK.qm</file>
         <file>lang/daspelling_de.qm</file>
         <file>lang/daspelling_en.qm</file>
+        <file>lang/daspelling_fo.qm</file>
+        <file>lang/daspelling_fo.ts</file>
     </qresource>
 </RCC>

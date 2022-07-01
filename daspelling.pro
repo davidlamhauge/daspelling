@@ -7,7 +7,7 @@ CONFIG += c++11 embed_translations
 TARGET = daspelling
 QMAKE_APPLICATION_BUNDLE_NAME = Daspelling
 
-VERSION = 0.9.11
+VERSION = 0.9.12
 DEFINES += APP_VERSION=\"\\\"$${VERSION}\\\"\"
 
 # You can make your code fail to compile if it uses deprecated APIs.
@@ -33,14 +33,17 @@ FORMS += \
 TRANSLATIONS += \
     lang/daspelling_da_DK.ts \
     lang/daspelling_en.ts \
-    lang/daspelling_de.ts
+    lang/daspelling_de.ts \
+    lang/daspelling_fo.ts
 
 # Default rules for deployment.
 # qnx: target.path = /tmp/$${TARGET}/bin
 # else: unix:!android: target.path = /opt/$${TARGET}/bin
 # !isEmpty(target.path): INSTALLS += target
 
-DISTFILES +=
+DISTFILES += \
+    lang/daspelling_fo.qm \
+    lang/daspelling_fo.ts
 
 RESOURCES += \
     icons.qrc

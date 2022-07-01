@@ -55,8 +55,12 @@ void PreferenceManager::cbLangaugePressed(int index)
         settings.setValue("langIndex", 1);
         break;
     case 2:
-        settings.setValue("lang", ":lang/lang/daspelling_de");
+        settings.setValue("lang", ":lang/lang/daspelling_fo");
         settings.setValue("langIndex", 2);
+        break;
+    case 3:
+        settings.setValue("lang", ":lang/lang/daspelling_de");
+        settings.setValue("langIndex", 3);
         break;
     default:
         settings.setValue("lang", ":lang/lang/daspelling_da_DK");

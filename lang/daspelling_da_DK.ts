@@ -74,17 +74,17 @@
         <translation>Sæt afspilningshastighed</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="188"/>
+        <location filename="../mainwindow.cpp" line="189"/>
         <source>Open sound file</source>
         <translation>Åben lydfil</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="190"/>
+        <location filename="../mainwindow.cpp" line="191"/>
         <source>Sound Files (*.wav *.mp3)</source>
         <translation>Lyd-filer (*.wav *.mp3)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="230"/>
+        <location filename="../mainwindow.cpp" line="231"/>
         <source>Play:</source>
         <translation>Afspil:</translation>
     </message>
@@ -102,77 +102,62 @@
         <translation>Sprog til brugergrænseflade</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="45"/>
-        <source>Danish</source>
-        <translation>Dansk</translation>
-    </message>
-    <message>
-        <location filename="../preferencemanager.ui" line="54"/>
-        <source>English</source>
-        <translation>Engelsk</translation>
-    </message>
-    <message>
-        <location filename="../preferencemanager.ui" line="63"/>
-        <source>German</source>
-        <translation>Tysk</translation>
-    </message>
-    <message>
-        <location filename="../preferencemanager.ui" line="77"/>
+        <location filename="../preferencemanager.ui" line="89"/>
         <source>Color for misspelling</source>
         <translation>Farve til fejlstavning</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="100"/>
+        <location filename="../preferencemanager.ui" line="112"/>
         <source>Red</source>
         <translation>Rød</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="109"/>
+        <location filename="../preferencemanager.ui" line="121"/>
         <source>Orange</source>
         <translation>Orange</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="118"/>
+        <location filename="../preferencemanager.ui" line="130"/>
         <source>Purple</source>
         <translation>Lilla</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="132"/>
+        <location filename="../preferencemanager.ui" line="144"/>
         <source>Show letters to help?</source>
         <translation>Vis bogstaver i hjælpelinje?</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="155"/>
+        <location filename="../preferencemanager.ui" line="167"/>
         <source>Show shuffled word</source>
         <translation>Vis hjælpelinjen</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="160"/>
+        <location filename="../preferencemanager.ui" line="172"/>
         <source>Hide two letter words</source>
         <translation>Skjul ord på to bogstaver</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="165"/>
+        <location filename="../preferencemanager.ui" line="177"/>
         <source>Hide two and three letter words</source>
         <translation>Skjul ord på to og tre bogstaver</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="170"/>
+        <location filename="../preferencemanager.ui" line="182"/>
         <source>Hide shuffled word</source>
         <translation>Skjul hjælpelinjen</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="187"/>
+        <location filename="../preferencemanager.ui" line="199"/>
         <source>Saves keystrokes, for later evaluation</source>
         <translation>Gem tastetryk, til senere evaluering</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="190"/>
+        <location filename="../preferencemanager.ui" line="202"/>
         <source>Save keystrokes</source>
         <translation>Gem tastetryk</translation>
     </message>
     <message>
-        <location filename="../preferencemanager.ui" line="234"/>
+        <location filename="../preferencemanager.ui" line="246"/>
         <source>Close</source>
         <translation>Luk</translation>
     </message>

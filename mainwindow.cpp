@@ -145,7 +145,7 @@ void MainWindow::preferencesPressed()
 
     readSettings();
 
-    // need to change UI language
+    // need to change UI language ?
     if (tmp != mLanguage)
     {
         QTranslator* translator = new QTranslator(this);
