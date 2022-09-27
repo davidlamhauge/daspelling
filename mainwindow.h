@@ -38,6 +38,7 @@ private:
     void play();
     void setPlaybackRate(int rate);
     void textChanged(QString s);
+    void createKeystrokeFile();
 
     void shuffle();
     void resetList();

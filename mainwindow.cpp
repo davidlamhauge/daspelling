@@ -224,6 +224,9 @@ void MainWindow::play()
 
     if (mRecordKeystrokes)
     {
+        if (mKeystrokeFileName.isEmpty())
+            createKeystrokeFile();
+
         QFile fil(mKeystrokeFileName);
         if (fil.open(QIODevice::ReadWrite | QIODevice::Append | QIODevice::Text))
         {
@@ -257,6 +260,9 @@ void MainWindow::textChanged(QString s)
 
     if (mRecordKeystrokes)
     {
+        if (mKeystrokeFileName.isEmpty())
+            createKeystrokeFile();
+
         QFile fil(mKeystrokeFileName);
         if (fil.open(QIODevice::ReadWrite | QIODevice::Append | QIODevice::Text))
         {
@@ -277,6 +283,22 @@ void MainWindow::textChanged(QString s)
     {
         palet.setColor(QPalette::Base, mMisSpellColor);
         ui->leSpelling->setPalette(palet);
+    }
+}
+
+void MainWindow::createKeystrokeFile()
+{
+    QString name = qgetenv("USER");
+    if (name.isEmpty())
+        name = qgetenv("USERNAME");
+    QString stamp = QDateTime().currentDateTime().toString("yyyyMMdd_hh_mm_ss");
+    mKeystrokeFileName = mLastDir + "/" + name + "_" + stamp + ".txt";
+    QFile fil(mKeystrokeFileName);
+    if (fil.open(QIODevice::ReadWrite | QIODevice::Append | QIODevice::Text))
+    {
+        QTextStream out(&fil);
+        out << "-> " << mWord << " <-\n";
+        fil.close();
     }
 }
 
@@ -310,6 +332,9 @@ void MainWindow::nextWord()
 
     if (mRecordKeystrokes)
     {
+        if (mKeystrokeFileName.isEmpty())
+            createKeystrokeFile();
+
         QFile fil(mKeystrokeFileName);
         if (fil.open(QIODevice::ReadWrite | QIODevice::Append | QIODevice::Text))
         {
@@ -334,6 +359,9 @@ void MainWindow::previousWord()
 
     if (mRecordKeystrokes)
     {
+        if (mKeystrokeFileName.isEmpty())
+            createKeystrokeFile();
+
         QFile fil(mKeystrokeFileName);
         if (fil.open(QIODevice::ReadWrite | QIODevice::Append | QIODevice::Text))
         {
@@ -442,20 +470,7 @@ void MainWindow::startSpelling()
     prepareSpelling(mActiveSound);
 
     if (mRecordKeystrokes)
-    {
-        QString name = qgetenv("USER");
-        if (name.isEmpty())
-            name = qgetenv("USERNAME");
-        QString stamp = QDateTime().currentDateTime().toString("yyyyMMdd_hh_mm_ss");
-        mKeystrokeFileName = mLastDir + "/" + name + "_" + stamp + ".txt";
-        QFile fil(mKeystrokeFileName);
-        if (fil.open(QIODevice::ReadWrite | QIODevice::Append | QIODevice::Text))
-        {
-            QTextStream out(&fil);
-            out << "-> " << mWord << " <-\n";
-            fil.close();
-        }
-    }
+        createKeystrokeFile();
 
     ui->leSpelling->setFocus();
 }
