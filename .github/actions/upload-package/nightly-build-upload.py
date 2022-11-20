@@ -59,9 +59,9 @@ filter120daysOld += " and createdTime < '{}'".format(check_date.strftime("%Y-%m-
 print('filter=', filter120daysOld)
 print('Deleting files older than 120 days')
 
-response = drive_service.files().list(q=filter120daysOld, spaces='drive').execute()
+# response = drive_service.files().list(q=filter120daysOld, spaces='drive').execute()
 
-for f in response.get('files'):
-  print('-------')
-  print('Deleting Name={}, ID={}'.format(f.get('name'), f.get('id')))
-  drive_service.files().delete(fileId=f.get('id')).execute()
+# for f in response.get('files'):
+#  print('-------')
+#  print('Deleting Name={}, ID={}'.format(f.get('name'), f.get('id')))
+#  drive_service.files().delete(fileId=f.get('id')).execute()
