@@ -33,6 +33,7 @@ private:
     Ui::RecordWords *ui;
     QString mLastDir = "";
 
+
     void selectFolderPressed();
     void newWordListPressed();
     void closePressed();
